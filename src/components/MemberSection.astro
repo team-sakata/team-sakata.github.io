@@ -1,0 +1,133 @@
+---
+import type { CollectionEntry } from "astro:content";
+
+interface Props {
+  section: CollectionEntry<"members">;
+  isFirst?: boolean;
+}
+
+const { section, isFirst = false } = Astro.props;
+---
+
+<div class="members-section" style={!isFirst ? "margin-top: 1rem;" : ""}>
+  {
+    section.data.title !== "教員" && (
+      <div class="members-section-title">
+        {section.data.title} / {section.data.titleEn}
+      </div>
+    )
+  }
+  <div class="members-list">
+    {
+      section.data.items.map((member) => (
+        <div class="member">
+          {member.image ? (
+            <img src={member.image} alt={member.name} class="member-image" />
+          ) : (
+            <div class="member-avatar">{member.avatar}</div>
+          )}
+          <div class="member-info">
+            {member.id ? (
+              <a href={`/members/${member.id}`} class="member-name-link">
+                <div class="member-name">{member.name}</div>
+              </a>
+            ) : (
+              <div class="member-name">{member.name}</div>
+            )}
+            {member.role && (
+              <div class="member-role">
+                {member.role} {member.roleEn ? `/ ${member.roleEn}` : ""}
+              </div>
+            )}
+            {member.description && (
+              <p class="member-description">{member.description}</p>
+            )}
+          </div>
+        </div>
+      ))
+    }
+  </div>
+</div>
+
+<style>
+  .members-section {
+    margin-bottom: 1.25rem;
+  }
+
+  .members-section-title {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--text-muted);
+    margin-bottom: 0.6rem;
+    font-weight: 500;
+  }
+
+  .members-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+  }
+
+  .member {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  .member-avatar {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: var(--bg-secondary);
+    border: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.7rem;
+    color: var(--accent);
+    font-weight: 500;
+    flex-shrink: 0;
+  }
+
+  .member-info {
+    flex: 1;
+  }
+
+  .member-name {
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: var(--text-primary);
+  }
+
+  .member-role {
+    font-size: 0.7rem;
+    color: var(--text-muted);
+  }
+
+  .member-name-link {
+    text-decoration: none;
+    color: inherit;
+  }
+
+  .member-name-link:hover .member-name {
+    color: var(--accent);
+    text-decoration: underline;
+  }
+
+  .member-image {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+    flex-shrink: 0;
+    border: 1px solid var(--border);
+  }
+
+  .member-description {
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+    margin-top: 0.4rem;
+    line-height: 1.6;
+  }
+</style>

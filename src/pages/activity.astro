@@ -1,0 +1,139 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import { getCollection } from "astro:content";
+
+const activity = await getCollection("activity");
+// Sort by date in descending order (newest first)
+activity.sort(
+    (a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime(),
+);
+---
+
+<Layout title="活動 | 坂田・森・浅谷・西本研究室">
+    <Header />
+
+    <main>
+        <section class="page-header">
+            <h1>活動</h1>
+            <p class="subtitle">Activity</p>
+        </section>
+
+        <section class="content-section">
+            <div class="activity-grid">
+                {
+                    activity.map((item) => (
+                        <a
+                            href={item.data.link || "#"}
+                            class="activity-card-link"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            <div class="activity-card">
+                                <div class="card-date">
+                                    {item.data.date.replace(/-/g, ".")}
+                                </div>
+                                <h3>{item.data.title}</h3>
+                                <p>{item.data.description}</p>
+                            </div>
+                        </a>
+                    ))
+                }
+            </div>
+        </section>
+    </main>
+
+    <Footer />
+</Layout>
+
+<style>
+    main {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 8rem 2rem 4rem;
+    }
+
+    .page-header {
+        margin-bottom: 3rem;
+        text-align: center;
+    }
+
+    .page-header h1 {
+        font-size: 2rem;
+        font-weight: 700;
+        margin-bottom: 0.5rem;
+    }
+
+    .subtitle {
+        color: var(--accent);
+        font-family: var(--font-serif);
+        font-size: 1.1rem;
+    }
+
+    .content-section {
+        margin-bottom: 3rem;
+    }
+
+    .activity-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.5rem;
+        margin-top: 2rem;
+    }
+
+    .activity-card-link {
+        text-decoration: none;
+        color: inherit;
+        display: block;
+        transition: transform 0.2s ease;
+    }
+
+    .activity-card-link:hover {
+        transform: translateY(-4px);
+    }
+
+    .activity-card {
+        background: var(--bg-card);
+        border: 1px solid var(--border);
+        border-radius: 8px;
+        padding: 1.5rem;
+        height: 100%;
+        transition:
+            box-shadow 0.2s ease,
+            border-color 0.2s ease;
+    }
+
+    .activity-card-link:hover .activity-card {
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        border-color: var(--accent);
+    }
+
+    .card-date {
+        font-size: 0.75rem;
+        color: var(--accent);
+        font-family: var(--font-mono);
+        margin-bottom: 0.5rem;
+        font-weight: 500;
+    }
+
+    .activity-card h3 {
+        font-size: 1rem;
+        color: var(--accent);
+        margin-bottom: 0.8rem;
+        font-weight: 600;
+    }
+
+    .activity-card p {
+        font-size: 0.9rem;
+        color: var(--text-secondary);
+        line-height: 1.6;
+        margin-bottom: 0;
+    }
+
+    @media (max-width: 768px) {
+        .activity-grid {
+            grid-template-columns: 1fr;
+        }
+    }
+</style>

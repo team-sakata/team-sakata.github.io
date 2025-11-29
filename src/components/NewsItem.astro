@@ -1,0 +1,82 @@
+---
+import type { CollectionEntry } from "astro:content";
+
+interface Props {
+  news: {
+    date: string;
+    text: string;
+    link?: string;
+  };
+}
+
+const { news } = Astro.props;
+---
+
+<div class="news-item">
+  <div class="news-date">{news.date}</div>
+  <div class="news-text">
+    {
+      news.link ? (
+        <a
+          href={news.link}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="news-link"
+        >
+          {news.text}
+        </a>
+      ) : (
+        news.text
+      )
+    }
+  </div>
+</div>
+
+<style>
+  .news-item {
+    display: flex;
+    gap: 0.75rem;
+    align-items: baseline;
+  }
+
+  .news-date {
+    font-size: 0.7rem;
+    color: var(--accent);
+    white-space: nowrap;
+    font-family: var(--font-sans);
+    font-weight: 500;
+  }
+
+  .news-text {
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+    line-height: 1.5;
+  }
+
+  .news-item.hidden {
+    display: none;
+  }
+
+  :global(.bento-card.expanded) .news-item.hidden {
+    display: flex;
+  }
+
+  :global(.bento-card.expanded) .news-item {
+    padding: 1rem;
+    background: var(--bg-secondary);
+    border-radius: 8px;
+    flex-direction: column;
+    gap: 0.4rem;
+  }
+
+  .news-link {
+    color: inherit;
+    text-decoration: underline;
+    text-decoration-color: var(--accent);
+    text-underline-offset: 2px;
+  }
+
+  .news-link:hover {
+    color: var(--accent);
+  }
+</style>

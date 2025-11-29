@@ -1,0 +1,187 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import ResearchArea from "../components/ResearchArea.astro";
+import { getCollection } from "astro:content";
+
+const research = await getCollection("research");
+const researchFocus = await getCollection("research-focus");
+research.sort((a, b) => a.data.order - b.data.order);
+researchFocus.sort((a, b) => a.data.order - b.data.order);
+---
+
+<Layout title="研究内容 | 坂田・森・浅谷・西本研究室">
+  <Header />
+
+  <main>
+    <section class="page-header">
+      <h1>研究内容</h1>
+      <p class="subtitle">Research</p>
+    </section>
+
+    <section class="content-section">
+      <h2>研究の方針</h2>
+      <p>
+        当研究室ではデータサイエンスを活用した経営に関する情報（技術経営学）や人間の行動に関する解析（計算社会科学）、そして言語処理を中心としたデータサイエンスの技法に関する研究（計算言語学）に関する研究を進めています。それぞれの分野は密接に関係しており、研究者同士が交流しながら研究を進めています。
+      </p>
+      <p>
+        学生の研究テーマ選択については、自主性を最大限に尊重する方針を採っています。このため、研究室内の研究テーマはかなり多様で、扱う技法も機械学習（深層学習、表現学習を含む）、自然言語処理、複雑系ネットワーク分析などかなり広範にわたります。
+      </p>
+    </section>
+
+    <section class="content-section">
+      <h2>研究室の指針</h2>
+      <p>
+        2009年にスタートし、開設15年になる我々の研究室では、経済・社会に関する洞察とAI・データサイエンスの手法を組み合わせることで、技術経営学の領域で新境地を切り開き、また、世界のトップチームの一つとなることを目指しています。分析手法としては、技術経営領域でもその活用が期待されている機械学習・深層学習、ネットワーク解析、自然言語処理等のデータサイエンス系の手法を中心とし、また、手法自体に関する基礎的な研究も重視しています。
+      </p>
+      <p>
+        そうした手法を用いた考察の対象としては、大規模な学術ビックデータ、ソーシャルメディア、取引関係やM&A等を含む大規模な企業情報、列車を利用したトリップデータ、レビュー文など、様々なものを扱っています。生成AIに関しては、逆学習を用いたLLMの解析に先駆的に取り組んでいます。
+      </p>
+      <p>
+        さらに、このような研究を進めるための外部連携として、「テクノロジー・インフォマティックス社会連携講座」や「事前学習言語モデルとネットワークの融合に基づく科学技術トレンド予測（NEDO/産業技術総合研究所）」の代表を務めるほか、多様な企業等と共同研究を行っています。
+      </p>
+    </section>
+
+    <div class="research-areas">
+      {research.map((item) => <ResearchArea research={item} />)}
+    </div>
+
+    <section class="content-section">
+      <h2>重点研究領域</h2>
+      <div class="focus-grid">
+        {
+          researchFocus.map((focus) => (
+            <a
+              href={`/research/focus${focus.data.order}`}
+              class="focus-card-link"
+            >
+              <div class="focus-card">
+                <h3>{focus.data.title}</h3>
+                <p>{focus.data.description}</p>
+              </div>
+            </a>
+          ))
+        }
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</Layout>
+
+<style>
+  main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 8rem 5rem 4rem;
+  }
+
+  .page-header {
+    margin-bottom: 3rem;
+    text-align: center;
+  }
+
+  .page-header h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+  }
+
+  .subtitle {
+    color: var(--accent);
+    font-family: var(--font-serif);
+    font-size: 1.1rem;
+  }
+
+  .content-section {
+    margin-bottom: 3rem;
+  }
+
+  .content-section h2 {
+    font-size: 1.4rem;
+    color: var(--text-primary);
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .content-section p {
+    margin-bottom: 1rem;
+    color: var(--text-secondary);
+    line-height: 1.8;
+  }
+
+  .research-areas {
+    margin-bottom: 3rem;
+  }
+
+  .recent-research-item {
+    margin-bottom: 1.5rem;
+  }
+
+  .recent-research-item h3 {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--accent);
+    margin-bottom: 0.5rem;
+  }
+
+  .recent-research-item p {
+    font-size: 0.9rem;
+  }
+
+  .focus-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin-top: 2rem;
+  }
+
+  .focus-card-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    transition: transform 0.2s ease;
+  }
+
+  .focus-card-link:hover {
+    transform: translateY(-4px);
+  }
+
+  .focus-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 1.5rem;
+    height: 100%;
+    transition:
+      box-shadow 0.2s ease,
+      border-color 0.2s ease;
+  }
+
+  .focus-card-link:hover .focus-card {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    border-color: var(--accent);
+  }
+
+  .focus-card h3 {
+    font-size: 1rem;
+    color: var(--accent);
+    margin-bottom: 0.8rem;
+    font-weight: 600;
+  }
+
+  .focus-card p {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin-bottom: 0;
+  }
+
+  @media (max-width: 768px) {
+    .focus-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

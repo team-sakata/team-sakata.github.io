@@ -1,0 +1,120 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Header from "../../components/Header.astro";
+import Footer from "../../components/Footer.astro";
+import { getCollection } from "astro:content";
+
+export async function getStaticPaths() {
+    const researchFocus = await getCollection("research-focus");
+    return researchFocus.map((focus) => ({
+        params: { id: `focus${focus.data.order}` },
+        props: { focus },
+    }));
+}
+
+const { focus } = Astro.props;
+---
+
+<Layout title={`${focus.data.title} | 坂田・森・浅谷・西本研究室`}>
+    <Header />
+
+    <main>
+        <section class="page-header">
+            <a href="/research" class="back-link">← 研究内容に戻る</a>
+            <h1>{focus.data.title}</h1>
+        </section>
+
+        <section class="content-section">
+            <div class="research-detail">
+                <p class="description">{focus.data.description}</p>
+
+                <div class="placeholder-content">
+                    <p>この研究トピックの詳細情報は準備中です。</p>
+                    <p>
+                        詳しくは<a href="/publications">Publications</a
+                        >ページをご覧ください。
+                    </p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <Footer />
+</Layout>
+
+<style>
+    main {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 8rem 5rem 4rem;
+    }
+
+    .page-header {
+        margin-bottom: 3rem;
+    }
+
+    .back-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        color: var(--accent);
+        text-decoration: none;
+        font-size: 0.9rem;
+        margin-bottom: 1.5rem;
+        transition: transform 0.2s ease;
+    }
+
+    .back-link:hover {
+        transform: translateX(-4px);
+    }
+
+    .page-header h1 {
+        font-size: 1.75rem;
+        font-weight: 700;
+        margin-bottom: 0.5rem;
+        line-height: 1.4;
+    }
+
+    .content-section {
+        margin-bottom: 3rem;
+    }
+
+    .research-detail {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .description {
+        font-size: 1.05rem;
+        color: var(--text-secondary);
+        line-height: 1.8;
+        padding: 1.5rem;
+        background: var(--bg-card);
+        border-left: 3px solid var(--accent);
+        border-radius: 4px;
+    }
+
+    .placeholder-content {
+        padding: 2rem;
+        background: var(--bg-secondary);
+        border: 1px solid var(--border);
+        border-radius: 8px;
+        text-align: center;
+    }
+
+    .placeholder-content p {
+        color: var(--text-secondary);
+        margin-bottom: 0.5rem;
+    }
+
+    .placeholder-content a {
+        color: var(--accent);
+        text-decoration: none;
+        font-weight: 500;
+    }
+
+    .placeholder-content a:hover {
+        text-decoration: underline;
+    }
+</style>

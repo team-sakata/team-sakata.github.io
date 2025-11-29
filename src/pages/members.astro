@@ -1,0 +1,58 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import MemberSection from "../components/MemberSection.astro";
+import { getCollection } from "astro:content";
+
+const members = await getCollection("members");
+members.sort((a, b) => a.data.order - b.data.order);
+---
+
+<Layout title="メンバー | 坂田・森・浅谷・西本研究室">
+  <Header />
+
+  <main>
+    <section class="page-header">
+      <h1>メンバー</h1>
+      <p class="subtitle">Members</p>
+    </section>
+
+    <div class="members-container">
+      {members.map((section) => <MemberSection section={section} />)}
+    </div>
+  </main>
+
+  <Footer />
+</Layout>
+
+<style>
+  main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 8rem 5rem 4rem;
+  }
+
+  .page-header {
+    margin-bottom: 3rem;
+    text-align: center;
+  }
+
+  .page-header h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+  }
+
+  .subtitle {
+    color: var(--accent);
+    font-family: var(--font-serif);
+    font-size: 1.1rem;
+  }
+
+  .members-container {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+</style>

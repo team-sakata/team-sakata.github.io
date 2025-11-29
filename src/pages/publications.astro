@@ -1,0 +1,92 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import PublicationItem from "../components/PublicationItem.astro";
+import { getCollection } from "astro:content";
+
+const publicationsCollection = await getCollection("publications");
+const publicationsEntry = publicationsCollection.find((p) => p.id === "list");
+const publications = publicationsEntry ? publicationsEntry.data : [];
+
+const preprints = publications.filter((p) => p.category === "preprint");
+const journals = publications.filter((p) => p.category === "journal");
+const conferences = publications.filter((p) => p.category === "conference");
+---
+
+<Layout title="論文リスト | 坂田・森・浅谷・西本研究室">
+  <Header />
+
+  <main>
+    <section class="page-header">
+      <h1>論文リスト</h1>
+      <p class="subtitle">Publications</p>
+    </section>
+
+    <section class="pub-section">
+      <h2>Preprints</h2>
+      <div class="pub-list">
+        {preprints.map((item) => <PublicationItem pub={item} />)}
+      </div>
+    </section>
+
+    <section class="pub-section">
+      <h2>Journal Papers</h2>
+      <div class="pub-list">
+        {journals.map((item) => <PublicationItem pub={item} />)}
+      </div>
+    </section>
+
+    <section class="pub-section">
+      <h2>Conference Papers</h2>
+      <div class="pub-list">
+        {conferences.map((item) => <PublicationItem pub={item} />)}
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</Layout>
+
+<style>
+  main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 8rem 5rem 4rem;
+  }
+
+  .page-header {
+    margin-bottom: 3rem;
+    text-align: center;
+  }
+
+  .page-header h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+  }
+
+  .subtitle {
+    color: var(--accent);
+    font-family: var(--font-serif);
+    font-size: 1.1rem;
+  }
+
+  .pub-section {
+    margin-bottom: 3rem;
+  }
+
+  .pub-section h2 {
+    font-size: 1.4rem;
+    color: var(--text-primary);
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .pub-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+</style>

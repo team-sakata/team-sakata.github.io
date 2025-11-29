@@ -1,0 +1,16 @@
+title: "スタッフ"
+titleEn: "Staff"
+items:
+  - avatar: "大"
+    name: "大知 正直"
+    role: "特任研究員"
+    roleEn: "Project Researcher"
+    image: "/images/sample_avatar.svg"
+    description: "専門は..."
+  - avatar: "磯"
+    name: "磯沼 大"
+    role: "特任研究員"
+    roleEn: "Project Researcher"
+    image: "/images/sample_avatar.jpg"
+    description: "専門は..."
+order: 1.5

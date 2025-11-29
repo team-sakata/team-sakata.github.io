@@ -1,0 +1,928 @@
+# Preprints
+- title: "Influential scientists shape knowledge flows between science and IGO policy"
+  authors: "K. Asatani, Y. Iwata, Y. Tomokiyo, B. Mahfouz, M. Yarime, & I. Sakata"
+  venue: "arXiv preprint arXiv:2506.06753"
+  year: "2025"
+  category: "preprint"
+  hidden: false
+
+- title: "Do Researchers Benefit Career-wise from Involvement in International Policy Guideline Development?"
+  authors: "Y. Tomokiyo, K. Nishimoto, K. Asatani, & I. Sakata"
+  venue: "arXiv preprint arXiv:2503.22584"
+  year: "2025"
+  category: "preprint"
+  hidden: false
+
+# Journal Papers
+- title: "Tracing the evolution of household carbon emission research by machine learning"
+  authors: "Y. Long, L. Huang, S. Montagna, Z. Chen, X. Ding, Y. Shigetomi, T. Zhao, K. Asatani, I. Sakata, & Y. Yoshida"
+  venue: "Environmental Impact Assessment Review"
+  year: "2025"
+  volume: "115"
+  pages: "108039"
+  category: "journal"
+  hidden: false
+
+- title: "Mid-career pitfall of consecutive success in science"
+  authors: "N. Higashide, T. Miura, Y. Tomokiyo, et al."
+  venue: "Scientific Reports"
+  year: "2024"
+  volume: "14"
+  pages: "28172"
+  category: "journal"
+  hidden: false
+
+- title: "Quantifying advances from basic research to applied research in material science"
+  authors: "N. Higashide, Y. Zhang, K. Asatani, T. Miura, & I. Sakata"
+  venue: "Technovation"
+  year: "2024"
+  volume: "135"
+  pages: "103050"
+  category: "journal"
+  hidden: false
+
+- title: "Detecting possible pairs of materials for composites using a material word co-occurrence network"
+  authors: "C. Ishii, K. Asatani, & I. Sakata"
+  venue: "PLOS ONE"
+  year: "2024"
+  volume: "19"
+  issue: "1"
+  pages: "e0297361"
+  category: "journal"
+  hidden: false
+
+- title: "Quantifying progress in research topics across nations"
+  authors: "K. Asatani, S. Oki, T. Momma, & I. Sakata"
+  venue: "Scientific Reports"
+  year: "2023"
+  volume: "13"
+  issue: "1"
+  pages: "4759"
+  category: "journal"
+  hidden: false
+
+- title: "Emerging trends in roadmapping research: A bibliometric literature review"
+  authors: "S. Vinayavekhin, R. Phaal, T. Thanamaitreejit, & K. Asatani"
+  venue: "Technology Analysis & Strategic Management"
+  year: "2023"
+  volume: "35"
+  issue: "5"
+  pages: "558-572"
+  category: "journal"
+  hidden: false
+
+- title: "Obtaining interactions among science, technology, and research policy for developing an innovation strategy: A case study of supercapacitors"
+  authors: "C. Ishii, K. Asatani, & I. Sakata"
+  venue: "Heliyon"
+  year: "2022"
+  volume: "8"
+  issue: "9"
+  pages: "e10721"
+  category: "journal"
+  hidden: false
+
+- title: "Revisiting the uniformity and inconsistency of slow-cited papers in science"
+  authors: "T. Miura, K. Asatani, & I. Sakata"
+  venue: "Journal of Informetrics"
+  year: "2023"
+  volume: "17"
+  issue: "1"
+  pages: "101378"
+  category: "journal"
+  hidden: false
+
+- title: "Predictive analysis of multiple future scientific impacts by embedding a heterogeneous network"
+  authors: "M. Ochi, M. Shiro, J. Mori, & I. Sakata"
+  venue: "PLOS ONE"
+  year: "2022"
+  volume: "17"
+  issue: "9"
+  pages: "e0274253"
+  category: "journal"
+  hidden: false
+
+- title: "Discovering Interdisciplinarily Spread Knowledge in the Academic Literature"
+  authors: "M. Kamada, K. Asatani, M. Isonuma, & I. Sakata"
+  venue: "IEEE Access"
+  year: "2021"
+  volume: "9"
+  pages: "124142-124151"
+  category: "journal"
+  hidden: false
+
+- title: "Large-scale analysis of delayed recognition using sleeping beauty and prince"
+  authors: "T. Miura, K. Asatani, & I. Sakata"
+  venue: "Applied Network Science"
+  year: "2021"
+  volume: "6"
+  pages: "48"
+  category: "journal"
+  hidden: false
+
+- title: "A finger-jointing model for describing nanostructures of cellulose microfibrils"
+  authors: "B. Fugetsu, A. Vipin, S. Takiguchi, I. Sakata, & M. Endo"
+  venue: "Scientific Reports"
+  year: "2021"
+  volume: "11"
+  issue: "1"
+  pages: "10055"
+  category: "journal"
+  hidden: false
+
+- title: "Categorization of mergers and acquisitions using transaction network features"
+  authors: "B. Shao, K. Asatani, H. Sasaki, & I. Sakata"
+  venue: "Research in International Business and Finance"
+  year: "2021"
+  volume: "57"
+  pages: "101421"
+  category: "journal"
+  hidden: false
+
+- title: "Unsupervised Abstractive Opinion Summarization by Generating Sentences with Tree-Structured Topic Guidance"
+  authors: "M. Isonuma, J. Mori, D. Bollegala, & I. Sakata"
+  venue: "Transactions of the Association for Computational Linguistics (TACL)"
+  year: "2021"
+  category: "journal"
+  hidden: false
+
+- title: "Dense and influential core promotes daily viral information spreading in political echo chambers"
+  authors: "K. Asatani, H. Yamano, T. Sakaki, & I. Sakata"
+  venue: "Scientific Reports"
+  year: "2021"
+  volume: "11"
+  issue: "1"
+  pages: "7491"
+  category: "journal"
+  hidden: false
+
+- title: "Identifying potential technological spin-offs using hierarchical information in international patent classification"
+  authors: "H. Sasaki & I. Sakata"
+  venue: "Technovation"
+  year: "2021"
+  volume: "100"
+  pages: "102192"
+  category: "journal"
+  hidden: false
+
+- title: "Business partner selection considering supply-chain centralities and causalities"
+  authors: "H. Sasaki & I. Sakata"
+  venue: "Supply Chain Forum: An International Journal"
+  year: "2021"
+  volume: "22"
+  issue: "1"
+  pages: "74-85"
+  category: "journal"
+  hidden: false
+
+- title: "Emerging scientific field detection using citation networks and topic models - A case study of the nanocarbon field"
+  authors: "H. Sasaki, B. Fugetsu, & I. Sakata"
+  venue: "Applied System Innovation"
+  year: "2020"
+  volume: "3"
+  issue: "3"
+  pages: "1-17, 40"
+  category: "journal"
+  hidden: false
+
+- title: "Graphene nanosheets homogeneously incorporated in polyurethane sponge for the elimination of water-soluble organic dyes"
+  authors: "S. Manabe, A. Vipin, S. Takiguchi, T. Kumashiro, B. Fugetsu, & I. Sakata"
+  venue: "Journal of Colloid and Interface Science"
+  year: "2021"
+  volume: "584"
+  pages: "816-826"
+  category: "journal"
+  hidden: false
+
+- title: "Aerogel from copper (II)-cellulose nanofibers and carbon nanotubes as absorbents for the elimination of toxic gases from air"
+  authors: "A. Vipin, B. Fugetsu, I. Sakata, Z. Wang, & M. Endo"
+  venue: "Journal of Colloid and Interface Science"
+  year: "2021"
+  volume: "582"
+  pages: "950-960"
+  category: "journal"
+  hidden: false
+
+- title: "Improved supercapacitors by implanting ultra-long single-walled carbon nanotubes into manganese oxide domains"
+  authors: "W. Gong, B. Fugetsu, I. Sakata, et al."
+  venue: "Journal of Power Sources"
+  year: "2020"
+  volume: "479"
+  pages: "228795"
+  category: "journal"
+  hidden: false
+
+- title: "Monolayered Platinum Nanoparticles as Efficient Electrocatalysts for the Mass Production of Electrolyzed Hydrogen Water"
+  authors: "Y. Wang, B. Fugetsu, I. Sakata, et al."
+  venue: "Scientific Reports"
+  year: "2020"
+  volume: "10"
+  pages: "10126"
+  category: "journal"
+  hidden: false
+
+- title: "Facile synthesis of graphene sheets intercalated by carbon spheres for high-performance supercapacitor electrodes"
+  authors: "Z. Wang, B. Fugetsu, I. Sakata, et al."
+  venue: "Carbon"
+  year: "2020"
+  volume: "167"
+  pages: "11-18"
+  category: "journal"
+  hidden: false
+
+- title: "Evaluating 'startup readiness' for researchers: Case studies of research-based startups with biopharmaceutical research topics"
+  authors: "T. Goji, Y. Hayashi, & I. Sakata"
+  venue: "Heliyon"
+  year: "2020"
+  volume: "6"
+  pages: "e04160"
+  category: "journal"
+  hidden: false
+
+- title: "Evaluating Nodes of Latent Mediators in Heterogeneous Communities"
+  authors: "H. Yamano, K. Asatani, & I. Sakata"
+  venue: "Scientific Reports"
+  year: "2020"
+  volume: "10"
+  pages: "8456"
+  category: "journal"
+  hidden: false
+
+- title: "Scientific Attention to sustainability and SDGs: Meta-analysis of academic papers"
+  authors: "K. Asatani, T. Takeda, H. Yamano, & I. Sakata"
+  venue: "Energies"
+  year: "2020"
+  volume: "13"
+  issue: "4"
+  pages: "975"
+  category: "journal"
+  hidden: false
+
+- title: "Stabilization of Prussian blue using copper sulfate for eliminating radioactive cesium from a high pH solution and seawater"
+  authors: "S. Makabe, A. Vipin, T. Kumashiro, S. Takiguchi, B. Fugetsu, & I. Sakata"
+  venue: "Journal of Hazardous Materials"
+  year: "2020"
+  volume: "386"
+  pages: "121979"
+  category: "journal"
+  hidden: false
+
+- title: "Thicker carbon-nanotube/manganese-oxide hybridized nanostructures as electrodes for creation of fiber-shaped supercapacitors of high energy densities"
+  authors: "W. Gong, B. Fugetsu, Z. Wang, T. Ueki, I. Sakata, H. Ogata, F. Han, M. Li, L. Su, X. Zhang, M. Terrones, & M. Endo"
+  venue: "Carbon"
+  year: "2019"
+  volume: "154"
+  pages: "169-177"
+  category: "journal"
+  hidden: false
+
+- title: "Comparative Examination of Network Clustering Methods for Extracting Community Structures of a City from Public Transportation Smart Card Data"
+  authors: "T. Maeda, J. Mori, M. Ochi, I. Hayashi, T. Sakimoto, & I. Sakata"
+  venue: "IEEE Access"
+  year: "2019"
+  volume: "7"
+  issue: "1"
+  pages: "53377-53391"
+  category: "journal"
+  hidden: false
+
+- title: "Identifying technology convergence in the field of robotics research"
+  authors: "T. Kose & I. Sakata"
+  venue: "Technological Forecasting and Social Change"
+  year: "2019"
+  volume: "146"
+  pages: "751-766"
+  category: "journal"
+  hidden: false
+
+- title: "Measurement of opportunity cost of travel time for predicting future residential mobility based on the smart card data of public transportation"
+  authors: "T. Maeda, J. Mori, M. Ochi, T. Sakimoto, & I. Sakata"
+  venue: "International Journal of Geo-Information"
+  year: "2018"
+  volume: "7"
+  pages: "416"
+  category: "journal"
+  hidden: false
+
+- title: "Detecting Interpersonal Relationships in Large-Scale Railway Trip Data"
+  authors: "K. Asatani, F. Toriumi, M. Ochi, J. Mori, & I. Sakata"
+  venue: "Journal of Computational Social Science"
+  year: "2018"
+  volume: "1"
+  pages: "s42001-018-0021-1"
+  category: "journal"
+  hidden: false
+
+- title: "Detecting trends in academic research from a citation network using network representation learning"
+  authors: "K. Asatani, J. Mori, M. Ochi, & I. Sakata"
+  venue: "PLOS ONE"
+  year: "2018"
+  volume: "13"
+  issue: "5"
+  pages: "e0197260"
+  category: "journal"
+  hidden: false
+
+- title: "Carbon nanotubes and manganese oxide hybrid nanostructures as high performance fiber supercapacitors"
+  authors: "W. Gong, B. Fugetsu, Z. Wang, I. Sakata, M. Li, et al."
+  venue: "Communications Chemistry"
+  year: "2018"
+  volume: "1"
+  pages: "s42004-018-0017-Z"
+  category: "journal"
+  hidden: false
+
+- title: "Cross-border power trade with Myanmar: Barriers and their removal from the Thai's Perspective"
+  authors: "K. Yamaguchi, P. Reubroycharoen, M. Sugiyama, D. Wiwattanate, H. Yoshikawa, & I. Sakata"
+  venue: "International Journal of Public Policy"
+  year: "2018"
+  volume: "14"
+  issue: "1"
+  pages: "30-49"
+  category: "journal"
+  hidden: false
+
+- title: "Preparation of novel tetrahedral Ag3PO4 crystals and the sunlight-responsive photocatalytic properties using graphene oxide as the template"
+  authors: "Y. Wang, B. Fugetsu, I. Sakata, et al."
+  venue: "Carbon"
+  year: "2017"
+  volume: "119"
+  pages: "522-526"
+  category: "journal"
+  hidden: false
+
+- title: "Electrochemically reduced water exerts super reactive oxygen species scavenging activity in HT1080 cells than the equivalent level of hydrogen-dissolved water"
+  authors: "T. Hamasaki, G. Harada, N. Nakamichi, I. Sakata, et al."
+  venue: "PLOS ONE"
+  year: "2017"
+  volume: "12"
+  issue: "2"
+  pages: "e0171192"
+  category: "journal"
+  hidden: false
+
+- title: "Nitrogen-doped porous carbon monoliths from polyacrylonitrile (PAN) and carbon nanotubes as electrodes for supercapacitors"
+  authors: "Y. Wang, B. Fugetsu, Z. Wang, I. Sakata, et al."
+  venue: "Scientific Reports"
+  year: "2017"
+  volume: "7"
+  pages: "40259"
+  category: "journal"
+  hidden: false
+
+- title: "Cellulose nanofiber backboned Prussian blue nanoparticles as powerful adsorbents for the selective elimination of radioactive cesium"
+  authors: "A. Vipin, B. Fugetsu, I. Sakata, A. Isogai, M. Endo, M. Li, & M. Dresselhaus"
+  venue: "Scientific Reports"
+  year: "2016"
+  volume: "6"
+  pages: "37009"
+  category: "journal"
+  hidden: false
+
+- title: "Geospatial Area Embedding Based on the Movement Purpose Hypothesis using Large-scale Mobility Data from Smart Cards"
+  authors: "M. Ochi, J. Mori, K. Asatani, I. Sakata, et al."
+  venue: "International Journal of Communications, Network and System Sciences (IJCNS)"
+  year: "2016"
+  volume: "9"
+  pages: "519-534"
+  category: "journal"
+  hidden: false
+
+- title: "Morphology-controlled fabrication of a three dimensional mesoporous poly(vinyl alcohol) monolith through the incorporation of graphene oxide"
+  authors: "Y. Wang, B. Fugetsu, I. Sakata, M. Terrones, M. Endo, & M. Dresselhaus"
+  venue: "Carbon"
+  year: "2016"
+  volume: "98"
+  pages: "334-342"
+  category: "journal"
+  hidden: false
+
+- title: "Three dimensional porous monoliths from multi-walled carbon nanotubes and polyacrylonitrile"
+  authors: "A. Vipin, B. Fugetsu, I. Sakata, T. Tanaka, L. Sun, S. Tanaka, M. Terrones, M. Endo, & M. Dresselhaus"
+  venue: "Carbon"
+  year: "2016"
+  volume: "101"
+  pages: "377-381"
+  category: "journal"
+  hidden: false
+
+- title: "Identifying Emerging Research Related to Solar Cells Field Using a Machine Learning Approach"
+  authors: "H. Sasaki, T. Hara, & I. Sakata"
+  venue: "Journal of Sustainable Development of Energy, Water and Environment Systems"
+  year: "2016"
+  volume: "4"
+  issue: "4"
+  pages: "418-429"
+  category: "journal"
+  hidden: false
+
+- title: "Detection and introduction of emerging technologies for green buildings in Thailand"
+  authors: "T. Visessonchok, M. Sugiyama, H. Sasaki, & I. Sakata"
+  venue: "International Journal of Energy Technology and Policy"
+  year: "2016"
+  volume: "12"
+  issue: "1"
+  pages: "2-19"
+  category: "journal"
+  hidden: false
+
+- title: "Academic Landscape of Hydropower: Citation-analysis based method and its application"
+  authors: "H. Sasaki, Z. Liu, & I. Sakata"
+  venue: "International Journal of Energy Technology and Policy"
+  year: "2016"
+  volume: "12"
+  issue: "1"
+  pages: "84-102"
+  category: "journal"
+  hidden: false
+
+# Conference Papers (Recent 5 Years)
+- title: "Lexical Entailment with Hierarchy Representations by Deep Metric Learning"
+  authors: "N. Sato, et al."
+  venue: "Findings of the Association for Computational Linguistics: EMNLP 2022"
+  year: "2022"
+  category: "conference"
+  hidden: false
+
+- title: "Measuring the researcher's movement toward growing organization focusing on researcher's career-age"
+  authors: "T. Miura, K. Asatani, & I. Sakata"
+  venue: "Portland International Conference on Management Engineering and Technology (PICMET'20)"
+  location: "Daejeon City, Korea"
+  year: "2021"
+  category: "conference"
+  hidden: false
+
+- title: "Evaluating Emerging Technologies on the Gartner Hype Cycle by Network Analysis"
+  authors: "Y. Kondo, K. Asatani, & I. Sakata"
+  venue: "Portland International Conference on Management Engineering and Technology (PICMET'20)"
+  location: "Daejeon City, Korea"
+  year: "2021"
+  category: "conference"
+  hidden: false
+
+- title: "Roles of Brokers and Clusters in the Inter-firm Network Dynamics: Evolution Map Perspective"
+  authors: "Y. Hiroko & I. Sakata"
+  venue: "Portland International Conference on Management Engineering and Technology (PICMET'20)"
+  location: "Daejeon City, Korea"
+  year: "2021"
+  category: "conference"
+  hidden: false
+
+- title: "Classifying Sleeping Beauties and Princes Using Citation Rarity"
+  authors: "T. Miura, K. Asatani, & I. Sakata"
+  venue: "The 9th International Conference on Complex Networks and Their Applications (COMPLEX NETWORKS 2020)"
+  location: "Online"
+  year: "2020"
+  category: "conference"
+  hidden: false
+
+- title: "Tree-Structured Neural Topic Model"
+  authors: "M. Isonuma, J. Mori, D. Bollegala, & I. Sakata"
+  venue: "The 58th Annual Meeting of the Association for Computational Linguistics (ACL 2020)"
+  location: "Online"
+  year: "2020"
+  category: "conference"
+  hidden: false
+
+- title: "Constructive Approach for Early Extraction of Viral Spreading Social Issues from Twitter"
+  authors: "C. J. Shiau, M. Ouchi, K. Nagahama, T. Sakaki, J. Mori, & I. Sakata"
+  venue: "12th ACM Web Science Conference 2020"
+  location: "Online"
+  year: "2020"
+  award: "Best Student Paper Honorable Mention Award"
+  category: "conference"
+  hidden: false
+
+- title: "Evaluating Nodes of Latent Mediators in Heterogeneous Communities"
+  authors: "H. Yamano, I. Sakata, & K. Asatani"
+  venue: "The 9th International Conference on Complex Networks and Their Applications (COMPLEX NETWORKS 2019)"
+  location: "Lisbon, Portugal"
+  year: "2019"
+  category: "conference"
+  hidden: false
+
+- title: "Scientific research on sustainability: A meta-analysis of academic papers about sustainability and the Sustainable Development Goals"
+  authors: "K. Asatani, H. Takeda, H. Yamano, & I. Sakata"
+  venue: "The 12th Dubrovnik Conference on Sustainable Development of Energy, Water and Environment Systems (SDEWES)"
+  location: "Dubrovnik, Croatia"
+  year: "2019"
+  category: "conference"
+  hidden: false
+
+- title: "Unsupervised Neural Single-Document Summarization of Reviews via Learning Latent Discourse Structure and its Ranking"
+  authors: "M. Isonuma, J. Mori, & I. Sakata"
+  venue: "Annual Meeting of the Association for Computational Linguistics (ACL 2019)"
+  location: "Florence, Italy"
+  year: "2019"
+  category: "conference"
+  hidden: false
+
+- title: "Detecting emerging complex technological fields in robotics"
+  authors: "T. Kose & I. Sakata"
+  venue: "Portland International Conference on Management Engineering and Technology (PICMET'19)"
+  location: "Portland, USA"
+  year: "2019"
+  paper_id: "8893969"
+  category: "conference"
+  hidden: false
+
+- title: "Analysis of mergers and acquisitions trends in the semiconductor industry with the technology perspective"
+  authors: "B. Shao & I. Sakata"
+  venue: "Portland International Conference on Management Engineering and Technology (PICMET'19)"
+  location: "Portland, USA"
+  year: "2019"
+  paper_id: "8893782"
+  category: "conference"
+  hidden: false
+
+- title: "Identifying affiliation effects on innovation enhancement"
+  authors: "T. Miura & I. Sakata"
+  venue: "Portland International Conference on Management Engineering and Technology (PICMET'19)"
+  location: "Portland, USA"
+  year: "2019"
+  paper_id: "8893886"
+  category: "conference"
+  hidden: false
+
+- title: "Researchers' startup readiness in the biopharmaceutical domain assessed using logistic regression for features of their papers, patents, institutes, and nations"
+  authors: "T. Goji & I. Sakata"
+  venue: "Portland International Conference on Management Engineering and Technology (PICMET'19)"
+  location: "Portland, USA"
+  year: "2019"
+  paper_id: "8893685"
+  category: "conference"
+  hidden: false
+
+- title: "Latent pattern extraction and factorization of firm bankruptcies and metabolism in Japan"
+  authors: "H. Yamano & I. Sakata"
+  venue: "Portland International Conference on Management Engineering and Technology (PICMET'19)"
+  location: "Portland, USA"
+  year: "2019"
+  paper_id: "8893943"
+  category: "conference"
+  hidden: false
+
+- title: "Inter-domain linking of problems in science and technology through a bibliometric approach"
+  authors: "H. Sasaki, S. Yamamoto, A. Agchbayan, N. Enkhbayasgalan, & I. Sakata"
+  venue: "Portland International Conference on Management Engineering and Technology (PICMET'19)"
+  location: "Portland, USA"
+  year: "2019"
+  paper_id: "8893965"
+  category: "conference"
+  hidden: false
+
+- title: "A Cross-lingual Analysis on Culinary Perceptions to Understand the Cross-cultural Difference"
+  authors: "X. Leng, M. Ochi, T. Sakaki, J. Mori, & I. Sakata"
+  venue: "AAAI 2019 Spring Symposia: Interpretable AI for Well-being: Understanding Cognitive Bias and Social Embeddedness"
+  location: "Palo Alto, CA, USA"
+  year: "2019"
+  award: "Special Paper Award from Reviewers"
+  category: "conference"
+  hidden: false
+
+- title: "Communication based on unilateral preference on Twitter: Internet luring in Japan"
+  authors: "K. Asatani, Y. Kawahata, F. Toriumi, & I. Sakata"
+  venue: "10th International Conference on Social Informatics (SocInfo'18)"
+  location: "St. Petersburg, Russia"
+  year: "2018"
+  category: "conference"
+  hidden: false
+
+- title: "Inequality Structure of Global Investment: Analysis and Simulation of an M&A Network"
+  authors: "K. Asatani & I. Sakata"
+  venue: "2018 IEEE International Conference on Industrial Engineering and Engineering Management (IEEM 2018)"
+  location: "Bangkok, Thailand"
+  year: "2018"
+  category: "conference"
+  hidden: false
+
+- title: "Categorization of Mergers and Acquisitions in Japan Using Corporate Databases: A Fundamental Research for Prediction"
+  authors: "B. Shao, K. Asatani, & I. Sakata"
+  venue: "2018 IEEE International Conference on Industrial Engineering and Engineering Management (IEEM 2018)"
+  location: "Bangkok, Thailand"
+  year: "2018"
+  category: "conference"
+  hidden: false
+
+- title: "Assessing 'start-up readiness' for research topics and researchers: Case studies of research-based start-ups in biopharmaceutical domain"
+  authors: "T. Goji, Y. Hayashi, H. Yamano, T. Matsuda, & I. Sakata"
+  venue: "Portland International Conference on Management Engineering and Technology (PICMET'18)"
+  location: "Honolulu, Hawaii, USA"
+  year: "2018"
+  category: "conference"
+  hidden: false
+
+- title: "Recategorizing interdisciplinary articles using natural language processing and machine/deep learning"
+  authors: "K. Tanaka, R. Arakawa, Y. Kameoka, & I. Sakata"
+  venue: "Portland International Conference on Management Engineering and Technology (PICMET'18)"
+  location: "Honolulu, Hawaii, USA"
+  year: "2018"
+  category: "conference"
+  hidden: false
+
+- title: "Data storage cost reduction by decluttering image and video data: Case study of video file decluttering"
+  authors: "T. Matsuda, T. Goji, & I. Sakata"
+  venue: "Portland International Conference on Management Engineering and Technology (PICMET'18)"
+  location: "Honolulu, Hawaii, USA"
+  year: "2018"
+  category: "conference"
+  hidden: false
+
+- title: "Co-word analysis to detect possible combinations for composite materials"
+  authors: "C. Fujisue, H. Sasaki, H. Yamano, & I. Sakata"
+  venue: "Portland International Conference on Management Engineering and Technology (PICMET'18)"
+  location: "Honolulu, Hawaii, USA"
+  year: "2018"
+  category: "conference"
+  hidden: false
+
+- title: "Analysis of technology convergence in robotics and technological portfolios among robot-related organizations"
+  authors: "T. Kose & I. Sakata"
+  venue: "Portland International Conference on Management Engineering and Technology (PICMET'18)"
+  location: "Honolulu, Hawaii, USA"
+  year: "2018"
+  category: "conference"
+  hidden: false
+
+- title: "Effect of competitors' state on mergers and acquisitions in Japan"
+  authors: "H. Yamano, M. Ochi, & I. Sakata"
+  venue: "27th International Conference for The International Association of Management of Technology (IAMOT 2018)"
+  location: "Birmingham"
+  year: "2018"
+  category: "conference"
+  hidden: false
+
+- title: "Detecting potential composite materials using literature-based discovery of academic papers: Meso-level analysis"
+  authors: "C. Fujisue, H. Sasaki, H. Yamano, & I. Sakata"
+  venue: "27th International Conference for The International Association of Management of Technology (IAMOT 2018)"
+  location: "Birmingham"
+  year: "2018"
+  category: "conference"
+  hidden: false
+
+- title: "Extractive summarization using multi-task learning with document classification"
+  authors: "M. Isonuma, T. Fujino, J. Mori, Y. Matsuo, & I. Sakata"
+  venue: "Conference on Empirical Methods in NLP (EMNLP)"
+  location: "Copenhagen, Denmark"
+  year: "2017"
+  category: "conference"
+  hidden: false
+
+- title: "Detection of emerging technologies for field effect transistors: a citation-based analysis"
+  authors: "C. Fujisue & I. Sakata"
+  venue: "Portland International Conference on Management Engineering and Technology (PICMET'17)"
+  location: "Portland, USA"
+  year: "2017"
+  category: "conference"
+  hidden: false
+
+- title: "Measuring Start-up Readiness of scientific research based start-ups using analysis of citation networks: case study of CRISPER-Cas9"
+  authors: "T. Goji, T. Matsuda, & I. Sakata"
+  venue: "Portland International Conference on Management Engineering and Technology (PICMET'17)"
+  location: "Portland, USA"
+  year: "2017"
+  category: "conference"
+  hidden: false
+
+- title: "Identifying technology advancements and their linkages in the field of robotics research"
+  authors: "T. Kose & I. Sakata"
+  venue: "Portland International Conference on Management Engineering and Technology (PICMET'17)"
+  location: "Portland, USA"
+  year: "2017"
+  category: "conference"
+  hidden: false
+
+- title: "Time-series analysis on the fields of Entrepreneurship research"
+  authors: "T. Kuroda, S. Iwami, & I. Sakata"
+  venue: "Portland International Conference on Management Engineering and Technology (PICMET'17)"
+  location: "Portland, USA"
+  year: "2017"
+  category: "conference"
+  hidden: false
+
+- title: "Identifying influencers of corporate performance in interfirm networks"
+  authors: "T. Oka, H. Sasaki, & I. Sakata"
+  venue: "Portland International Conference on Management Engineering and Technology (PICMET'17)"
+  location: "Portland, USA"
+  year: "2017"
+  category: "conference"
+  hidden: false
+
+- title: "Cross-domain academic paper recommendation by semantic linkage approach using text analysis and recurrent neural networks"
+  authors: "K. M. Ravi, J. Mori, & I. Sakata"
+  venue: "Portland International Conference on Management Engineering and Technology (PICMET'17)"
+  location: "Portland, USA"
+  year: "2017"
+  category: "conference"
+  hidden: false
+
+- title: "Prediction of business partners using an n-gram-based approach that combines a network model and linear model of a supply chain"
+  authors: "H. Sasaki & I. Sakata"
+  venue: "Portland International Conference on Management Engineering and Technology (PICMET'17)"
+  location: "Portland, USA"
+  year: "2017"
+  category: "conference"
+  hidden: false
+
+- title: "New science and technology policy evaluation using bibliometric approach"
+  authors: "K. Tanaka & I. Sakata"
+  venue: "Portland International Conference on Management Engineering and Technology (PICMET'17)"
+  location: "Portland, USA"
+  year: "2017"
+  category: "conference"
+  hidden: false
+
+- title: "Metabolism of inter-firm transactions in regional networks"
+  authors: "H. Yamano, H. Sasaki, & I. Sakata"
+  venue: "Portland International Conference on Management Engineering and Technology (PICMET'17)"
+  location: "Portland, USA"
+  year: "2017"
+  category: "conference"
+  hidden: false
+
+- title: "Regional Differences and Commonalities of Inter-Firm Transaction Metabolism"
+  authors: "H. Yamano & I. Sakata"
+  venue: "International Society for Professional Innovation Management (ISPIM)"
+  location: "Melbourne, Australia"
+  year: "2017"
+  category: "conference"
+  hidden: false
+
+- title: "Representation Learning for Geospatial Areas using Large-scale Mobility Data from Smart Card"
+  authors: "M. Ochi, K. Asatani, Y. Nakashio, Y. Yamashita, M. Ruttley, J. Mori, & I. Sakata"
+  venue: "PURBA-2016 Workshop, in conjunction with UbiComp 2016"
+  location: "Heidelberg, Germany"
+  year: "2016"
+  category: "conference"
+  hidden: false
+
+- title: "New bibliometric analysis of research institution network"
+  authors: "K. Tanaka & I. Sakata"
+  venue: "Portland International Conference on Management Engineering and Technology (PICMET'16)"
+  location: "Honolulu, Hawaii, USA"
+  year: "2016"
+  category: "conference"
+  hidden: false
+
+- title: "Detecting structural changes in the nano carbon domain based on the time distribution of text information of academic papers"
+  authors: "Y. Nakashio, T. Hara, J. Mori, & I. Sakata"
+  venue: "Portland International Conference on Management Engineering and Technology (PICMET'16)"
+  location: "Honolulu, Hawaii, USA"
+  year: "2016"
+  category: "conference"
+  hidden: false
+
+- title: "Positioning social entrepreneurship research in the field of entrepreneurship research"
+  authors: "T. Kuroda, S. Iwami, & I. Sakata"
+  venue: "Portland International Conference on Management Engineering and Technology (PICMET'16)"
+  location: "Honolulu, Hawaii, USA"
+  year: "2016"
+  category: "conference"
+  hidden: false
+
+- title: "Detecting candidate combinations of the keywords organ-material-technology in regenerative medicine"
+  authors: "H. Yamano, H. Sasaki, & I. Sakata"
+  venue: "Portland International Conference on Management Engineering and Technology (PICMET'16)"
+  location: "Honolulu, Hawaii, USA"
+  year: "2016"
+  category: "conference"
+  hidden: false
+
+- title: "Prediction of emerging papers in nanocarbon materials-related research using a citation network"
+  authors: "H. Sasaki, T. Hara, & I. Sakata"
+  venue: "Portland International Conference on Management Engineering and Technology (PICMET'16)"
+  location: "Honolulu, Hawaii, USA"
+  year: "2016"
+  category: "conference"
+  hidden: false
+
+# Reviews
+- title: "Five years on from Fukushima"
+  authors: "M. Sugiyama, I. Sakata, H. Shiroyama, H. Yoshikawa, & T. Taniguchi"
+  venue: "Nature"
+  year: "2016"
+  volume: "531"
+  pages: "29-31"
+  category: "review"
+  hidden: false
+
+- title: "科学技術ビックデータで未来を予測する"
+  authors: "坂田一郎"
+  venue: "化学"
+  year: "2018"
+  volume: "73"
+  issue: "2"
+  pages: "11"
+  category: "review"
+  hidden: false
+
+- title: "新時代のイノベーション政策を考える"
+  authors: "坂田一郎"
+  venue: "學士會会報"
+  year: "2016"
+  issue: "918"
+  pages: "16-20"
+  category: "review"
+  hidden: false
+
+- title: "地域クラスターのネットワーク形成のダイナミクス－１２地域・分野のネットワーク・アーキテクチュアの比較分析"
+  authors: "坂田一郎, 梶川裕矢, 武田善行, 橋本正洋, 柴田尚樹, 松島克守"
+  venue: "RIETI Discussion Paper Series"
+  year: "2007"
+  paper_id: "no.07-J-023"
+  category: "review"
+  hidden: false
+
+- title: "地域クラスター・ネットワークの構造分析"
+  authors: "坂田一郎, 梶川裕矢, 武田善行, 橋本正洋, 柴田尚樹, 松島克守"
+  venue: "RIETI Discussion Paper Series"
+  year: "2006"
+  paper_id: "no.06-J-055"
+  category: "review"
+  hidden: false
+
+- title: "経済活力の視点からみた税制改革"
+  authors: "坂田一郎"
+  venue: "RIETI Discussion Paper Series"
+  year: "2004"
+  paper_id: "no.04-J-012"
+  category: "review"
+  hidden: false
+
+# Invited Lectures
+- title: "大変革時代におけるイノベーション創出に向けたR&Dマネジメント"
+  authors: "坂田一郎"
+  venue: "第43期 新しい技術経営を考える会第１回例会, 東京大学"
+  year: "2022"
+  category: "invited_lecture"
+  hidden: false
+
+- title: "Redefining the university's mission in a time of global change"
+  authors: "I. Sakata"
+  venue: "Annual International Forum on Higher Education 2020"
+  location: "Zhengzhou, Henan, China"
+  year: "2020"
+  category: "invited_lecture"
+  hidden: false
+
+- title: "Technology Informatics for innovation management: A study of nanocarbon applications"
+  authors: "I. Sakata"
+  venue: "Vebleo Fellow Lecture 2020, Webinar on materials Science, Engineering and Technology"
+  year: "2020"
+  category: "invited_lecture"
+  hidden: false
+
+- title: "Technology informatics for innovation management in nanocarbon applications"
+  authors: "I. Sakata"
+  venue: "IAAM Fellow Lecture 2020, Advanced Material Lecture Series"
+  year: "2020"
+  category: "invited_lecture"
+  hidden: false
+
+- title: "Forecasting of trends in research on nanocarbons based on publication via network representation learning (NRL)"
+  authors: "I. Sakata"
+  venue: "AIRC International Workshop on AI Co-Evolving with Humans"
+  location: "Tokyo, Japan"
+  year: "2020"
+  category: "invited_lecture"
+  hidden: false
+
+- title: "Forecasting of trend in researches on nanocarbons based on publication citations via network representation learning (NRL)"
+  authors: "I. Sakata"
+  venue: "The 29th Assembly of Advanced Material Congress (AMC29)"
+  location: "Stockholm, Sweden"
+  year: "2019"
+  note: "IAAM Award Lecture"
+  category: "invited_lecture"
+  hidden: false
+
+- title: "Detecting trends in academic research from a citation network using a machine learning approach"
+  authors: "I. Sakata"
+  venue: "Joint Seminar STM and JST on machine learning & TDM use in research"
+  location: "Tokyo"
+  year: "2018"
+  category: "invited_lecture"
+  hidden: false
+
+- title: "Detecting knowledge structure and trends in academic research from a citation network using a machine learning approach"
+  authors: "I. Sakata"
+  venue: "MIT NSE (Department of Nuclear Science and Engineering) Special Seminar"
+  location: "Boston, MIT"
+  year: "2018"
+  category: "invited_lecture"
+  hidden: false
+
+- title: "Academic Information and AI for Innovation Management"
+  authors: "I. Sakata"
+  venue: "Research Intelligence Asia Pacific Conference 2017"
+  location: "Bangkok"
+  year: "2017"
+  category: "invited_lecture"
+  hidden: false
+
+- title: "Science for machine learning, machine learning for science"
+  authors: "I. Sakata"
+  venue: "France and Japan symposium of deep learning and AI"
+  location: "Hongo, Japan"
+  year: "2016"
+  category: "invited_lecture"
+  hidden: false
