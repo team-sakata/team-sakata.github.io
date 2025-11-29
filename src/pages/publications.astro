@@ -17,10 +17,9 @@ const conferences = publications.filter((p) => p.category === "conference");
 <Layout title="論文リスト | 坂田・森・浅谷・西本研究室">
   <Header />
 
-  <main>
+  <main class="main-content">
     <section class="page-header">
       <h1>論文リスト</h1>
-      <p class="subtitle">Publications</p>
     </section>
 
     <section class="pub-section">
@@ -49,12 +48,6 @@ const conferences = publications.filter((p) => p.category === "conference");
 </Layout>
 
 <style>
-  main {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 8rem 5rem 4rem;
-  }
-
   .page-header {
     margin-bottom: 3rem;
     text-align: center;

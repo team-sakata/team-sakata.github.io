@@ -10,31 +10,33 @@ interface Props {
 const { title, class: className, id, href, label } = Astro.props;
 ---
 
-<article class:list={['bento-card', className]} id={id}>
-  {href ? (
-    <a href={href} class="bento-card-link">
-      <div class="card-header">
-        {label && <span class="card-label">{label}</span>}
-        <div class="title-row">
+<article class:list={["bento-card", className]} id={id}>
+  {
+    href ? (
+      <a href={href} class="bento-card-link">
+        <div class="card-header">
+          {label && <span class="card-label">{label}</span>}
+          <div class="title-row">
+            <h2 class="card-title">{title}</h2>
+            <span class="arrow">→</span>
+          </div>
+        </div>
+        <div class="card-content">
+          <slot />
+        </div>
+      </a>
+    ) : (
+      <div class="bento-card-inner">
+        <div class="card-header">
+          {label && <span class="card-label">{label}</span>}
           <h2 class="card-title">{title}</h2>
-          <span class="arrow">→</span>
+        </div>
+        <div class="card-content">
+          <slot />
         </div>
       </div>
-      <div class="card-content">
-        <slot />
-      </div>
-    </a>
-  ) : (
-    <div class="bento-card-inner">
-      <div class="card-header">
-        {label && <span class="card-label">{label}</span>}
-        <h2 class="card-title">{title}</h2>
-      </div>
-      <div class="card-content">
-        <slot />
-      </div>
-    </div>
-  )}
+    )
+  }
 </article>
 
 <style>
@@ -47,6 +49,7 @@ const { title, class: className, id, href, label } = Astro.props;
     flex-direction: column;
     box-shadow: var(--shadow);
     overflow: hidden;
+    position: relative;
   }
 
   .bento-card:hover {
@@ -86,6 +89,7 @@ const { title, class: className, id, href, label } = Astro.props;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding-right: 1.5rem; /* Space for arrow */
   }
 
   .card-title {
@@ -97,6 +101,9 @@ const { title, class: className, id, href, label } = Astro.props;
   }
 
   .arrow {
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
     font-size: 1.2rem;
     color: var(--accent);
     opacity: 0;
@@ -117,17 +124,35 @@ const { title, class: className, id, href, label } = Astro.props;
   }
 
   /* Grid Spanning Utility Classes */
-  .bento-card.large { grid-column: span 2; grid-row: span 2; }
-  .bento-card.wide { grid-column: span 2; }
-  .bento-card.tall { grid-row: span 2; }
+  .bento-card.large {
+    grid-column: span 2;
+    grid-row: span 2;
+  }
+  .bento-card.wide {
+    grid-column: span 2;
+  }
+  .bento-card.tall {
+    grid-row: span 2;
+  }
 
   @media (max-width: 900px) {
-    .bento-card.large { grid-column: span 2; grid-row: span 1; }
+    .bento-card.large {
+      grid-column: span 2;
+      grid-row: span 1;
+    }
   }
 
   @media (max-width: 600px) {
-    .bento-card.large, .bento-card.wide, .bento-card.tall {
-      grid-column: span 1; grid-row: span 1;
+    .bento-card.large,
+    .bento-card.wide,
+    .bento-card.tall {
+      grid-column: span 1;
+      grid-row: span 1;
+    }
+
+    .arrow {
+      opacity: 1;
+      transform: translateX(0);
     }
   }
 </style>

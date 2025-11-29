@@ -23,6 +23,9 @@ const membersCollection = defineCollection({
             id: z.string().optional(), // For linking to member pages
             image: z.string().optional(),
             description: z.string().optional(),
+            location: z.string().optional(),
+            researchAreas: z.string().optional(),
+            courses: z.string().optional(),
         })),
         order: z.number().default(0),
     }),

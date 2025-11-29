@@ -35,7 +35,35 @@ const { member } = Astro.props;
       </div>
 
       <div class="profile-content">
-        <p>（ここに教員の詳細な紹介文が入ります。現在準備中です。）</p>
+        {member.description && <p class="description">{member.description}</p>}
+
+        <div class="info-grid">
+          {
+            member.location && (
+              <div class="info-item">
+                <h3>居室</h3>
+                <p>{member.location}</p>
+              </div>
+            )
+          }
+          {
+            member.researchAreas && (
+              <div class="info-item">
+                <h3>研究分野</h3>
+                <p>{member.researchAreas}</p>
+              </div>
+            )
+          }
+          {
+            member.courses && (
+              <div class="info-item">
+                <h3>担当講義</h3>
+                <p>{member.courses}</p>
+              </div>
+            )
+          }
+        </div>
+
         <a href="/" class="back-link">← ホームに戻る</a>
       </div>
     </div>
@@ -98,6 +126,29 @@ const { member } = Astro.props;
     color: var(--text-secondary);
   }
 
+  .description {
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+    color: var(--text-primary);
+  }
+
+  .info-grid {
+    display: grid;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+  }
+
+  .info-item h3 {
+    font-size: 0.9rem;
+    color: var(--accent);
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+  }
+
+  .info-item p {
+    color: var(--text-primary);
+  }
+
   .back-link {
     display: inline-block;
     margin-top: 2rem;
@@ -114,6 +165,14 @@ const { member } = Astro.props;
     .profile-header {
       flex-direction: column;
       text-align: center;
+    }
+
+    main {
+      padding: 6rem 1.5rem 3rem;
+    }
+
+    .member-profile {
+      padding: 1.5rem;
     }
   }
 </style>

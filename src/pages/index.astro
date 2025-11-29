@@ -32,7 +32,7 @@ researchFocus.sort((a, b) => a.data.order - b.data.order);
 <Layout title="坂田・森・浅谷・西本研究室 | 東京大学">
   <Header />
 
-  <main>
+  <main class="main-content">
     <Hero />
 
     <div class="bento-grid">
@@ -104,42 +104,55 @@ researchFocus.sort((a, b) => a.data.order - b.data.order);
       </BentoCard>
 
       <!-- Members Area (Right 1/3) -->
-      <BentoCard
-        title="Members"
-        class="members-card span-1 tall-1-4"
-        href="/members"
-      >
+      <BentoCard title="メンバー" class="members-card span-1 tall-1-4">
         <div class="members-preview">
           {
-            members.slice(0, 3).map((group) => (
-              <div class="member-group">
-                <h4>{group.data.title}</h4>
-                <ul>
-                  {group.data.items.slice(0, 3).map((member) => (
-                    <li>{member.name}</li>
+            (() => {
+              const faculty = members.find((g) => g.data.title === "教員");
+              if (!faculty) return null;
+              return (
+                <div class="faculty-list">
+                  {faculty.data.items.map((member) => (
+                    <div class="faculty-item">
+                      <img
+                        src={member.image}
+                        alt={member.name}
+                        class="faculty-avatar"
+                      />
+                      <div class="faculty-info">
+                        <span class="faculty-name">{member.name}</span>
+                        <span class="faculty-role">{member.role}</span>
+                        {member.description && (
+                          <p class="faculty-description">
+                            {member.description}
+                          </p>
+                        )}
+                      </div>
+                    </div>
                   ))}
-                </ul>
-              </div>
-            ))
+                </div>
+              );
+            })()
           }
         </div>
+        <a href="/members" class="view-all-link">すべて見る →</a>
       </BentoCard>
 
       <!-- Research (Full Width) -->
       <BentoCard
-        title="Research"
+        title="研究内容"
         class="research-card full-width tall-huge"
         href="/research"
       >
         <div class="research-preview">
           <h3>技術経営学 / 計算社会科学 / 計算言語学</h3>
-          <p>
+          <p class="line-clamp-3">
             2009年にスタートし、開設15年になる我々の研究室では、経済・社会に関する洞察とAI・データサイエンスの手法を組み合わせることで、技術経営学の領域で新境地を切り開き、また、世界のトップチームの一つとなることを目指しています。分析手法としては、技術経営領域でもその活用が期待されている機械学習・深層学習、ネットワーク解析、自然言語処理等のデータサイエンス系の手法を中心とし、また、手法自体に関する基礎的な研究も重視しています。
           </p>
-          <p>
+          <p class="line-clamp-3">
             そうした手法を用いた考察の対象としては、大規模な学術ビックデータ、ソーシャルメディア、取引関係やM&A等を含む大規模な企業情報、列車を利用したトリップデータ、レビュー文など、様々なものを扱っています。生成AIに関しては、逆学習を用いたLLMの解析に先駆的に取り組んでいます。
           </p>
-          <p>
+          <p class="line-clamp-3">
             さらに、このような研究を進めるための外部連携として、「テクノロジー・インフォマティックス社会連携講座」や「事前学習言語モデルとネットワークの融合に基づく科学技術トレンド予測（NEDO/産業技術総合研究所）」の代表を務めるほか、多様な企業等と共同研究を行っています。
           </p>
         </div>
@@ -148,29 +161,24 @@ researchFocus.sort((a, b) => a.data.order - b.data.order);
       <!-- Research Focus Boxes (Show only 3) -->
       {
         researchFocus.slice(0, 3).map((focus) => (
-          <a
+          <BentoCard
+            title={focus.data.title}
+            class="research-focus-card span-1 fixed-height"
             href={`/research/focus${focus.data.order}`}
-            class="research-focus-link"
           >
-            <BentoCard
-              title={focus.data.title}
-              label={focus.data.label}
-              class="research-focus-card span-1 fixed-height"
-            >
-              <div class="focus-preview">
-                <p>{focus.data.description}</p>
-                <div class="focus-tags">
-                  <span class="focus-tag">Publications</span>
-                  <span class="focus-tag">Projects</span>
-                </div>
+            <div class="focus-preview">
+              <p class="line-clamp-3">{focus.data.description}</p>
+              <div class="focus-tags">
+                <span class="focus-tag">Publications</span>
+                <span class="focus-tag">Projects</span>
               </div>
-            </BentoCard>
-          </a>
+            </div>
+          </BentoCard>
         ))
       }
 
       <!-- Publications Area -->
-      <BentoCard title="Publications" class="publications-card full-width">
+      <BentoCard title="論文リスト" class="publications-card full-width">
         <div class="publications-list-compact">
           {
             publications
@@ -189,12 +197,7 @@ researchFocus.sort((a, b) => a.data.order - b.data.order);
       </BentoCard>
 
       <!-- Join Us (Left 2/3) -->
-      <BentoCard
-        title="新入生の方へ"
-        label="Join Us"
-        class="span-2"
-        href="/visit"
-      >
+      <BentoCard title="新入生の方へ" class="span-2" href="/visit">
         <p>
           研究室見学を随時受け付けています。研究会（月1回・木曜4限）や輪読会の見学を推奨しています。
         </p>
@@ -206,7 +209,7 @@ researchFocus.sort((a, b) => a.data.order - b.data.order);
       </BentoCard>
 
       <!-- Contact (Right 1/3) -->
-      <BentoCard title="アクセス" label="Contact" id="contact" class="span-1">
+      <BentoCard title="アクセス" id="contact" class="span-1">
         <div class="contact-info">
           <div class="contact-row">
             <svg
@@ -269,12 +272,6 @@ researchFocus.sort((a, b) => a.data.order - b.data.order);
 </Layout>
 
 <style>
-  main {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 6rem 2rem 4rem;
-  }
-
   .bento-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -362,12 +359,6 @@ researchFocus.sort((a, b) => a.data.order - b.data.order);
 
   .guidelines-toggle:hover {
     color: var(--accent-light);
-  }
-
-  @media (max-width: 900px) {
-    :global(.bento-card.span-2) {
-      grid-column: span 3; /* Full width on tablet */
-    }
   }
 
   .research-preview h3,
@@ -547,51 +538,82 @@ researchFocus.sort((a, b) => a.data.order - b.data.order);
 
   @media (max-width: 900px) {
     .bento-grid {
-      grid-template-columns: repeat(2, 1fr);
+      grid-template-columns: 1fr;
+      padding: 1rem;
+      gap: 1rem;
+    }
+
+    :global(.bento-card.span-2),
+    :global(.bento-card.wide),
+    :global(.bento-card.large),
+    :global(.bento-card.full-width) {
+      grid-column: span 1;
     }
 
     :global(.bento-card.expanded) .pub-list,
     :global(.bento-card.expanded) .news-list {
       grid-template-columns: 1fr;
     }
-  }
 
-  @media (max-width: 600px) {
-    main {
-      padding: 5rem 1rem 2rem;
-    }
-
-    .bento-grid {
+    .publications-preview {
       grid-template-columns: 1fr;
     }
   }
 
-  /* Members Preview */
-  .members-preview {
+  @media (max-width: 600px) {
+    .bento-grid {
+      padding: 0;
+      gap: 0.75rem;
+    }
+  }
+
+  /* Faculty Preview */
+  .faculty-list {
     display: flex;
     flex-direction: column;
     gap: 1rem;
   }
 
-  .member-group h4 {
-    font-size: 0.85rem;
-    color: var(--accent);
-    margin-bottom: 0.5rem;
-    font-weight: 600;
+  .faculty-item {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
   }
 
-  .member-group ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
+  .faculty-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 1px solid var(--border);
+  }
+
+  .faculty-info {
     display: flex;
     flex-direction: column;
-    gap: 0.3rem;
+    line-height: 1.2;
   }
 
-  .member-group li {
-    font-size: 0.85rem;
+  .faculty-name {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--text-primary);
+  }
+
+  .faculty-role {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+  }
+
+  .faculty-description {
+    font-size: 0.75rem;
     color: var(--text-secondary);
+    margin-top: 0.25rem;
+    line-height: 1.4;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
   }
 
   /* Publications Preview */
