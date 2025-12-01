@@ -60,4 +60,19 @@ If you'd like to visit, please contact us via
  </p>  </section>   </main> <footer data-astro-cid-sz7xmlte> <p data-astro-cid-sz7xmlte>
 &copy; 2025 Sakata & Mori & Asatani & Nishimoto Laboratory, The University
     of Tokyo. All rights reserved.
-</p> </footer>  </body></html>
+</p> </footer>  <!-- Speculation Rules for Chrome/Edge (prerender pages on hover) --> <script type="speculationrules">
+		{
+			"prerender": [
+				{
+					"where": { "selector_matches": "[data-astro-prefetch]" },
+					"eagerness": "moderate"
+				}
+			],
+			"prefetch": [
+				{
+					"where": { "selector_matches": "a[href^='/']" },
+					"eagerness": "moderate"
+				}
+			]
+		}
+		</script> <!-- Service Worker Registration (works on all browsers including Safari) --> <script type="module">"serviceWorker"in navigator&&window.addEventListener("load",()=>{navigator.serviceWorker.register("/sklab_homepage/sw.js").catch(()=>{})});</script> </body> </html>
