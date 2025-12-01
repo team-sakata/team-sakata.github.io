@@ -19,14 +19,14 @@ const navItems = [
   {
     key: "publications",
     path: "publications",
-    label: { ja: "論文リスト", en: "Publications" },
+    label: { ja: "論文", en: "Publications" },
   },
   { key: "activity", path: "activity", label: { ja: "活動紹介", en: "Activities" } },
   { key: "news", path: "news", label: { ja: "ニュース", en: "News" } },
   {
     key: "visit",
     path: "visit",
-    label: { ja: "採用/新入生への案内", en: "Visit / Join" },
+    label: { ja: "採用/新入生へ", en: "Visit / Join" },
   },
 ];
 ---
@@ -40,18 +40,18 @@ const navItems = [
       class="logo-text"
       style="
         font-size: 1.05rem;
-        font-weight: 700;
+        font-weight: 600;
         background: linear-gradient(120deg, #6f63ff, #2ac4ff);
         -webkit-background-clip: text;
         color: transparent;
       "
       >Sakata Lab</span>
       <span class="logo-text" style="font-weight:600; letter-spacing:0.02em;"
-      >{currentLocale === "en" ? "Sakata / Mori / Asatani / Nishimoto Lab" : "坂田・森・浅谷・西本研究室"}</span
+      >{currentLocale === "en" ? "坂田・森・浅谷・西本研究室" : "坂田・森・浅谷・西本研究室"}</span
       >
       <span class="logo-dept">
       <span
-        >{currentLocale === "en" ? "Dept. of Technology Management for Innovation, The University of Tokyo" : "東京大学 工学系研究科 技術経営戦略学専攻"}</span
+        >{currentLocale === "en" ? "Dept. of Technology Management for Innovation, Utokyo" : "東京大学 工学系研究科 技術経営戦略学専攻"}</span
       >
       </span>
     </a>
@@ -159,7 +159,7 @@ const navItems = [
 
   .logo {
     font-family: var(--font-sans);
-    font-size: 0.95rem;
+    font-size: 1rem;
     font-weight: 500;
     color: var(--text-primary);
     text-decoration: none;
@@ -197,7 +197,7 @@ const navItems = [
   .nav-links a {
     color: var(--text-secondary);
     text-decoration: none;
-    font-size: 0.8rem;
+    font-size: 0.9rem;
     font-weight: 400;
     transition: color 0.2s;
   }
@@ -315,7 +315,7 @@ const navItems = [
     transform: translateY(-8px) rotate(-45deg);
   }
 
-  @media (max-width: 1000px) {
+  @media (max-width: 1070px) {
     header {
       padding: 0.85rem 1.5rem;
     }

@@ -44,7 +44,7 @@ const { title, class: className, id, href, label } = Astro.props;
     background: var(--bg-card);
     border: 1px solid var(--border);
     border-radius: var(--radius);
-    transition: all 0.3s ease;
+    transition: all 0.2s ease;
     display: flex;
     flex-direction: column;
     box-shadow: var(--shadow);
@@ -53,10 +53,8 @@ const { title, class: className, id, href, label } = Astro.props;
   }
 
   .bento-card:hover {
-    background: var(--bg-card-hover);
-    border-color: var(--accent-light);
     box-shadow: var(--shadow-hover);
-    transform: translateY(-2px);
+    transform: translateY(-0.5px);
   }
 
   .bento-card-link {
@@ -65,14 +63,14 @@ const { title, class: className, id, href, label } = Astro.props;
     display: flex;
     flex-direction: column;
     height: 100%;
-    padding: 1.5rem;
+    padding: 1.25rem;
   }
 
   .bento-card-inner {
     display: flex;
     flex-direction: column;
     height: 100%;
-    padding: 1.5rem;
+    padding: 1.25rem;
   }
 
   .card-label {
@@ -95,20 +93,20 @@ const { title, class: className, id, href, label } = Astro.props;
   .card-title {
     font-family: var(--font-sans);
     font-size: 1.2rem;
-    font-weight: 600;
+    font-weight: 500;
     line-height: 1.3;
     color: var(--text-primary);
   }
 
   .arrow {
     position: absolute;
-    top: 1.5rem;
-    right: 1.5rem;
+    top: 1.25rem;
+    right: 1.25rem;
     font-size: 1.2rem;
     color: var(--accent);
     opacity: 0;
-    transform: translateX(-10px);
-    transition: all 0.3s ease;
+    transform: translateX(-3px);
+    transition: all 0.15s ease;
   }
 
   .bento-card:hover .arrow {
