@@ -1,90 +1,133 @@
 ---
 const currentLocale = Astro.url.pathname.includes("/en/") ? "en" : "ja";
+const basePath = import.meta.env.BASE_URL.endsWith("/")
+  ? import.meta.env.BASE_URL
+  : `${import.meta.env.BASE_URL}/`;
+const localeLinks = {
+  ja: basePath,
+  en: `${basePath}en/`,
+};
 ---
 
 <header>
   <nav>
     <a href={import.meta.env.BASE_URL} class="logo">
-      <span class="logo-text">Sakata Lab / 坂田・森・浅谷・西本研究室</span>
-      <span class="logo-dept">東京大学工学系研究科技術経営戦略学専攻</span>
+
+      <span
+      class="logo-text"
+      style="
+        font-size: 1.05rem;
+        font-weight: 700;
+        background: linear-gradient(120deg, #6f63ff, #2ac4ff);
+        -webkit-background-clip: text;
+        color: transparent;
+      "
+      >Sakata Lab</span>
+      <span class="logo-text" style="font-weight:600; letter-spacing:0.02em;"
+      >坂田・森・浅谷・西本研究室</span
+      >
+      <span class="logo-dept">
+      <span
+        >東京大学 工学系研究科 技術経営戦略学専攻</span
+      >
+      </span>
     </a>
-    <ul class="nav-links">
-      <li>
-        <a
-          href={`${import.meta.env.BASE_URL}/${currentLocale === "ja" ? "" : "en/"}research`}
-          >研究内容
-        </a>
-      </li>
-      <li>
-        <a
-          href={`${import.meta.env.BASE_URL}/${currentLocale === "ja" ? "" : "en/"}members`}
-          >メンバー</a
-        >
-      </li>
-      <li>
-        <a
-          href={`${import.meta.env.BASE_URL}/${currentLocale === "ja" ? "" : "en/"}publications`}
-          >論文リスト</a
-        >
-      </li>
-      <li>
-        <a
-          href={`${import.meta.env.BASE_URL}/${currentLocale === "ja" ? "" : "en/"}activity`}
-          >活動紹介</a
-        >
-      </li>
-      <li>
-        <a
-          href={`${import.meta.env.BASE_URL}/${currentLocale === "ja" ? "" : "en/"}news`}
-          >ニュース</a
-        >
-      </li>
-      <li>
-        <a
-          href={`${import.meta.env.BASE_URL}/${currentLocale === "ja" ? "" : "en/"}visit`}
-          >採用/新入生への案内</a
-        >
-      </li>
-      <li>
-        <a href="https://planet.sakatalab.t.u-tokyo.ac.jp/" target="_blank"
-          >Science Planet+</a
-        >
-      </li>
-    </ul>
-    <div class="mobile-controls">
-      <button class="hamburger" aria-label="Menu">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
+    <div class="nav-right">
+      <ul class="nav-links">
+        <li>
+          <a
+            href={`${import.meta.env.BASE_URL}/${currentLocale === "ja" ? "" : "en/"}research`}
+            >研究内容</a
+          >
+        </li>
+        <li>
+          <a
+            href={`${import.meta.env.BASE_URL}/${currentLocale === "ja" ? "" : "en/"}members`}
+            >メンバー</a
+          >
+        </li>
+        <li>
+          <a
+            href={`${import.meta.env.BASE_URL}/${currentLocale === "ja" ? "" : "en/"}publications`}
+            >論文リスト</a
+          >
+        </li>
+        <li>
+          <a
+            href={`${import.meta.env.BASE_URL}/${currentLocale === "ja" ? "" : "en/"}activity`}
+            >活動紹介</a
+          >
+        </li>
+        <li>
+          <a
+            href={`${import.meta.env.BASE_URL}/${currentLocale === "ja" ? "" : "en/"}news`}
+            >ニュース</a
+          >
+        </li>
+        <li>
+          <a
+            href={`${import.meta.env.BASE_URL}/${currentLocale === "ja" ? "" : "en/"}visit`}
+            >採用/新入生への案内</a
+          >
+        </li>
+        <li>
+          <a href="https://planet.sakatalab.t.u-tokyo.ac.jp/" target="_blank"
+            >Science Planet+</a
+          >
+        </li>
+      </ul>
+      <div class="header-actions">
+        <div class="lang-switch" aria-label="Language selector">
+          <a
+            href={localeLinks.ja}
+            aria-current={currentLocale === "ja" ? "page" : undefined}
+            class:list={{ active: currentLocale === "ja" }}
+            >JA</a
+          >
+          <span class="divider" aria-hidden="true">/</span>
+          <a
+            href={localeLinks.en}
+            aria-current={currentLocale === "en" ? "page" : undefined}
+            class:list={{ active: currentLocale === "en" }}
+            >EN</a
+          >
+        </div>
+        <div class="mobile-controls">
+          <button class="hamburger" aria-label="Menu">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        </div>
+      </div>
     </div>
     <div class="mobile-menu">
       <a
         href={`${import.meta.env.BASE_URL}/${currentLocale === "ja" ? "" : "en/"}research`}
-        >Research</a
+        >研究内容</a
       >
       <a
         href={`${import.meta.env.BASE_URL}/${currentLocale === "ja" ? "" : "en/"}members`}
-        >Members</a
+        >メンバー</a
       >
       <a
         href={`${import.meta.env.BASE_URL}/${currentLocale === "ja" ? "" : "en/"}publications`}
-        >Publications</a
+        >論文リスト</a
       >
       <a
         href={`${import.meta.env.BASE_URL}/${currentLocale === "ja" ? "" : "en/"}activity`}
-        >Activity</a
+        >活動紹介</a
       >
       <a
         href={`${import.meta.env.BASE_URL}/${currentLocale === "ja" ? "" : "en/"}news`}
-        >News</a
+        >ニュース</a
       >
       <a
         href={`${import.meta.env.BASE_URL}/${currentLocale === "ja" ? "" : "en/"}visit`}
-        >Access</a
+        >採用/新入生への案内</a
       >
       <a href="https://planet.sakatalab.t.u-tokyo.ac.jp/" target="_blank"
-        >Planet</a
+        >Science Planet+</a
       >
     </div>
   </nav>
@@ -134,6 +177,7 @@ const currentLocale = Astro.url.pathname.includes("/en/") ? "en" : "ja";
     display: flex;
     justify-content: space-between;
     align-items: center;
+    gap: 1.5rem;
   }
 
   .logo {
@@ -158,13 +202,19 @@ const currentLocale = Astro.url.pathname.includes("/en/") ? "en" : "ja";
     margin-top: 1px;
   }
 
+  .nav-right {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    margin-left: auto;
+  }
+
   .nav-links {
     display: flex;
-    gap: 1.5rem;
+    gap: 1rem;
     list-style: none;
     margin: 0;
-    margin-right: -100px;
-    padding: 0rem;
+    padding: 0;
   }
 
   .nav-links a {
@@ -177,6 +227,50 @@ const currentLocale = Astro.url.pathname.includes("/en/") ? "en" : "ja";
 
   .nav-links a:hover {
     color: var(--accent);
+  }
+
+  .header-actions {
+    display: flex;
+    align-items: center;
+    gap: 0.85rem;
+  }
+
+  .lang-switch {
+    display: flex;
+    align-items: center;
+    gap: 0.35rem;
+    font-size: 0.78rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+  }
+
+  .lang-switch a {
+    text-decoration: none;
+    color: var(--text-muted);
+    font-weight: 600;
+    padding: 0.15rem 0.35rem;
+    border-radius: 999px;
+    transition: color 0.2s ease, background 0.2s ease;
+  }
+
+  .lang-switch a.active {
+    color: var(--text-primary);
+    background: rgba(0, 0, 0, 0.06);
+  }
+
+  .lang-switch a:hover {
+    color: var(--text-primary);
+  }
+
+  .lang-switch .divider {
+    color: var(--text-muted);
+    font-weight: 500;
+  }
+
+  .mobile-controls {
+    display: flex;
+    align-items: center;
   }
 
   /* Hamburger Menu */
@@ -249,8 +343,17 @@ const currentLocale = Astro.url.pathname.includes("/en/") ? "en" : "ja";
       padding: 0.85rem 1rem;
     }
 
+    .nav-right {
+      gap: 0.75rem;
+    }
+
     .nav-links {
       display: none;
+    }
+
+    .lang-switch {
+      font-size: 0.72rem;
+      letter-spacing: 0.05em;
     }
 
     .hamburger {
