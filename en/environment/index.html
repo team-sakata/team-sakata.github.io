@@ -75,4 +75,4 @@ If you'd like to visit, please contact us via
 				}
 			]
 		}
-		</script> <!-- Service Worker Registration (works on all browsers including Safari) --> <script type="module">"serviceWorker"in navigator&&window.addEventListener("load",()=>{navigator.serviceWorker.register("/sklab_homepage/sw.js").catch(()=>{})});</script> </body> </html>
+		</script> <!-- Unregister any existing Service Worker to fix issues --> <script type="module">"serviceWorker"in navigator&&(navigator.serviceWorker.getRegistrations().then(e=>{for(const r of e)r.unregister()}),"caches"in window&&caches.keys().then(e=>{for(const r of e)caches.delete(r)}));</script> </body> </html>
