@@ -1,0 +1,45 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import MemberSection from "../../components/MemberSection.astro";
+import PageHeader from "../../components/PageHeader.astro";
+import { getSortedMembers } from "../../utils/collections";
+import { detectLocale } from "../../utils/paths";
+
+export function getStaticPaths() {
+    return [
+        { params: { locale: 'ja' } },
+        { params: { locale: 'en' } },
+    ];
+}
+
+const members = await getSortedMembers();
+
+const locale = detectLocale(Astro.url.pathname);
+const copy = {
+  ja: {
+    metaTitle: "メンバー | 坂田・森・浅谷・西本研究室",
+    pageTitle: "メンバー",
+  },
+  en: {
+    metaTitle: "Members | Sakata / Mori / Asatani / Nishimoto Lab",
+    pageTitle: "Members",
+  },
+} as const;
+
+const t = copy[locale];
+---
+
+<Layout title={t.metaTitle} isSubpage>
+  <PageHeader title={t.pageTitle} />
+
+  <div class="members-container">
+    {members.map((section) => <MemberSection section={section} />)}
+  </div>
+  <style>
+    .members-container {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
+  </style>
+</Layout>

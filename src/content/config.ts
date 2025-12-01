@@ -1,15 +1,5 @@
 import { defineCollection, z } from 'astro:content';
 
-const researchCollection = defineCollection({
-    type: 'content',
-    schema: z.object({
-        title: z.string(),
-        titleEn: z.string(),
-        keywords: z.array(z.string()),
-        order: z.number().default(0),
-    }),
-});
-
 const membersCollection = defineCollection({
     type: 'data',
     schema: z.object({
@@ -18,14 +8,19 @@ const membersCollection = defineCollection({
         items: z.array(z.object({
             avatar: z.string(),
             name: z.string(),
+            nameEn: z.string().optional(),
             role: z.string().optional(),
             roleEn: z.string().optional(),
             id: z.string().optional(), // For linking to member pages
             image: z.string().optional(),
             description: z.string().optional(),
+            descriptionEn: z.string().optional(),
             location: z.string().optional(),
+            locationEn: z.string().optional(),
             researchAreas: z.string().optional(),
+            researchAreasEn: z.string().optional(),
             courses: z.string().optional(),
+            coursesEn: z.string().optional(),
         })),
         order: z.number().default(0),
     }),
@@ -57,8 +52,13 @@ const researchFocusCollection = defineCollection({
     type: 'data',
     schema: z.object({
         title: z.string(),
+        title_ja: z.string().optional(),
+        title_en: z.string().optional(),
         description: z.string(),
+        description_ja: z.string().optional(),
+        description_en: z.string().optional(),
         description_short: z.string().optional(),
+        description_short_en: z.string().optional(),
         image: z.string().optional(),
         link: z.string().optional(),
         label: z.string().optional(),
@@ -71,15 +71,19 @@ const activityCollection = defineCollection({
     schema: z.object({
         date: z.string(), // YYYY-MM-DD format
         title: z.string(),
+        title_ja: z.string().optional(),
+        title_en: z.string().optional(),
         description: z.string(),
+        description_ja: z.string().optional(),
+        description_en: z.string().optional(),
         description_short: z.string().optional(),
+        description_short_en: z.string().optional(),
         image: z.string().optional(),
         link: z.string().optional(),
     }),
 });
 
 export const collections = {
-    research: researchCollection,
     members: membersCollection,
     news: newsCollection,
     publications: publicationsCollection,

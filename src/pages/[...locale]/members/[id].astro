@@ -1,9 +1,7 @@
 ---
 import Layout from "../../../layouts/Layout.astro";
-import Header from "../../../components/Header.astro";
-import Footer from "../../../components/Footer.astro";
 import { getCollection } from "astro:content";
-import { resolvePath } from "../../../utils/paths";
+import { resolvePath, detectLocale, buildLocalizedPath } from "../../../utils/paths";
 
 export async function getStaticPaths() {
   const members = await getCollection("members");
@@ -11,20 +9,54 @@ export async function getStaticPaths() {
 
   if (!faculty) return [];
 
-  return faculty.data.items
-    .filter((m) => m.id)
-    .map((member) => ({
-      params: { id: member.id },
-      props: { member },
-    }));
+  const locales = ['ja', 'en'] as const;
+  return locales.flatMap((locale) =>
+    faculty.data.items
+      .filter((m) => m.id)
+      .map((member) => ({
+        params: { locale, id: member.id },
+        props: { member },
+      }))
+  );
 }
 
 const { member } = Astro.props;
+const locale = detectLocale(Astro.url.pathname);
+
+// Get localized values
+const displayName = locale === "en" ? (member.nameEn ?? member.name) : member.name;
+const displayRole = locale === "en" ? (member.roleEn ?? member.role) : member.role;
+const displayDescription = locale === "en" ? (member.descriptionEn ?? member.description) : member.description;
+const displayLocation = locale === "en" ? (member.locationEn ?? member.location) : member.location;
+const displayResearchAreas = locale === "en" ? (member.researchAreasEn ?? member.researchAreas) : member.researchAreas;
+const displayCourses = locale === "en" ? (member.coursesEn ?? member.courses) : member.courses;
+
+const copy = {
+  ja: {
+    metaTitle: `${member.name} | 坂田・森・浅谷・西本研究室`,
+    back: "← 戻る",
+    labels: {
+      location: "居室",
+      researchAreas: "研究分野",
+      courses: "担当講義",
+    },
+  },
+  en: {
+    metaTitle: `${displayName} | Sakata / Mori / Asatani / Nishimoto Lab`,
+    back: "← Back",
+    labels: {
+      location: "Office",
+      researchAreas: "Research Areas",
+      courses: "Courses",
+    },
+  },
+} as const;
+
+const t = copy[locale];
+const listPath = buildLocalizedPath(locale, "members");
 ---
 
-<Layout title={`${member.name} | 坂田・森・浅谷・西本研究室`}>
-  <Header />
-
+<Layout title={t.metaTitle}>
   <main>
     <div class="member-profile">
       <div class="profile-header">
@@ -33,7 +65,7 @@ const { member } = Astro.props;
             member.image ? (
               <img
                 src={resolvePath(member.image)}
-                alt={member.name}
+                alt={displayName}
                 class="profile-image"
               />
             ) : (
@@ -42,49 +74,47 @@ const { member } = Astro.props;
           }
         </div>
         <div class="profile-info">
-          <h1>{member.name}</h1>
-          <p class="role">{member.role} / {member.roleEn}</p>
+          <h1>{displayName}</h1>
+          {displayRole && (
+            <p class="role">{displayRole}</p>
+          )}
         </div>
       </div>
 
       <div class="profile-content">
-        {member.description && <p class="description">{member.description}</p>}
+        {displayDescription && <p class="description">{displayDescription}</p>}
 
         <div class="info-grid">
           {
-            member.location && (
+            displayLocation && (
               <div class="info-item">
-                <h3>居室</h3>
-                <p>{member.location}</p>
+                <h3>{t.labels.location}</h3>
+                <p>{displayLocation}</p>
               </div>
             )
           }
           {
-            member.researchAreas && (
+            displayResearchAreas && (
               <div class="info-item">
-                <h3>研究分野</h3>
-                <p>{member.researchAreas}</p>
+                <h3>{t.labels.researchAreas}</h3>
+                <p>{displayResearchAreas}</p>
               </div>
             )
           }
           {
-            member.courses && (
+            displayCourses && (
               <div class="info-item">
-                <h3>担当講義</h3>
-                <p>{member.courses}</p>
+                <h3>{t.labels.courses}</h3>
+                <p>{displayCourses}</p>
               </div>
             )
           }
         </div>
 
-        <a href="#" onclick="history.back(); return false;" class="back-link"
-          >← 戻る</a
-        >
+        <button type="button" class="back-link" onclick="history.back()">{t.back}</button>
       </div>
     </div>
   </main>
-
-  <Footer />
 </Layout>
 
 <style>
@@ -175,12 +205,16 @@ const { member } = Astro.props;
     display: inline-block;
     margin-top: 2rem;
     color: var(--accent);
-    text-decoration: none;
+    background: none;
+    border: none;
+    padding: 0;
+    font: inherit;
     font-weight: 500;
+    cursor: pointer;
   }
 
   .back-link:hover {
-    text-decoration: underline;
+    opacity: 0.8;
   }
 
   @media (max-width: 600px) {

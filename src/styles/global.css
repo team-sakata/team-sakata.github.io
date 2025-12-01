@@ -11,8 +11,8 @@
   --accent-warm: #7c6a5d;
   --border: #e5e5e5;
   --radius: 12px;
-  --font-serif: 'Source Serif 4', serif;
-  --font-sans: 'Noto Sans JP', sans-serif;
+  --font-serif: 'Inter', sans-serif;
+  --font-sans: 'IBM Plex Sans JP', 'Inter', sans-serif;
   --shadow: 0 1px 3px rgba(0, 0, 0, 0.04), 0 1px 2px rgba(0, 0, 0, 0.06);
   --shadow-hover: 0 4px 12px rgba(0, 0, 0, 0.08);
 }

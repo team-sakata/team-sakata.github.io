@@ -1,17 +1,40 @@
 ---
-const currentLocale = Astro.url.pathname.includes("/en/") ? "en" : "ja";
-const basePath = import.meta.env.BASE_URL.endsWith("/")
-  ? import.meta.env.BASE_URL
-  : `${import.meta.env.BASE_URL}/`;
-const localeLinks = {
-  ja: basePath,
-  en: `${basePath}en/`,
-};
+import type { Locale } from "../utils/paths";
+import {
+  buildLocalizedPath,
+  detectLocale,
+  getLocaleToggleLinks,
+} from "../utils/paths";
+
+interface Props {
+  locale?: Locale;
+}
+
+const { locale: localeProp }: Props = Astro.props;
+const currentLocale = localeProp ?? detectLocale(Astro.url.pathname);
+const localeLinks = getLocaleToggleLinks(Astro.url.pathname);
+const navItems = [
+  { key: "research", path: "research", label: { ja: "研究内容", en: "Research" } },
+  { key: "members", path: "members", label: { ja: "メンバー", en: "Members" } },
+  {
+    key: "publications",
+    path: "publications",
+    label: { ja: "論文リスト", en: "Publications" },
+  },
+  { key: "activity", path: "activity", label: { ja: "活動紹介", en: "Activities" } },
+  { key: "news", path: "news", label: { ja: "ニュース", en: "News" } },
+  {
+    key: "visit",
+    path: "visit",
+    label: { ja: "採用/新入生への案内", en: "Visit / Join" },
+  },
+];
+---
 ---
 
 <header>
   <nav>
-    <a href={import.meta.env.BASE_URL} class="logo">
+    <a href={buildLocalizedPath(currentLocale)} class="logo">
 
       <span
       class="logo-text"
@@ -24,52 +47,23 @@ const localeLinks = {
       "
       >Sakata Lab</span>
       <span class="logo-text" style="font-weight:600; letter-spacing:0.02em;"
-      >坂田・森・浅谷・西本研究室</span
+      >{currentLocale === "en" ? "Sakata / Mori / Asatani / Nishimoto Lab" : "坂田・森・浅谷・西本研究室"}</span
       >
       <span class="logo-dept">
       <span
-        >東京大学 工学系研究科 技術経営戦略学専攻</span
+        >{currentLocale === "en" ? "Dept. of Technology Management for Innovation, The University of Tokyo" : "東京大学 工学系研究科 技術経営戦略学専攻"}</span
       >
       </span>
     </a>
     <div class="nav-right">
       <ul class="nav-links">
-        <li>
-          <a
-            href={`${import.meta.env.BASE_URL}/${currentLocale === "ja" ? "" : "en/"}research`}
-            >研究内容</a
-          >
-        </li>
-        <li>
-          <a
-            href={`${import.meta.env.BASE_URL}/${currentLocale === "ja" ? "" : "en/"}members`}
-            >メンバー</a
-          >
-        </li>
-        <li>
-          <a
-            href={`${import.meta.env.BASE_URL}/${currentLocale === "ja" ? "" : "en/"}publications`}
-            >論文リスト</a
-          >
-        </li>
-        <li>
-          <a
-            href={`${import.meta.env.BASE_URL}/${currentLocale === "ja" ? "" : "en/"}activity`}
-            >活動紹介</a
-          >
-        </li>
-        <li>
-          <a
-            href={`${import.meta.env.BASE_URL}/${currentLocale === "ja" ? "" : "en/"}news`}
-            >ニュース</a
-          >
-        </li>
-        <li>
-          <a
-            href={`${import.meta.env.BASE_URL}/${currentLocale === "ja" ? "" : "en/"}visit`}
-            >採用/新入生への案内</a
-          >
-        </li>
+        {navItems.map((item) => (
+          <li>
+            <a href={buildLocalizedPath(currentLocale, item.path)}>
+              {item.label[currentLocale]}
+            </a>
+          </li>
+        ))}
         <li>
           <a href="https://planet.sakatalab.t.u-tokyo.ac.jp/" target="_blank"
             >Science Planet+</a
@@ -102,30 +96,11 @@ const localeLinks = {
       </div>
     </div>
     <div class="mobile-menu">
-      <a
-        href={`${import.meta.env.BASE_URL}/${currentLocale === "ja" ? "" : "en/"}research`}
-        >研究内容</a
-      >
-      <a
-        href={`${import.meta.env.BASE_URL}/${currentLocale === "ja" ? "" : "en/"}members`}
-        >メンバー</a
-      >
-      <a
-        href={`${import.meta.env.BASE_URL}/${currentLocale === "ja" ? "" : "en/"}publications`}
-        >論文リスト</a
-      >
-      <a
-        href={`${import.meta.env.BASE_URL}/${currentLocale === "ja" ? "" : "en/"}activity`}
-        >活動紹介</a
-      >
-      <a
-        href={`${import.meta.env.BASE_URL}/${currentLocale === "ja" ? "" : "en/"}news`}
-        >ニュース</a
-      >
-      <a
-        href={`${import.meta.env.BASE_URL}/${currentLocale === "ja" ? "" : "en/"}visit`}
-        >採用/新入生への案内</a
-      >
+      {navItems.map((item) => (
+        <a href={buildLocalizedPath(currentLocale, item.path)}>
+          {item.label[currentLocale]}
+        </a>
+      ))}
       <a href="https://planet.sakatalab.t.u-tokyo.ac.jp/" target="_blank"
         >Science Planet+</a
       >
@@ -338,7 +313,7 @@ const localeLinks = {
     transform: translateY(-8px) rotate(-45deg);
   }
 
-  @media (max-width: 900px) {
+  @media (max-width: 1000px) {
     header {
       padding: 0.85rem 1rem;
     }

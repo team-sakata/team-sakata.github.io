@@ -1,0 +1,316 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import PageHeader from "../../components/PageHeader.astro";
+import Section from "../../components/Section.astro";
+import { getResearchFocus } from "../../utils/collections";
+import { resolvePath } from "../../utils/paths";
+import type { Locale } from "../../utils/paths";
+
+export function getStaticPaths() {
+  return [
+    { params: { locale: "ja" } },
+    { params: { locale: "en" } },
+  ];
+}
+
+const researchFocus = await getResearchFocus();
+researchFocus.sort((a, b) => a.data.order - b.data.order);
+
+const locale = (Astro.params.locale || "ja") as Locale;
+const isJa = locale === "ja";
+
+// ------------------------------------------------------------
+// 研究領域データ（ベタ打ち＋中で ja/en を切り替え）
+// ------------------------------------------------------------
+const researchAreas = [
+  {
+    renderTitle: () =>
+      isJa ? "Science of Science / Science of Science" : "Science of Science",
+    renderDescription: () =>
+      isJa
+        ? "科学論文、特許、企業活動などから、知識や技術がどのように創出され、社会へ広がるかを数理的に解析します。多様性やジェンダーなどの社会的要因も対象とし、近年国内外で活発化している研究領域です。"
+        : "We analyze how scientific knowledge and technological innovation emerge and diffuse through papers, patents, and corporate activities. Social factors such as diversity and gender are also key themes in this rapidly growing field.",
+    renderHighlights: () =>
+      isJa
+        ? [
+            "国際的な研究トピックの進展と遅れの分析",
+            "基礎研究者を軸としたサイエンスエコシステムの理解",
+            "政策文書における論文引用メカニズムの解明",
+            "サーキュラーエコノミー分野のトップ研究者の分析",
+          ]
+        : [
+            "Measuring global advancement and delay of research topics",
+            "Modeling science ecosystems centered on fundamental researchers",
+            "Understanding mechanisms of policy citations to scientific papers",
+            "Analyzing leading researchers in the circular economy domain",
+          ],
+  },
+  {
+    renderTitle: () =>
+      isJa
+        ? "計算社会科学 / Computational Social Science"
+        : "Computational Social Science",
+    renderDescription: () =>
+      isJa
+        ? "都市における人の行動やSNS上のインタラクションをデータから数理的に解析します。Google MapデータやTwitterデータの分析、LLMを活用した社会データ解析、企業ネットワークや特許情報を用いた技術・経済の相互作用の研究を進めています。"
+        : "We analyze human behavior and online interactions using large-scale data. Our work includes Google Maps and Twitter (X) analysis, LLM-based social data analytics, and studies on techno-economic interactions using firm networks and patent information.",
+    renderHighlights: () =>
+      isJa
+        ? [
+            "Twitter上の政治コミュニティ構造の変化の解析",
+            "Google Mapデータによる都市インタラクション構造の理解",
+            "研究者のSNS利用と研究インパクトの関係分析",
+            "地銀を中心とした企業間取引ネットワークの距離特性",
+            "パテントスペースを用いた企業ポートフォリオ戦略の評価",
+          ]
+        : [
+            "Tracking structural changes in political communities on Twitter",
+            "Understanding urban interaction patterns using Google Maps data",
+            "Analyzing scientists’ social media use and research impact",
+            "Distance characteristics in regional-bank-centered transaction networks",
+            "Evaluating corporate portfolio strategies using patent-space models",
+          ],
+  },
+  {
+    renderTitle: () =>
+      isJa ? "自然言語処理 / Natural Language Processing" : "Natural Language Processing",
+    renderDescription: () =>
+      isJa
+        ? "逆学習・モデル合成・学習データ蒸留などの最先端手法を開発し、言語モデルの汎化能力や推論能力がどのように獲得されるかを解明します。また、言語モデルの透明性・安全性・効率性の向上を目指した研究に取り組むとともに、LLMをエージェントとして活用する新しい枠組みも探求しています。"
+        : "We develop advanced methods such as inverse learning, model composition, and training-data distillation to understand how language models acquire generalization and reasoning abilities. We also pursue improved transparency, safety, and efficiency, while exploring new frameworks that use LLMs as autonomous agents.",
+    renderHighlights: () =>
+      isJa
+        ? [
+            "大規模言語モデルの逆学習による訓練データ解析",
+          ]
+        : [
+            "Analyzing training data of large language models via inverse learning",
+          ],
+  },
+];
+---
+
+<Layout
+  title={
+    isJa
+      ? "研究内容 | 坂田・森・浅谷・西本研究室"
+      : "Research | Sakata / Mori / Asatani / Nishimoto Lab"
+  }
+  isSubpage
+>
+  <PageHeader title={isJa ? "研究内容" : "Research"} />
+
+  <!-- 研究の方針 -->
+  <Section title={isJa ? "研究の方針" : "Research Policy"}>
+    {isJa ? (
+      <>
+        <p>
+          当研究室ではデータサイエンスを活用して、経営・社会・科学技術に関する現象を体系的に理解し、新しい知見を創出することを目指しています。機械学習・深層学習、自然言語処理、ネットワーク分析などの手法を中心に、手法そのものの基礎研究にも取り組んでいます。
+        </p>
+        <p>
+          解析対象は、学術ビッグデータ、ソーシャルメディア、企業取引情報やM&A、特許データ、都市行動データ、レビュー文など多岐にわたります。生成AIについては、逆学習を用いた大規模言語モデル（LLM）の解析や、LLMを活用した社会・科学データの分析にも先駆的に取り組んでいます。
+        </p>
+        <p>
+          学生の研究テーマ選択については自主性を尊重し、多様なテーマの研究が進められています。研究者同士が活発に交流し、分野横断的な取り組みが進んでいます。
+        </p>
+        <p>
+          さらに、テクノロジー・インフォマティックス社会連携講座や NEDO/産業技術総合研究所のプロジェクトなど、外部機関との共同研究も積極的に推進しています。研究成果の社会実装と広範なコミュニティへの貢献を重視しています。
+        </p>
+      </>
+    ) : (
+      <>
+        <p>
+          Our laboratory aims to understand phenomena in business, society, and science &amp; technology using data-science methodologies, generating new insights across these domains. We focus on machine learning, deep learning, natural language processing, and network analysis, while also pursuing foundational research on these methods.
+        </p>
+        <p>
+          Our analyses cover diverse datasets including large-scale scholarly corpora, social media, corporate transaction and M&amp;A information, patent data, urban mobility datasets, and review texts. We are also among the first to analyze large language models (LLMs) via inverse learning and to utilize LLMs in the analysis of scientific and social systems.
+        </p>
+        <p>
+          Students are encouraged to choose their research topics autonomously, leading to a rich variety of themes. Active collaboration across domains is a defining characteristic of our research environment.
+        </p>
+        <p>
+          We also collaborate with external organizations such as the Technology Informatics Social Collaboration Program and the NEDO/AIST Science-Technology Trend Forecasting Project, emphasizing societal impact and engagement with broader research communities.
+        </p>
+      </>
+    )}
+  </Section>
+
+  <!-- 研究領域 -->
+  <div class="research-areas-section">
+    {researchAreas.map((area) => {
+      const highlights = area.renderHighlights();
+      return (
+        <section class="research-area">
+          <h2 class="area-title">{area.renderTitle()}</h2>
+
+          <p class="area-description">{area.renderDescription()}</p>
+
+          <div class="highlights">
+            <h4>
+              {isJa ? "近年の代表的な研究" : "Recent Research Highlights"}
+            </h4>
+
+            {highlights.length > 0 ? (
+              <ul>
+                {highlights.map((item) => (
+                  <li>{item}</li>
+                ))}
+              </ul>
+            ) : (
+              <p class="no-highlights">
+                {isJa ? "（準備中）" : "(To be added)"}
+              </p>
+            )}
+          </div>
+        </section>
+      );
+    })}
+  </div>
+
+  <!-- 重点研究領域 -->
+  <Section title={isJa ? "重点研究領域" : "Research Highlights"}>
+    <div class="focus-grid">
+      {researchFocus.map((focus) => {
+        const title = isJa
+          ? focus.data.title_ja || focus.data.title
+          : focus.data.title_en || focus.data.title;
+        const description = isJa
+          ? focus.data.description_short || focus.data.description_ja || focus.data.description
+          : focus.data.description_short_en || focus.data.description_en || focus.data.description;
+        const focusLink = resolvePath(`/${locale}/research/${focus.id}`);
+
+        return (
+          <a href={focusLink} class="focus-card-link">
+            <div class="focus-card" id={`focus-${focus.data.order}`}>
+              {focus.data.image && (
+                <img
+                  src={resolvePath(focus.data.image)}
+                  alt={title}
+                  class="focus-image"
+                />
+              )}
+              <h3>{title}</h3>
+              <p>{description}</p>
+            </div>
+          </a>
+        );
+      })}
+    </div>
+  </Section>
+</Layout>
+
+<style>
+  .research-areas-section {
+    margin-bottom: 3rem;
+  }
+
+  .research-area {
+    padding-bottom: 2rem;
+    margin-bottom: 2rem;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .research-area:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+    margin-bottom: 0;
+  }
+
+  .area-title {
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: var(--accent);
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .area-description {
+    font-size: 0.95rem;
+    line-height: 1.8;
+    color: var(--text-secondary);
+    margin-bottom: 1.5rem;
+  }
+
+  .highlights h4 {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 0.5rem;
+  }
+
+  .highlights ul {
+    margin: 0;
+    padding-left: 1.2rem;
+  }
+
+  .highlights li {
+    font-size: 0.9rem;
+    line-height: 1.6;
+    color: var(--text-secondary);
+    margin-bottom: 0.3rem;
+  }
+
+  .no-highlights {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+  }
+
+  .focus-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin-top: 2rem;
+  }
+
+  .focus-card-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    height: 100%;
+  }
+
+  .focus-card-link:hover .focus-card {
+    border-color: var(--accent);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+
+  .focus-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 1.5rem;
+    height: 100%;
+    transition: border-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .focus-card h3 {
+    font-size: 1rem;
+    color: var(--accent);
+    margin-bottom: 0.8rem;
+    font-weight: 600;
+  }
+
+  .focus-card p {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin-bottom: 0;
+  }
+
+  .focus-image {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+    border-radius: 6px;
+    margin-bottom: 1rem;
+    border: 1px solid var(--border);
+  }
+
+  @media (max-width: 768px) {
+    .focus-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

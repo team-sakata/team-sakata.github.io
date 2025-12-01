@@ -1,9 +1,12 @@
 title: "Scientific Attention to Sustainability and SDGs: Meta-Analysis of Academic Papers"
+title_ja: "サステナビリティとSDGsへの科学的関心：学術論文のメタ分析"
+title_en: "Scientific Attention to Sustainability and SDGs: Meta-Analysis of Academic Papers"
 description: "サスティナビリティに関する学術文献がSDGsに対しどのような関心を持っているかを、30万件の書誌情報より明らかにしました。"
 description_ja: "サスティナビリティに関する学術文献がSDGsに対しどのような関心を持っているかを、30万件の書誌情報より明らかにしました。"
-description_en: "サスティナビリティに関する学術文献がSDGsに対しどのような関心を持っているかを、30万件の書誌情報より明らかにしました。"
+description_en: "We analyzed 300,000 bibliographic records to reveal how sustainability-related academic literature addresses the SDGs."
 order: 2
 label: "Research"
 
 image: "/lab_guidelines_insight.png"
 description_short: "サスティナビリティに関する学術文献がSDGsに対しどのような関心を持っているかを分析"
+description_short_en: "Analyzing how sustainability literature addresses the SDGs"

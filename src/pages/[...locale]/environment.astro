@@ -1,0 +1,204 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import PageHeader from "../../components/PageHeader.astro";
+import Section from "../../components/Section.astro";
+import { detectLocale } from "../../utils/paths";
+
+export function getStaticPaths() {
+  return [
+    { params: { locale: "ja" } },
+    { params: { locale: "en" } },
+  ];
+}
+
+const locale = detectLocale(Astro.url.pathname);
+const isJa = locale === "ja";
+---
+
+<Layout
+  title={
+    isJa
+      ? "新入生の方へ | 坂田・森・浅谷・西本研究室"
+      : "Visit / Join | Sakata / Mori / Asatani / Nishimoto Lab"
+  }
+  isSubpage
+>
+  <PageHeader title={isJa ? "新入生の方へ" : "Visit / Join"} />
+
+  <Section title={isJa ? "研究室の方針" : "Lab Policy"}>
+    {isJa ? (
+      <>
+        <p>
+          坂田教授、森教授（兼担、本務は情報基盤センター）、浅谷特任准教授、西本特任講師の４名で共同で指導を行っています。どの研究室に入っても同様な指導が受けられます。
+        </p>
+        <p>
+          主な技法としては、生成AI、LLMエージェントを含めた自然言語処理、深層学習、複雑系ネットワーク科学を扱っています。また、データとしては、大規模な科学技術文献DB、特許DB、国際機関群の政策文書DB、M&A等の企業情報DB、Eコマース上のレビュー文、関西一円の乗降客情報など。
+        </p>
+        <p>
+          それらを用いた研究領域としては、計算社会科学、サイエンス・オブ・サイエンス、イノベーションマネジメント、M&A研究、自然言語処理などの技法の研究ですが、テーマ選定にあたっては、学生のみなさんの興味・関心を重視しています。
+        </p>
+        <p>
+          国際会議や国内学会での発表を応援しています。2025年には、所属学生が言語処理学会で３賞を受賞しています。
+        </p>
+      </>
+    ) : (
+      <>
+        <p>
+          Professors Sakata, Mori (joint appointment), Associate Professor
+          Asatani, and Lecturer Nishimoto supervise all students together, so
+          you receive the same guidance regardless of the advisor assignment.
+        </p>
+        <p>
+          We work with natural language processing including generative AI and
+          LLM agents, deep learning, and complex network science. Our datasets
+          span large-scale literature and patent databases, policy documents,
+          corporate information such as M&A data, e-commerce reviews, and
+          mobility data across the Kansai region.
+        </p>
+        <p>
+          Research themes include computational social science, science of
+          science, innovation management, M&A studies, and methodological
+          advances in NLP. Students are encouraged to pursue topics that
+          genuinely interest them.
+        </p>
+        <p>
+          We actively support presentations at domestic and international
+          conferences. In 2025, several members received awards at the
+          Association for Natural Language Processing.
+        </p>
+      </>
+    )}
+  </Section>
+
+  <Section title={isJa ? "学生居室" : "Workspace"}>
+    {isJa ? (
+      <>
+        <p>
+          2021年夏に大規模な改装を行い、本郷キャンパス工学部3号館/8号館に学生居室を3部屋設置しました。感染症対策として複数の部屋を自由に使えるようにすることで、安全かつ快適な研究生活を送ることができるように配慮しています。
+        </p>
+      </>
+    ) : (
+      <>
+        <p>
+          After a major renovation in 2021 we now operate three student rooms
+          across Engineering Buildings 3 and 8 on the Hongo campus. Multiple
+          rooms are available to keep research comfortable and safe even under
+          infection-control measures.
+        </p>
+      </>
+    )}
+  </Section>
+
+  <Section title={isJa ? "計算機リソース" : "Computing Resources"}>
+    {isJa ? (
+      <>
+        <p>
+          当研究室では大量のデータを用いた分析や深層学習を用いたモデルの開発を行うことから、大規模な計算機リソースが不可欠です。
+        </p>
+        <p>
+          当研究室には深層学習モデルの計算に必要なGPUサーバーや、大規模なデータの処理に必要な高メモリサーバー（2TB）など最先端の計算設備を整えており、不自由なく研究できる環境を用意しています。
+        </p>
+        <p>
+          この他産業技術総合研究所や理化学研究所の大規模サーバも利用できる環境にあるほか、MacbookなどのPCを可能な限り学生に貸与しています。
+        </p>
+      </>
+    ) : (
+      <>
+        <p>
+          Large-scale computation is essential for our data-intensive analyses
+          and deep-learning models.
+        </p>
+        <p>
+          Our lab hosts GPU servers and high-memory
+          machines (up to 2 TB RAM), providing a comfortable environment for
+          experimentation.
+        </p>
+        <p>
+          We can also access national research institute clusters (AIST, RIKEN)
+          and lend MacBooks or other laptops when needed.
+        </p>
+      </>
+    )}
+  </Section>
+
+  <Section title={isJa ? "研究室見学" : "Lab Visits"}>
+    {isJa ? (
+      <>
+        <p>
+          研究室見学にあたっては、坂田研究室の日常的なイベントである「研究会」や「輪読会」の見学を推奨しています。
+        </p>
+        <p>
+          研究会では、毎月1度、木曜日4限 (14:55-16:40)
+          に開かれ、毎回10名ほどの学生が、研究の進捗を発表します。また、全学生が聴講しますので、終了後に学生室
+          (202) で学生の率直な話を聞いてみるのもお勧めです。
+        </p>
+        <p>
+          輪読会では、隔週 (研究会のない週)
+          に開かれ、参加している各学生が簡単に読んだ論文を1人1本発表する「乱読」と、1人の担当学生が詳細に論文を発表する「精読」を行っています。分野の雰囲気や近年のトレンドを手軽に体感することができ、各学生の興味も知ることができお勧めです。
+        </p>
+      </>
+    ) : (
+      <>
+        <p>
+          We recommend joining our regular seminars or reading groups when
+          visiting the lab.
+        </p>
+        <p>
+          The seminar meets once a month on Thursdays (period 4, 14:55-16:40).
+          Around ten students present their progress while all members attend,
+          so you can chat with them afterward in Room 202.
+        </p>
+        <p>
+          Reading groups meet every other week (the weeks without the seminar).
+          Each participant gives a short overview of a paper (randoku) and one
+          student presents a paper in depth (seidoku). These sessions showcase
+          current topics and interests.
+        </p>
+      </>
+    )}
+
+    <h3>{isJa ? "現在開かれている輪読会" : "Current Reading Groups"}</h3>
+    <ul>
+      {isJa ? (
+        <>
+          <li>Computational Social Science (計算社会科学; CSS) (水曜日2限)</li>
+          <li>Science of Science (金曜日2限)</li>
+          <li>Natural Language Processing (NLP) (木曜日3限)</li>
+          <li>Economics (水曜日5限)</li>
+        </>
+      ) : (
+        <>
+          <li>Computational Social Science (Wed period 2)</li>
+          <li>Science of Science (Fri period 2)</li>
+          <li>Natural Language Processing (Thu period 3)</li>
+          <li>Economics (Wed period 5)</li>
+        </>
+      )}
+    </ul>
+
+    <p style="margin-top: 2rem;">
+      {isJa ? (
+        <>
+          見学を希望される方は
+          <a
+            href="https://docs.google.com/forms/d/e/1FAIpQLSdqy1RRlwpU8HjNB--ZEzXUcu-T3DC4sesNmYmScp3tNvBUUQ/viewform"
+            target="_blank"
+            rel="noopener noreferrer"
+            >こちらのフォーム</a
+          >
+          からお気軽にお問い合わせください。
+        </>
+      ) : (
+        <>
+          If you'd like to visit, please contact us via
+          <a
+            href="https://docs.google.com/forms/d/e/1FAIpQLSdqy1RRlwpU8HjNB--ZEzXUcu-T3DC4sesNmYmScp3tNvBUUQ/viewform"
+            target="_blank"
+            rel="noopener noreferrer"
+            >this form</a
+          >.
+        </>
+      )}
+    </p>
+  </Section>
+</Layout>

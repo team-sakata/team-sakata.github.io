@@ -1,0 +1,67 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import PublicationItem from "../../components/PublicationItem.astro";
+import PageHeader from "../../components/PageHeader.astro";
+import Section from "../../components/Section.astro";
+import { detectLocale } from "../../utils/paths";
+import { getPublications } from "../../utils/collections";
+
+export function getStaticPaths() {
+    return [
+        { params: { locale: 'ja' } },
+        { params: { locale: 'en' } },
+    ];
+}
+
+const publications = await getPublications();
+
+const preprints = publications.filter((p) => p.category === "preprint");
+const journals = publications.filter((p) => p.category === "journal");
+const conferences = publications.filter((p) => p.category === "conference");
+
+const locale = detectLocale(Astro.url.pathname);
+const copy = {
+  ja: {
+    metaTitle: "論文リスト | 坂田・森・浅谷・西本研究室",
+    pageTitle: "論文リスト",
+    sections: {
+      preprints: "プレプリント",
+      journals: "ジャーナル論文",
+      conferences: "国際会議論文",
+    },
+  },
+  en: {
+    metaTitle: "Publications | Sakata / Mori / Asatani / Nishimoto Lab",
+    pageTitle: "Publications",
+    sections: {
+      preprints: "Preprints",
+      journals: "Journal Papers",
+      conferences: "Conference Papers",
+    },
+  },
+} as const;
+
+const t = copy[locale];
+---
+
+<Layout title={t.metaTitle} isSubpage>
+  <PageHeader title={t.pageTitle} />
+
+  <Section title={t.sections.preprints}>
+    <div class="pub-list">
+      {preprints.map((item) => <PublicationItem pub={item} />)}
+    </div>
+  </Section>
+
+  <Section title={t.sections.journals}>
+    <div class="pub-list">
+      {journals.map((item) => <PublicationItem pub={item} />)}
+    </div>
+  </Section>
+
+  <Section title={t.sections.conferences}>
+    <div class="pub-list">
+      {conferences.map((item) => <PublicationItem pub={item} />)}
+    </div>
+  </Section>
+</Layout>

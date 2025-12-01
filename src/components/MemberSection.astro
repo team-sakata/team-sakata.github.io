@@ -1,6 +1,6 @@
 ---
 import type { CollectionEntry } from "astro:content";
-import { resolvePath } from "../utils/paths";
+import { resolvePath, buildLocalizedPath, detectLocale } from "../utils/paths";
 import FacultyCard from "./FacultyCard.astro";
 
 interface Props {
@@ -9,10 +9,25 @@ interface Props {
 }
 
 const { section, isFirst = false } = Astro.props;
+const locale = detectLocale(Astro.url.pathname);
+const getMemberLink = (id?: string) => (id ? buildLocalizedPath(locale, `members/${id}`) : undefined);
+const sectionTitle = locale === "en" ? section.data.titleEn ?? section.data.title : section.data.title;
+const labels = {
+  researchAreas: locale === "en" ? "Research areas:" : "研究分野:",
+  courses: locale === "en" ? "Courses:" : "担当講義:",
+};
+
+// Helper function to get localized field
+const getLocalized = (member: any, field: string) => {
+  if (locale === "en") {
+    return member[`${field}En`] ?? member[field];
+  }
+  return member[field];
+};
 ---
 
 <div class="members-section" style={!isFirst ? "margin-top: 2rem;" : ""}>
-  {(<div class="members-section-title">{section.data.title}</div>)}
+  {(<div class="members-section-title">{sectionTitle}</div>)}
 
   {
     section.data.title === "教員" ? (
@@ -28,7 +43,7 @@ const { section, isFirst = false } = Astro.props;
             {member.image ? (
               <img
                 src={resolvePath(member.image)}
-                alt={member.name}
+                alt={getLocalized(member, 'name')}
                 class="member-image"
               />
             ) : (
@@ -37,31 +52,31 @@ const { section, isFirst = false } = Astro.props;
             <div class="member-info">
               {member.id ? (
                 <a
-                  href={`${import.meta.env.BASE_URL}/members/${member.id}`}
+                  href={getMemberLink(member.id)}
                   class="member-name-link"
                 >
-                  <div class="member-name">{member.name}</div>
+                  <div class="member-name">{getLocalized(member, 'name')}</div>
                 </a>
               ) : (
-                <div class="member-name">{member.name}</div>
+                <div class="member-name">{getLocalized(member, 'name')}</div>
               )}
-              {member.role && (
+              {(member.role || member.roleEn) && (
                 <div class="member-role">
-                  {member.role} {member.roleEn ? `/ ${member.roleEn}` : ""}
+                  {getLocalized(member, 'role')}
                 </div>
               )}
-              {member.description && (
-                <p class="member-description">{member.description}</p>
+              {(member.description || member.descriptionEn) && (
+                <p class="member-description">{getLocalized(member, 'description')}</p>
               )}
-              {member.researchAreas && (
+              {(member.researchAreas || member.researchAreasEn) && (
                 <div class="member-meta">
-                  <span class="meta-label">研究分野:</span>{" "}
-                  {member.researchAreas}
+                  <span class="meta-label">{labels.researchAreas}</span>{" "}
+                  {getLocalized(member, 'researchAreas')}
                 </div>
               )}
-              {member.courses && (
+              {(member.courses || member.coursesEn) && (
                 <div class="member-meta">
-                  <span class="meta-label">担当講義:</span> {member.courses}
+                  <span class="meta-label">{labels.courses}</span> {getLocalized(member, 'courses')}
                 </div>
               )}
             </div>

@@ -10,10 +10,6 @@ export async function getSortedMembers() {
     return members.sort((a, b) => a.data.order - b.data.order);
 }
 
-export async function getResearch() {
-    return await getCollection("research");
-}
-
 export async function getResearchFocus() {
     return await getCollection("research-focus");
 }

@@ -1,22 +1,33 @@
 ---
-import { resolvePath } from "../utils/paths";
+import { resolvePath, buildLocalizedPath, detectLocale } from "../utils/paths";
 
 interface Props {
     member: {
         name: string;
+        nameEn?: string;
         role?: string;
         roleEn?: string;
         image?: string;
         description?: string;
+        descriptionEn?: string;
         id?: string;
     };
 }
 
 const { member } = Astro.props;
+const locale = detectLocale(Astro.url.pathname);
+const profileLink = member.id
+    ? buildLocalizedPath(locale, `members/${member.id}`)
+    : undefined;
+
+// Get localized values
+const displayName = locale === "en" ? (member.nameEn ?? member.name) : member.name;
+const displayRole = locale === "en" ? (member.roleEn ?? member.role) : member.role;
+const displayDescription = locale === "en" ? (member.descriptionEn ?? member.description) : member.description;
 ---
 
 <a
-    href={`${import.meta.env.BASE_URL}/members/${member.id}`}
+    href={profileLink ?? "#"}
     class="faculty-card-link"
 >
     <div class="faculty-card">
@@ -37,16 +48,16 @@ const { member } = Astro.props;
         </div>
         <div class="faculty-info">
             <div class="faculty-header">
-                <h3 class="faculty-name">{member.name}</h3>
+                <h3 class="faculty-name">{displayName}</h3>
                 {
-                    member.roleEn && (
-                        <span class="faculty-role">{member.roleEn}</span>
+                    displayRole && (
+                        <span class="faculty-role">{displayRole}</span>
                     )
                 }
             </div>
             {
-                member.description && (
-                    <p class="faculty-description">{member.description}</p>
+                displayDescription && (
+                    <p class="faculty-description">{displayDescription}</p>
                 )
             }
         </div>
