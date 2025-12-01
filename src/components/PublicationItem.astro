@@ -22,11 +22,16 @@ const { pub } = Astro.props;
 
 <style>
   .pub-item {
-    padding-bottom: 1rem;
+    padding: 1rem 0;
     border-bottom: 1px solid var(--border);
   }
 
-  .pub-item:last-child {
+  .pub-item:first-child {
+    padding-top: 0;
+  }
+
+  :global(.pub-list > :last-child) .pub-item,
+  :global(.pub-list > .pub-item:last-child) {
     border-bottom: none;
     padding-bottom: 0;
   }
