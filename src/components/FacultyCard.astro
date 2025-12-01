@@ -1,0 +1,161 @@
+---
+import { resolvePath } from "../utils/paths";
+
+interface Props {
+    member: {
+        name: string;
+        role?: string;
+        roleEn?: string;
+        image?: string;
+        description?: string;
+        id?: string;
+    };
+}
+
+const { member } = Astro.props;
+---
+
+<a
+    href={`${import.meta.env.BASE_URL}/members/${member.id}`}
+    class="faculty-card-link"
+>
+    <div class="faculty-card">
+        <div class="faculty-image-container">
+            {
+                member.image ? (
+                    <img
+                        src={resolvePath(member.image)}
+                        alt={member.name}
+                        class="faculty-image"
+                    />
+                ) : (
+                    <div class="faculty-avatar-placeholder">
+                        {member.name[0]}
+                    </div>
+                )
+            }
+        </div>
+        <div class="faculty-info">
+            <div class="faculty-header">
+                <h3 class="faculty-name">{member.name}</h3>
+                {
+                    member.roleEn && (
+                        <span class="faculty-role">{member.roleEn}</span>
+                    )
+                }
+            </div>
+            {
+                member.description && (
+                    <p class="faculty-description">{member.description}</p>
+                )
+            }
+        </div>
+    </div>
+</a>
+
+<style>
+    .faculty-card-link {
+        text-decoration: none;
+        color: inherit;
+        display: block;
+        height: 100%;
+    }
+
+    .faculty-card {
+        display: flex;
+        gap: 1.5rem;
+        padding: 1.5rem;
+        background: var(--bg-card);
+        border: 1px solid var(--border);
+        border-radius: 8px;
+        height: 100%;
+        transition:
+            box-shadow 0.2s ease,
+            border-color 0.2s ease,
+            transform 0.2s ease;
+        align-items: flex-start;
+    }
+
+    .faculty-card-link:hover .faculty-card {
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        border-color: var(--accent);
+        transform: translateY(-2px);
+    }
+
+    .faculty-image-container {
+        flex-shrink: 0;
+    }
+
+    .faculty-image {
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 1px solid var(--border);
+    }
+
+    .faculty-avatar-placeholder {
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        background: var(--bg-secondary);
+        border: 1px solid var(--border);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.5rem;
+        color: var(--accent);
+        font-weight: 500;
+    }
+
+    .faculty-info {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .faculty-header {
+        display: flex;
+        flex-direction: column;
+        gap: 0.2rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .faculty-name {
+        font-size: 1.1rem;
+        font-weight: 700;
+        color: var(--text-primary);
+        margin: 0;
+    }
+
+    .faculty-role {
+        font-size: 0.8rem;
+        color: var(--accent);
+        font-weight: 500;
+    }
+
+    .faculty-description {
+        font-size: 0.85rem;
+        color: var(--text-secondary);
+        line-height: 1.6;
+        margin: 0;
+        display: -webkit-box;
+        -webkit-line-clamp: 4;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+    }
+
+    @media (max-width: 600px) {
+        .faculty-card {
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            padding: 1.2rem;
+        }
+
+        .faculty-info {
+            align-items: center;
+        }
+    }
+</style>

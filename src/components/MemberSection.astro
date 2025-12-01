@@ -1,6 +1,7 @@
 ---
 import type { CollectionEntry } from "astro:content";
 import { resolvePath } from "../utils/paths";
+import FacultyCard from "./FacultyCard.astro";
 
 interface Props {
   section: CollectionEntry<"members">;
@@ -10,75 +11,79 @@ interface Props {
 const { section, isFirst = false } = Astro.props;
 ---
 
-<div class="members-section" style={!isFirst ? "margin-top: 1rem;" : ""}>
+<div class="members-section" style={!isFirst ? "margin-top: 2rem;" : ""}>
+  {(<div class="members-section-title">{section.data.title}</div>)}
+
   {
-    section.data.title !== "教員" && (
-      <div class="members-section-title">
-        {section.data.title} / {section.data.titleEn}
+    section.data.title === "教員" ? (
+      <div class="faculty-grid">
+        {section.data.items.map((member: any) => (
+          <FacultyCard member={member} />
+        ))}
+      </div>
+    ) : (
+      <div class="members-list">
+        {section.data.items.map((member: any) => (
+          <div class="member">
+            {member.image ? (
+              <img
+                src={resolvePath(member.image)}
+                alt={member.name}
+                class="member-image"
+              />
+            ) : (
+              <div class="member-avatar">{member.avatar}</div>
+            )}
+            <div class="member-info">
+              {member.id ? (
+                <a
+                  href={`${import.meta.env.BASE_URL}/members/${member.id}`}
+                  class="member-name-link"
+                >
+                  <div class="member-name">{member.name}</div>
+                </a>
+              ) : (
+                <div class="member-name">{member.name}</div>
+              )}
+              {member.role && (
+                <div class="member-role">
+                  {member.role} {member.roleEn ? `/ ${member.roleEn}` : ""}
+                </div>
+              )}
+              {member.description && (
+                <p class="member-description">{member.description}</p>
+              )}
+              {member.researchAreas && (
+                <div class="member-meta">
+                  <span class="meta-label">研究分野:</span>{" "}
+                  {member.researchAreas}
+                </div>
+              )}
+              {member.courses && (
+                <div class="member-meta">
+                  <span class="meta-label">担当講義:</span> {member.courses}
+                </div>
+              )}
+            </div>
+          </div>
+        ))}
       </div>
     )
   }
-  <div class="members-list">
-    {
-      section.data.items.map((member) => (
-        <div class="member">
-          {member.image ? (
-            <img
-              src={resolvePath(member.image)}
-              alt={member.name}
-              class="member-image"
-            />
-          ) : (
-            <div class="member-avatar">{member.avatar}</div>
-          )}
-          <div class="member-info">
-            {member.id ? (
-              <a
-                href={`${import.meta.env.BASE_URL}/members/${member.id}`}
-                class="member-name-link"
-              >
-                <div class="member-name">{member.name}</div>
-              </a>
-            ) : (
-              <div class="member-name">{member.name}</div>
-            )}
-            {member.role && (
-              <div class="member-role">
-                {member.role} {member.roleEn ? `/ ${member.roleEn}` : ""}
-              </div>
-            )}
-            {member.description && (
-              <p class="member-description">{member.description}</p>
-            )}
-            {member.researchAreas && (
-              <div class="member-meta">
-                <span class="meta-label">研究分野:</span> {member.researchAreas}
-              </div>
-            )}
-            {member.courses && (
-              <div class="member-meta">
-                <span class="meta-label">担当講義:</span> {member.courses}
-              </div>
-            )}
-          </div>
-        </div>
-      ))
-    }
-  </div>
 </div>
 
 <style>
   .members-section {
-    margin-bottom: 1.25rem;
+    margin-bottom: 2rem;
   }
 
   .members-section-title {
-    font-size: 0.7rem;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
+    font-size: 1.1rem;
     color: var(--text-muted);
-    margin-bottom: 0.6rem;
-    font-weight: 500;
+    margin-bottom: 1rem;
+    font-weight: 600;
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 0.5rem;
   }
 
   .members-list {
@@ -160,5 +165,12 @@ const { section, isFirst = false } = Astro.props;
     font-weight: 600;
     color: var(--text-muted);
     margin-right: 0.25rem;
+  }
+
+  .faculty-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2rem;
   }
 </style>

@@ -58,6 +58,7 @@ const researchFocusCollection = defineCollection({
     schema: z.object({
         title: z.string(),
         description: z.string(),
+        description_short: z.string().optional(),
         image: z.string().optional(),
         link: z.string().optional(),
         label: z.string().optional(),
@@ -71,6 +72,7 @@ const activityCollection = defineCollection({
         date: z.string(), // YYYY-MM-DD format
         title: z.string(),
         description: z.string(),
+        description_short: z.string().optional(),
         image: z.string().optional(),
         link: z.string().optional(),
     }),

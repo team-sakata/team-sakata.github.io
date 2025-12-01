@@ -1,10 +1,10 @@
 ---
-import Layout from "../layouts/Layout.astro";
+import Layout from "../../layouts/Layout.astro";
 import { getCollection } from "astro:content";
-import { getSortedActivity } from "../utils/collections";
-import PageHeader from "../components/PageHeader.astro";
-import Section from "../components/Section.astro";
-import { resolvePath } from "../utils/paths";
+import { getSortedActivity } from "../../utils/collections";
+import PageHeader from "../../components/PageHeader.astro";
+import Section from "../../components/Section.astro";
+import { resolvePath } from "../../utils/paths";
 const activity = await getSortedActivity();
 ---
 

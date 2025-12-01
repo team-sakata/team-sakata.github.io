@@ -1,8 +1,8 @@
 ---
-import Layout from "../layouts/Layout.astro";
-import MemberSection from "../components/MemberSection.astro";
-import PageHeader from "../components/PageHeader.astro";
-import { getSortedMembers } from "../utils/collections";
+import Layout from "../../layouts/Layout.astro";
+import MemberSection from "../../components/MemberSection.astro";
+import PageHeader from "../../components/PageHeader.astro";
+import { getSortedMembers } from "../../utils/collections";
 
 const members = await getSortedMembers();
 ---

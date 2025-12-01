@@ -5,15 +5,19 @@ interface Props {
     authors: string;
     venue: string;
     hidden: boolean;
+    year?: string;
   };
 }
 
 const { pub } = Astro.props;
 ---
 
-<div class:list={['pub-item', { hidden: pub.hidden }]}>
+<div class:list={["pub-item", { hidden: pub.hidden }]}>
   <div class="pub-title">{pub.title}</div>
-  <div class="pub-meta">{pub.authors} · <span class="pub-venue">{pub.venue}</span></div>
+  <div class="pub-meta">
+    {pub.authors} · <span class="pub-venue"
+      >{pub.venue} {pub.year && `(${pub.year})`}</span>
+  </div>
 </div>
 
 <style>

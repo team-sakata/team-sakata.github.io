@@ -4,3 +4,4 @@ order: 1
 label: "Research"
 
 image: "/lab_guidelines_insight.png"
+description_short: "各国の研究者が出す論文群のリサーチトピックを定量的に時系列に比較"

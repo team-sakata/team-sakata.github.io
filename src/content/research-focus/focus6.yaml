@@ -1,5 +1,7 @@
 title: "Unsupervised Abstractive Opinion Summarization by Generating Sentences with Tree-Structured Topic Guidance"
 description: "木構造上のトピックから各トピックに関する要約文を生成する教師なし要約手法を提案"
+description_ja: "木構造上のトピックから各トピックに関する要約文を生成する教師なし要約手法を提案"
+description_en: "木構造上のトピックから各トピックに関する要約文を生成する教師なし要約手法を提案"
 order: 6
 
 image: "/lab_guidelines_insight.png"

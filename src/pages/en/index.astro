@@ -1,12 +1,12 @@
 ---
-import Layout from "../layouts/Layout.astro";
-import Hero from "../components/Hero.astro";
-import BentoCard from "../components/BentoCard.astro";
-import ResearchArea from "../components/ResearchArea.astro";
-import MemberSection from "../components/MemberSection.astro";
-import NewsItem from "../components/NewsItem.astro";
-import PublicationItem from "../components/PublicationItem.astro";
-import LabGuidelines from "../components/LabGuidelines.astro";
+import Layout from "../../layouts/Layout.astro";
+import Hero from "../../components/Hero.astro";
+import BentoCard from "../../components/BentoCard.astro";
+import ResearchArea from "../../components/ResearchArea.astro";
+import MemberSection from "../../components/MemberSection.astro";
+import NewsItem from "../../components/NewsItem.astro";
+import PublicationItem from "../../components/PublicationItem.astro";
+import LabGuidelines from "../../components/LabGuidelines.astro";
 
 import {
   getSortedActivity,
@@ -14,7 +14,7 @@ import {
   getResearch,
   getResearchFocus,
   getPublications,
-} from "../utils/collections";
+} from "../../utils/collections";
 
 const activity = await getSortedActivity();
 const members = await getSortedMembers();
@@ -22,8 +22,8 @@ const research = await getResearch();
 const researchFocus = await getResearchFocus();
 const publications = await getPublications();
 
-import news from "../data/news.yaml";
-import { resolvePath } from "../utils/paths";
+import news from "../../data/news.yaml";
+import { resolvePath } from "../../utils/paths";
 
 // Sort collections
 research.sort((a, b) => a.data.order - b.data.order);
