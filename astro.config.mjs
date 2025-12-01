@@ -19,9 +19,9 @@ export default defineConfig({
         },
     },
     prefetch: {
-        // Prefetch links on hover for faster navigation
+        // Prefetch navigation links immediately on page load
         prefetchAll: false,
-        defaultStrategy: 'hover',
+        defaultStrategy: 'load',  // 'load' = prefetch immediately when page loads
     },
     vite: {
         plugins: vitePlugins,
