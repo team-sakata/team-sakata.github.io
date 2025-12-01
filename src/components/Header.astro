@@ -147,7 +147,7 @@ const navItems = [
   }
 
   header nav {
-    max-width: 1070px;
+    max-width: 1110px;
     margin: 0 auto;
     display: flex;
     justify-content: space-between;
@@ -315,7 +315,7 @@ const navItems = [
 
   @media (max-width: 1000px) {
     header {
-      padding: 0.85rem 1rem;
+      padding: 0.85rem 2.5rem;
     }
 
     .nav-right {
@@ -335,4 +335,28 @@ const navItems = [
       display: flex;
     }
   }
+
+  @media (max-width: 600px) {
+    header {
+      padding: 0.85rem 0.5rem;
+    }
+
+    .nav-right {
+      gap: 0.75rem;
+    }
+
+    .nav-links {
+      display: none;
+    }
+
+    .lang-switch {
+      font-size: 0.72rem;
+      letter-spacing: 0.05em;
+    }
+
+    .hamburger {
+      display: flex;
+    }
+  }
+
 </style>
