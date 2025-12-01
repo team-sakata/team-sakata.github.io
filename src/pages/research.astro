@@ -52,7 +52,7 @@ researchFocus.sort((a, b) => a.data.order - b.data.order);
         {
           researchFocus.map((focus) => (
             <a
-              href={`/research/focus${focus.data.order}`}
+              href={`${import.meta.env.BASE_URL}/research/focus${focus.data.order}`}
               class="focus-card-link"
             >
               <div class="focus-card">

@@ -1,3 +1,7 @@
+---
+import { resolvePath } from "../utils/paths";
+---
+
 <section class="hero">
   <div class="hero-container">
     <div class="hero-content">
@@ -6,7 +10,10 @@
       </p>
     </div>
     <div class="hero-image">
-      <img src="/lab_guidelines_insight.png" alt="Lab Research Insight" />
+      <img
+        src={resolvePath("/lab_guidelines_insight.png")}
+        alt="Lab Research Insight"
+      />
     </div>
   </div>
 </section>

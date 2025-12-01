@@ -3,6 +3,7 @@ import Layout from "../layouts/Layout.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import { getCollection } from "astro:content";
+import { resolvePath } from "../utils/paths";
 
 const activity = await getCollection("activity");
 // Sort by date in descending order (newest first)
@@ -14,10 +15,9 @@ activity.sort(
 <Layout title="活動 | 坂田・森・浅谷・西本研究室">
     <Header />
 
-    <main>
+    <main class="main-content">
         <section class="page-header">
             <h1>活動</h1>
-            <p class="subtitle">Activity</p>
         </section>
 
         <section class="content-section">
@@ -25,12 +25,17 @@ activity.sort(
                 {
                     activity.map((item) => (
                         <a
-                            href={item.data.link || "#"}
+                            href={`${import.meta.env.BASE_URL}/activity/${item.id}`}
                             class="activity-card-link"
-                            target="_blank"
-                            rel="noopener noreferrer"
                         >
                             <div class="activity-card">
+                                {item.data.image && (
+                                    <img
+                                        src={resolvePath(item.data.image)}
+                                        alt={item.data.title}
+                                        class="activity-image"
+                                    />
+                                )}
                                 <div class="card-date">
                                     {item.data.date.replace(/-/g, ".")}
                                 </div>
@@ -48,27 +53,15 @@ activity.sort(
 </Layout>
 
 <style>
-    main {
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 8rem 2rem 4rem;
-    }
-
     .page-header {
         margin-bottom: 3rem;
-        text-align: center;
     }
 
     .page-header h1 {
-        font-size: 2rem;
+        font-size: 1.75rem;
         font-weight: 700;
         margin-bottom: 0.5rem;
-    }
-
-    .subtitle {
-        color: var(--accent);
-        font-family: var(--font-serif);
-        font-size: 1.1rem;
+        line-height: 1.4;
     }
 
     .content-section {
@@ -79,7 +72,6 @@ activity.sort(
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         gap: 1.5rem;
-        margin-top: 2rem;
     }
 
     .activity-card-link {
@@ -129,6 +121,15 @@ activity.sort(
         color: var(--text-secondary);
         line-height: 1.6;
         margin-bottom: 0;
+    }
+
+    .activity-image {
+        width: 100%;
+        height: 160px;
+        object-fit: cover;
+        border-radius: 6px;
+        margin-bottom: 1rem;
+        border: 1px solid var(--border);
     }
 
     @media (max-width: 768px) {

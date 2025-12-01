@@ -3,6 +3,7 @@ import Layout from "../../layouts/Layout.astro";
 import Header from "../../components/Header.astro";
 import Footer from "../../components/Footer.astro";
 import { getCollection } from "astro:content";
+import { resolvePath } from "../../utils/paths";
 
 export async function getStaticPaths() {
   const members = await getCollection("members");
@@ -27,7 +28,19 @@ const { member } = Astro.props;
   <main>
     <div class="member-profile">
       <div class="profile-header">
-        <div class="avatar-large">{member.avatar}</div>
+        <div class="avatar-large">
+          {
+            member.image ? (
+              <img
+                src={resolvePath(member.image)}
+                alt={member.name}
+                class="profile-image"
+              />
+            ) : (
+              member.avatar
+            )
+          }
+        </div>
         <div class="profile-info">
           <h1>{member.name}</h1>
           <p class="role">{member.role} / {member.roleEn}</p>
@@ -64,7 +77,7 @@ const { member } = Astro.props;
           }
         </div>
 
-        <a href="/" class="back-link">← ホームに戻る</a>
+        <a href={import.meta.env.BASE_URL} class="back-link">← ホームに戻る</a>
       </div>
     </div>
   </main>

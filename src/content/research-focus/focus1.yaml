@@ -2,3 +2,5 @@ title: "Quantifying progress in research topics across nations"
 description: "各国の研究者が出す論文群のリサーチトピックを定量的に時系列に比較することで、国レベル又は大学レベルでの研究トピックの総体的な進み/遅れ具合を観察しました。さらに、国別に研究トピックのタイムラグが生じるメカニズムについて、論文の共著ネットワーク上で研究トピックが伝播すると仮定し、研究者の共著ネットワークのCore-Periphery構造の影響を考察しました。"
 order: 1
 label: "Research"
+
+image: "/lab_guidelines_insight.png"

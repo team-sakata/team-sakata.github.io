@@ -3,6 +3,7 @@ import Layout from "../../layouts/Layout.astro";
 import Header from "../../components/Header.astro";
 import Footer from "../../components/Footer.astro";
 import { getCollection } from "astro:content";
+import { resolvePath } from "../../utils/paths";
 
 export async function getStaticPaths() {
     const researchFocus = await getCollection("research-focus");
@@ -30,6 +31,15 @@ const { focus } = Astro.props;
 
         <section class="content-section">
             <div class="research-detail">
+                {
+                    focus.data.image && (
+                        <img
+                            src={resolvePath(focus.data.image)}
+                            alt={focus.data.title}
+                            class="detail-image"
+                        />
+                    )
+                }
                 <p class="description">{focus.data.description}</p>
             </div>
         </section>
@@ -83,5 +93,13 @@ const { focus } = Astro.props;
         background: var(--bg-card);
         border-left: 3px solid var(--accent);
         border-radius: 4px;
+    }
+
+    .detail-image {
+        width: 100%;
+        max-height: 400px;
+        object-fit: cover;
+        border-radius: 8px;
+        border: 1px solid var(--border);
     }
 </style>

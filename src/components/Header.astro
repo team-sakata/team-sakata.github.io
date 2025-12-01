@@ -1,16 +1,18 @@
 <header>
   <nav>
-    <a href="/" class="logo">
+    <a href={import.meta.env.BASE_URL} class="logo">
       <span class="logo-text">Sakata Lab / 坂田・森・浅谷・西本研究室</span>
       <span class="logo-dept">東京大学工学系研究科技術経営戦略学専攻</span>
     </a>
     <ul class="nav-links">
-      <li><a href="/research">研究内容</a></li>
-      <li><a href="/members">メンバー</a></li>
-      <li><a href="/publications">論文リスト</a></li>
-      <li><a href="/activity">活動</a></li>
-      <li><a href="/news">ニュース</a></li>
-      <li><a href="/visit">採用/学生募集</a></li>
+      <li><a href={`${import.meta.env.BASE_URL}/research`}>研究内容</a></li>
+      <li><a href={`${import.meta.env.BASE_URL}/members`}>メンバー</a></li>
+      <li>
+        <a href={`${import.meta.env.BASE_URL}/publications`}>論文リスト</a>
+      </li>
+      <li><a href={`${import.meta.env.BASE_URL}/activity`}>活動</a></li>
+      <li><a href={`${import.meta.env.BASE_URL}/news`}>ニュース</a></li>
+      <li><a href={`${import.meta.env.BASE_URL}/visit`}>採用/学生募集</a></li>
     </ul>
     <button class="hamburger" aria-label="Menu">
       <span></span>
@@ -18,12 +20,12 @@
       <span></span>
     </button>
     <div class="mobile-menu">
-      <a href="/research">研究内容</a>
-      <a href="/members">メンバー</a>
-      <a href="/publications">論文リスト</a>
-      <a href="/activity">活動</a>
-      <a href="/news">ニュース</a>
-      <a href="/visit">採用/学生募集</a>
+      <a href={`${import.meta.env.BASE_URL}/research`}>研究内容</a>
+      <a href={`${import.meta.env.BASE_URL}/members`}>メンバー</a>
+      <a href={`${import.meta.env.BASE_URL}/publications`}>論文リスト</a>
+      <a href={`${import.meta.env.BASE_URL}/activity`}>活動</a>
+      <a href={`${import.meta.env.BASE_URL}/news`}>ニュース</a>
+      <a href={`${import.meta.env.BASE_URL}/visit`}>採用/学生募集</a>
     </div>
   </nav>
 
