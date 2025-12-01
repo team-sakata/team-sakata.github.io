@@ -3,31 +3,22 @@
 
 const CACHE_NAME = 'sklab-cache-v1';
 
-// Pages to cache immediately on install
+// Assets to cache (not pages, to avoid redirect issues)
 const PRECACHE_URLS = [
-  '/sklab_homepage/',
-  '/sklab_homepage/ja/',
-  '/sklab_homepage/en/',
-  '/sklab_homepage/ja/research',
-  '/sklab_homepage/ja/members',
-  '/sklab_homepage/ja/publications',
-  '/sklab_homepage/ja/activity',
-  '/sklab_homepage/ja/news',
-  '/sklab_homepage/ja/visit',
-  '/sklab_homepage/en/research',
-  '/sklab_homepage/en/members',
-  '/sklab_homepage/en/publications',
-  '/sklab_homepage/en/activity',
-  '/sklab_homepage/en/news',
-  '/sklab_homepage/en/visit',
   '/sklab_homepage/lab_guidelines_insight.webp',
+  '/sklab_homepage/images/members/sakata.webp',
+  '/sklab_homepage/images/members/mori.webp',
+  '/sklab_homepage/images/members/asatani.webp',
+  '/sklab_homepage/images/members/nishimoto.webp',
 ];
 
-// Install: Cache core pages
+// Install: Cache assets only
 self.addEventListener('install', (event) => {
   event.waitUntil(
     caches.open(CACHE_NAME).then((cache) => {
-      return cache.addAll(PRECACHE_URLS);
+      return cache.addAll(PRECACHE_URLS).catch(() => {
+        // Ignore errors for missing files
+      });
     })
   );
   self.skipWaiting();
@@ -47,40 +38,39 @@ self.addEventListener('activate', (event) => {
   self.clients.claim();
 });
 
-// Fetch: Stale-while-revalidate strategy
+// Fetch: Cache-first for assets, network-first for pages
 self.addEventListener('fetch', (event) => {
   // Only handle GET requests
   if (event.request.method !== 'GET') return;
 
-  // Only handle same-origin requests
   const url = new URL(event.request.url);
+  
+  // Only handle same-origin requests
   if (url.origin !== location.origin) return;
 
-  // Skip non-page requests (let browser handle assets normally)
-  const isPage = event.request.mode === 'navigate' || 
-                 event.request.destination === 'document' ||
-                 url.pathname.endsWith('/') ||
-                 !url.pathname.includes('.');
+  // Skip navigation requests entirely (let browser handle pages normally)
+  // This avoids Safari's redirect issues
+  if (event.request.mode === 'navigate') return;
 
-  if (!isPage) return;
+  // Only cache static assets (images, CSS, JS)
+  const isAsset = /\.(webp|png|jpg|jpeg|svg|css|js|woff2?)$/i.test(url.pathname);
+  if (!isAsset) return;
 
   event.respondWith(
-    caches.open(CACHE_NAME).then((cache) => {
-      return cache.match(event.request).then((cachedResponse) => {
-        // Fetch from network in background
-        const fetchPromise = fetch(event.request).then((networkResponse) => {
-          // Cache the new response
-          if (networkResponse.ok) {
-            cache.put(event.request, networkResponse.clone());
-          }
-          return networkResponse;
-        }).catch(() => {
-          // Network failed, return cached or offline page
-          return cachedResponse;
-        });
+    caches.match(event.request).then((cachedResponse) => {
+      if (cachedResponse) {
+        return cachedResponse;
+      }
 
-        // Return cached response immediately, or wait for network
-        return cachedResponse || fetchPromise;
+      return fetch(event.request).then((networkResponse) => {
+        // Cache successful responses
+        if (networkResponse.ok) {
+          const responseClone = networkResponse.clone();
+          caches.open(CACHE_NAME).then((cache) => {
+            cache.put(event.request, responseClone);
+          });
+        }
+        return networkResponse;
       });
     })
   );
