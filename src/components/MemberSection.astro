@@ -45,6 +45,8 @@ const getLocalized = (member: any, field: string) => {
                 src={resolvePath(member.image)}
                 alt={getLocalized(member, 'name')}
                 class="member-image"
+                loading="lazy"
+                decoding="async"
               />
             ) : (
               <div class="member-avatar">{member.avatar}</div>

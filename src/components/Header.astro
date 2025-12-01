@@ -34,7 +34,7 @@ const navItems = [
 
 <header>
   <nav>
-    <a href={buildLocalizedPath(currentLocale)} class="logo">
+    <a href={buildLocalizedPath(currentLocale)} class="logo" data-astro-prefetch>
 
       <span
       class="logo-text"
@@ -59,7 +59,7 @@ const navItems = [
       <ul class="nav-links">
         {navItems.map((item) => (
           <li>
-            <a href={buildLocalizedPath(currentLocale, item.path)}>
+            <a href={buildLocalizedPath(currentLocale, item.path)} data-astro-prefetch>
               {item.label[currentLocale]}
             </a>
           </li>
@@ -76,6 +76,7 @@ const navItems = [
             href={localeLinks.ja}
             aria-current={currentLocale === "ja" ? "page" : undefined}
             class:list={{ active: currentLocale === "ja" }}
+            data-astro-prefetch
             >JA</a
           >
           <span class="divider" aria-hidden="true">/</span>
@@ -83,6 +84,7 @@ const navItems = [
             href={localeLinks.en}
             aria-current={currentLocale === "en" ? "page" : undefined}
             class:list={{ active: currentLocale === "en" }}
+            data-astro-prefetch
             >EN</a
           >
         </div>
@@ -97,7 +99,7 @@ const navItems = [
     </div>
     <div class="mobile-menu">
       {navItems.map((item) => (
-        <a href={buildLocalizedPath(currentLocale, item.path)}>
+        <a href={buildLocalizedPath(currentLocale, item.path)} data-astro-prefetch>
           {item.label[currentLocale]}
         </a>
       ))}

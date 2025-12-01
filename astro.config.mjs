@@ -18,6 +18,11 @@ export default defineConfig({
             redirectToDefaultLocale: false,
         },
     },
+    prefetch: {
+        // Prefetch links on hover for faster navigation
+        prefetchAll: false,
+        defaultStrategy: 'hover',
+    },
     vite: {
         plugins: vitePlugins,
     },

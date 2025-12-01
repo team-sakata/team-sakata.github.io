@@ -172,6 +172,8 @@ researchFocus.sort((a, b) => a.data.order - b.data.order);
                       src={resolvePath(member.image || "")}
                       alt={isJa ? member.name : (member.nameEn || member.name)}
                       class="faculty-avatar"
+                      loading="lazy"
+                      decoding="async"
                     />
                     <div class="faculty-info">
                       <span class="faculty-name">{isJa ? member.name : (member.nameEn || member.name)}</span>
@@ -338,6 +340,8 @@ researchFocus.sort((a, b) => a.data.order - b.data.order);
                   src={resolvePath(item.image)}
                   alt={item.title}
                   class="focus-image"
+                  loading="lazy"
+                  decoding="async"
                 />
               )}
               <p class="line-clamp-3">{item.description}</p>

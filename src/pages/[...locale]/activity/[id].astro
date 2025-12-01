@@ -51,6 +51,8 @@ const listPath = buildLocalizedPath(locale, "activity");
                             src={resolvePath(activity.data.image)}
                             alt={activity.data.title}
                             class="detail-image"
+                            loading="lazy"
+                            decoding="async"
                         />
                     )
                 }

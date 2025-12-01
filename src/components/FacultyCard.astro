@@ -32,12 +32,13 @@ const displayDescription = locale === "en" ? (member.descriptionEn ?? member.des
 >
     <div class="faculty-card">
         <div class="faculty-image-container">
-            {
-                member.image ? (
+            {member.image ? (
                     <img
                         src={resolvePath(member.image)}
                         alt={member.name}
                         class="faculty-image"
+                        loading="lazy"
+                        decoding="async"
                     />
                 ) : (
                     <div class="faculty-avatar-placeholder">

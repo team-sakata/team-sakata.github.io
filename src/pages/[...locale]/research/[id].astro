@@ -60,6 +60,8 @@ const description = isJa
                         src={resolvePath(focus.data.image)}
                         alt={title}
                         class="detail-image"
+                        loading="lazy"
+                        decoding="async"
                     />
                 )}
                 <p class="description">{description}</p>

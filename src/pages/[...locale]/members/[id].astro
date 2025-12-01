@@ -67,6 +67,8 @@ const listPath = buildLocalizedPath(locale, "members");
                 src={resolvePath(member.image)}
                 alt={displayName}
                 class="profile-image"
+                loading="lazy"
+                decoding="async"
               />
             ) : (
               member.avatar
