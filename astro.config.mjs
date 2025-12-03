@@ -2,13 +2,13 @@
 import { defineConfig } from 'astro/config';
 import yaml from '@rollup/plugin-yaml';
 
-const ghBase = '/homepage';
+const ghBase = '/';
 const resolvedBase = process.env.ASTRO_BASE ?? ghBase;
 
 const vitePlugins = [yaml()];
 
 export default defineConfig({
-    site: 'https://asatani.github.io',
+    site: 'https://team-sakata.github.io',
     base: resolvedBase,
     i18n: {
         defaultLocale: 'ja',
