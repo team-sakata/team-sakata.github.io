@@ -3,7 +3,7 @@
  * This ensures assets work correctly when deployed to a subdirectory.
  * 
  * @param path The path to resolve (e.g., "/images/foo.jpg")
- * @returns The resolved path (e.g., "/sklab_homepage/images/foo.jpg")
+ * @returns The resolved path (e.g., "/homepage/images/foo.jpg")
  */
 export type Locale = 'ja' | 'en';
 

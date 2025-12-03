@@ -2,7 +2,7 @@
 import { defineConfig } from 'astro/config';
 import yaml from '@rollup/plugin-yaml';
 
-const ghBase = '/sklab_homepage';
+const ghBase = '/homepage';
 const resolvedBase = process.env.ASTRO_BASE ?? ghBase;
 
 const vitePlugins = [yaml()];

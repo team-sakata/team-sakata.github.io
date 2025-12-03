@@ -1,7 +1,7 @@
 #!/bin/bash
 set -e
 
-cd /var/www/sklab_homepage
+cd /var/www/homepage
 
 # 最新を取得
 git fetch origin main
