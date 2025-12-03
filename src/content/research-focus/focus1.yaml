@@ -7,6 +7,6 @@ description_en: "We quantitatively compared research topics across nations over 
 order: 1
 label: "Research"
 
-image: "/lab_guidelines_insight.webp"
+image: "/images/sample_avatar.avif"
 description_short: "各国の研究者が出す論文群のリサーチトピックを定量的に時系列に比較"
 description_short_en: "Quantitative time-series comparison of research topics across nations"

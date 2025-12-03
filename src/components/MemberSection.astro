@@ -104,9 +104,21 @@ const getLocalized = (member: any, field: string) => {
   }
 
   .members-list {
-    display: flex;
-    flex-direction: column;
-    gap: 0.6rem;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+  }
+
+  @media (max-width: 768px) {
+    .members-list {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 480px) {
+    .members-list {
+      grid-template-columns: 1fr;
+    }
   }
 
   .member {
