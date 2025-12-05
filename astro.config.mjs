@@ -1,5 +1,6 @@
 // @ts-check
 import { defineConfig } from 'astro/config';
+import sitemap from '@astrojs/sitemap';
 import yaml from '@rollup/plugin-yaml';
 
 const ghBase = '/';
@@ -10,6 +11,7 @@ const vitePlugins = [yaml()];
 export default defineConfig({
     site: 'https://www.sakatalab.t.u-tokyo.ac.jp',
     base: resolvedBase,
+    integrations: [sitemap()],
     i18n: {
         defaultLocale: 'ja',
         locales: ['ja', 'en'],
