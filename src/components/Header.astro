@@ -26,10 +26,16 @@ const navItems = [
   {
     key: "visit",
     path: "visit",
-    label: { ja: "採用/新入生へ", en: "Visit / Join" },
+    label: { ja: "採用/新入生へ", en: "Join" },
   },
 ];
----
+
+// 現在のパスから選択中のナビアイテムを判定
+const currentPath = Astro.url.pathname;
+const isActiveNav = (itemPath: string) => {
+  // パスが /ja/research や /en/research などの場合にマッチ
+  return currentPath.includes(`/${itemPath}`) || currentPath.includes(`/${itemPath}/`);
+};
 ---
 
 <header>
@@ -59,7 +65,11 @@ const navItems = [
       <ul class="nav-links">
         {navItems.map((item) => (
           <li>
-            <a href={buildLocalizedPath(currentLocale, item.path)} data-astro-prefetch>
+            <a 
+              href={buildLocalizedPath(currentLocale, item.path)} 
+              data-astro-prefetch
+              class:list={{ active: isActiveNav(item.path) }}
+            >
               {item.label[currentLocale]}
             </a>
           </li>
@@ -188,7 +198,7 @@ const navItems = [
 
   .nav-links {
     display: flex;
-    gap: 1rem;
+    gap: 0.1rem;
     list-style: none;
     margin: 0;
     padding: 0;
@@ -199,11 +209,25 @@ const navItems = [
     text-decoration: none;
     font-size: 0.9rem;
     font-weight: 400;
-    transition: color 0.2s;
+    transition: color 0.2s, background-color 0.2s, border-color 0.2s;
+    position: relative;
+    padding: 0.4rem 0.75rem 0.32rem;
+    border-radius: 999px;
+    border: 1.5px solid transparent;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1.15;
   }
 
   .nav-links a:hover {
     color: var(--accent);
+  }
+
+  /* アクティブなナビリンクをトラック型（ピル型）の枠で囲む */
+  .nav-links a.active {
+    color: var(--accent);
+    border-color: var(--accent);
   }
 
   .header-actions {
