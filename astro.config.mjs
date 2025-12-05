@@ -8,7 +8,7 @@ const resolvedBase = process.env.ASTRO_BASE ?? ghBase;
 const vitePlugins = [yaml()];
 
 export default defineConfig({
-    site: 'https://sakatalab.t.u-tokyo.ac.jp',
+    site: 'https://www.sakatalab.t.u-tokyo.ac.jp',
     base: resolvedBase,
     i18n: {
         defaultLocale: 'ja',
