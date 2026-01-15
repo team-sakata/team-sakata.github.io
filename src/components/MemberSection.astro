@@ -9,6 +9,7 @@ interface Props {
 }
 
 const { section, isFirst = false } = Astro.props;
+const isScrollable = section.id === "alumni";
 const locale = detectLocale(Astro.url.pathname);
 const getMemberLink = (id?: string) => (id ? buildLocalizedPath(locale, `members/${id}`) : undefined);
 const sectionTitle = locale === "en" ? section.data.titleEn ?? section.data.title : section.data.title;
@@ -37,7 +38,7 @@ const getLocalized = (member: any, field: string) => {
         ))}
       </div>
     ) : (
-      <div class="members-list">
+      <div class={`members-list ${isScrollable ? "scrollable" : ""}`}>
         {section.data.items.map((member: any) => (
           <div class="member">
             {member.image ? (
@@ -202,4 +203,21 @@ const getLocalized = (member: any, field: string) => {
     gap: 1.5rem;
     margin-bottom: 2rem;
   }
+  /* ▼▼▼ 追加 ▼▼▼ */
+  /* 卒業生リスト用のスクロール設定 */
+  .members-list.scrollable {
+    max-height: 500px; /* ここで高さを調整してください */
+    overflow-y: auto;
+    
+    /* デザイン調整（任意） */
+    padding: 1rem;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    /*background: var(--bg-secondary);  少し背景色を変えると枠がわかりやすくなります */
+    
+    /* グリッドの表示崩れを防ぐため念のためブロック要素的に扱う */
+    display: grid;
+    align-content: start; 
+  }
+  /* ▲▲▲ 追加 ▲▲▲ */
 </style>
