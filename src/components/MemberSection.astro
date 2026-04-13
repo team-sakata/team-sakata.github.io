@@ -16,6 +16,7 @@ const sectionTitle = locale === "en" ? section.data.titleEn ?? section.data.titl
 const labels = {
   researchAreas: locale === "en" ? "Research areas:" : "研究分野:",
   courses: locale === "en" ? "Courses:" : "担当講義:",
+  awards: locale === "en" ? "Selected student awards:" : "主な学生表彰:",
 };
 
 // Helper function to get localized field
@@ -80,6 +81,16 @@ const getLocalized = (member: any, field: string) => {
               {(member.courses || member.coursesEn) && (
                 <div class="member-meta">
                   <span class="meta-label">{labels.courses}</span> {getLocalized(member, 'courses')}
+                </div>
+              )}
+              {(member.awards || member.awardsEn) && (
+                <div class="member-meta">
+                  <span class="meta-label">{labels.awards}</span>
+                  <ul class="member-awards">
+                    {getLocalized(member, 'awards').map((award: string) => (
+                      <li>{award}</li>
+                    ))}
+                  </ul>
                 </div>
               )}
             </div>
@@ -203,6 +214,16 @@ const getLocalized = (member: any, field: string) => {
     gap: 1.5rem;
     margin-bottom: 2rem;
   }
+
+  .member-awards {
+    margin: 0.2rem 0 0;
+    padding-left: 1rem;
+  }
+
+  .member-awards li + li {
+    margin-top: 0.15rem;
+  }
+
   /* ▼▼▼ 追加 ▼▼▼ */
   /* 卒業生リスト用のスクロール設定 */
   .members-list.scrollable {

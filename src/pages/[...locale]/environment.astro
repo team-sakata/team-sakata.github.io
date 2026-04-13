@@ -18,8 +18,8 @@ const isJa = locale === "ja";
 <Layout
   title={
     isJa
-      ? "新入生の方へ | 坂田・森・浅谷・西本研究室"
-      : "Join | Sakata / Mori / Asatani / Nishimoto Lab"
+      ? "新入生の方へ | 坂田・森・浅谷研究室"
+      : "Join | Sakata / Mori / Asatani Lab"
   }
   isSubpage
 >
@@ -29,7 +29,7 @@ const isJa = locale === "ja";
     {isJa ? (
       <>
         <p>
-          坂田教授、森教授（兼担、本務は情報基盤センター）、浅谷特任准教授、西本特任講師の４名で共同で指導を行っています。どの研究室に入っても同様な指導が受けられます。
+          坂田教授、森教授（兼担、本務は情報基盤センター）、浅谷特任准教授の3名で共同で指導を行っています。どの研究室に入っても同様な指導が受けられます。
         </p>
         <p>
           主な技法としては、生成AI、LLMエージェントを含めた自然言語処理、深層学習、複雑系ネットワーク科学を扱っています。また、データとしては、大規模な科学技術文献DB、特許DB、国際機関群の政策文書DB、M&A等の企業情報DB、Eコマース上のレビュー文、関西一円の乗降客情報など。
@@ -44,9 +44,9 @@ const isJa = locale === "ja";
     ) : (
       <>
         <p>
-          Professors Sakata, Mori (joint appointment), Associate Professor
-          Asatani, and Lecturer Nishimoto supervise all students together, so
-          you receive the same guidance regardless of the advisor assignment.
+          Professors Sakata, Mori (joint appointment), and Project Associate
+          Professor Asatani supervise all students together, so you receive the
+          same guidance regardless of the advisor assignment.
         </p>
         <p>
           We work with natural language processing including generative AI and
@@ -128,7 +128,7 @@ const isJa = locale === "ja";
           研究室見学にあたっては、坂田研究室の日常的なイベントである「研究会」や「輪読会」の見学を推奨しています。
         </p>
         <p>
-          研究会では、毎月2度、火曜日2限 (10:25-12:10)
+          研究会では、毎月2度、月曜日3限 (14:55-16:40)
           に開かれ、毎回5名ほどの学生が、研究の進捗を発表します。また、全学生が聴講しますので、終了後に学生室
           (202) で学生の率直な話を聞いてみるのもお勧めです。
         </p>
@@ -144,7 +144,7 @@ const isJa = locale === "ja";
           visiting the lab.
         </p>
         <p>
-          The seminar meets twice a month on Tuesdays (period 2, 10:25-12:10).
+          The seminar meets twice a month on Mondays (period 3, 14:55-16:40).
           Around ten students present their progress while all members attend,
           so you can chat with them afterward in Room 202.
         </p>
@@ -161,17 +161,15 @@ const isJa = locale === "ja";
     <ul>
       {isJa ? (
         <>
-          <li>Computational Social Science (計算社会科学; CSS) (火曜日3限)</li>
-          <li>Science of Science (水曜日2限)</li>
-          <li>Natural Language Processing (NLP) (月曜日3限)</li>
-          <li>Economics (月曜日2限)</li>
+          <li>Computational Social Science (計算社会科学; CSS) (月曜日2限)</li>
+          <li>Science of Science (月曜日3限)</li>
+          <li>Natural Language Processing (NLP) (月曜日4限)</li>
         </>
       ) : (
         <>
-          <li>Computational Social Science (Tue period 3)</li>
-          <li>Science of Science (Wed period 2)</li>
-          <li>Natural Language Processing (Mon period 3)</li>
-          <li>Economics (Mon period 3)</li>
+          <li>Computational Social Science (Mon period 2)</li>
+          <li>Science of Science (Mon period 3)</li>
+          <li>Natural Language Processing (NLP) (Mon period 4)</li>
         </>
       )}
     </ul>

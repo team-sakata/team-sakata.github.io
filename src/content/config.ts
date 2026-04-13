@@ -11,6 +11,8 @@ const membersCollection = defineCollection({
             nameEn: z.string().optional(),
             role: z.string().optional(),
             roleEn: z.string().optional(),
+            awards: z.array(z.string()).optional(),
+            awardsEn: z.array(z.string()).optional(),
             id: z.string().optional(), // For linking to member pages
             image: z.string().optional(),
             description: z.string().optional(),
