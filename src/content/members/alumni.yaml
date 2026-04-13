@@ -1,6 +1,76 @@
 title: "卒業生"
 titleEn: "OB・OG Students"
 items:
+  - avatar: "OB"
+    name: "東出 紀之"
+    nameEn: "Noriyuki Higashide"
+    role: "令和8年3月博士号取得"
+    roleEn: "Ph.D. obtained, March 2026"
+    awards:
+      - "技術経営戦略学 専攻長賞（博士：2025年度）"
+    awardsEn:
+      - "Dean's Award, Department of Technology Management for Innovation (Ph.D., 2025)"
+
+  - avatar: "OB"
+    name: "岸本 駿"
+    nameEn: "Shun Kishimoto"
+    role: "令和8年3月 TMI専攻卒業"
+    roleEn: "Graduated from Dept. of TMI, March 2026"
+    awards:
+      - "ビジネスモデル学会賞（修士：2025年度）"
+      - "優秀卒業研究賞（2023年度）"
+    awardsEn:
+      - "Business Model Society Award (Master's, 2025)"
+      - "Excellent Undergraduate Research Award (2023)"
+
+  - avatar: "OB"
+    name: "種谷 直哉"
+    nameEn: "Naoya Tanetani"
+    role: "令和8年3月 TMI専攻卒業"
+    roleEn: "Graduated from Dept. of TMI, March 2026"
+
+  - avatar: "OB"
+    name: "原田 啓矢"
+    nameEn: "Hiroya Harada"
+    role: "令和8年3月 TMI専攻卒業"
+    roleEn: "Graduated from Dept. of TMI, March 2026"
+
+  - avatar: "OG"
+    name: "尾藤 実伽子"
+    nameEn: "Mikako Bito"
+    role: "令和8年3月 TMI専攻卒業"
+    roleEn: "Graduated from Dept. of TMI, March 2026"
+
+  - avatar: "OB"
+    name: "李 兆祺"
+    nameEn: "Zhaoqi Li"
+    role: "令和8年3月 TMI専攻卒業"
+    roleEn: "Graduated from Dept. of TMI, March 2026"
+
+  - avatar: "OB"
+    name: "久保 春喜"
+    nameEn: "Harunobu Kubo"
+    role: "令和8年3月 TMI専攻卒業"
+    roleEn: "Graduated from Dept. of TMI, March 2026"
+
+  - avatar: "OB"
+    name: "吉本 匠"
+    nameEn: "Takumi Yoshimoto"
+    role: "令和8年3月 TMI専攻卒業"
+    roleEn: "Graduated from Dept. of TMI, March 2026"
+
+  - avatar: "OG"
+    name: "李 佳穎 (Chia Yiing Lee)"
+    nameEn: "Chia Yiing Lee"
+    role: "令和7年9月 TMI専攻卒業"
+    roleEn: "Graduated from Dept. of TMI, September 2025"
+
+  - avatar: "Ex"
+    name: "PONCET LUCAS"
+    nameEn: "Lucas Poncet"
+    role: "交換留学生"
+    roleEn: "Exchange Student"
+
   - avatar: "OG"
     name: "岩田 由理恵"
     nameEn: "Yurie Iwata"
@@ -16,8 +86,12 @@ items:
   - avatar: "OB"
     name: "友清 雄太"
     nameEn: "Yuta Tomokiyo"
-    role: "令和7年3月 TMI専攻卒業 令和6年度専攻長賞受賞"
-    roleEn: "Graduated from Dept. of TMI, March 2025 (Received Dean's Award 2024)"
+    role: "令和7年3月 TMI専攻卒業"
+    roleEn: "Graduated from Dept. of TMI, March 2025"
+    awards:
+      - "技術経営戦略学 専攻長賞（修士：2024年度）"
+    awardsEn:
+      - "Dean's Award, Department of Technology Management for Innovation (Master's, 2024)"
 
   - avatar: "OB"
     name: "中村 亮太"
@@ -58,8 +132,14 @@ items:
   - avatar: "OB"
     name: "三浦 崇寛"
     nameEn: "Takahiro Miura"
-    role: "令和5年3月 TMI専攻卒業: 日本学術振興会特別研究員DC2, 令和2年度 工学研究科長賞受賞, 令和5年度 工学研究科長賞受賞"
-    roleEn: "Graduated from Dept. of TMI, March 2023 (JSPS Research Fellow DC2, Received Dean's Award of Engineering 2020 & 2023)"
+    role: "令和5年3月 TMI専攻卒業: 日本学術振興会特別研究員DC2"
+    roleEn: "Graduated from Dept. of TMI, March 2023 (JSPS Research Fellow DC2)"
+    awards:
+      - "工学系研究科長賞（修士：2020年度）"
+      - "工学系研究科長賞（博士：2023年度）"
+    awardsEn:
+      - "Dean's Award, Graduate School of Engineering (Master's, 2020)"
+      - "Dean's Award, Graduate School of Engineering (Ph.D., 2023)"
 
   - avatar: "OB"
     name: "浅野 聖也"
@@ -84,6 +164,10 @@ items:
     nameEn: "Daiki Miura"
     role: "令和5年3月 TMI専攻卒業"
     roleEn: "Graduated from Dept. of TMI, March 2023"
+    awards:
+      - "工学系研究科長賞（修士：2023年度）"
+    awardsEn:
+      - "Dean's Award, Graduate School of Engineering (Master's, 2023)"
 
   - avatar: "OB"
     name: "喩 琢成"
@@ -118,8 +202,12 @@ items:
   - avatar: "OG"
     name: "宮本 望"
     nameEn: "Nozomi Miyamoto"
-    role: "令和5年3月TMI専攻卒業, 令和4年度専攻長賞(学秀)受賞, 言語処理学会優秀賞受賞"
-    roleEn: "Graduated from Dept. of TMI, March 2023 (Received Dean's Award 2022, NLP Young Researcher Award)"
+    role: "令和5年3月TMI専攻卒業, 言語処理学会優秀賞受賞"
+    roleEn: "Graduated from Dept. of TMI, March 2023 (NLP Young Researcher Award)"
+    awards:
+      - "技術経営戦略学 専攻長賞（修士：2022年度）"
+    awardsEn:
+      - "Dean's Award, Department of Technology Management for Innovation (Master's, 2022)"
 
   - avatar: "OB"
     name: "宮崎 佳祐"
@@ -142,8 +230,14 @@ items:
   - avatar: "OG"
     name: "鎌田 麻衣子"
     nameEn: "Maiko Kamada"
-    role: "令和4年3月TMI専攻卒業, MDSデータサイエンスコンテスト2018優勝チーム・優秀卒業論文賞受賞，令和3年度専攻長賞受賞"
-    roleEn: "Graduated from Dept. of TMI, March 2022 (MDS Data Science Contest 2018 Winner, Best Thesis Award, Dean's Award 2021)"
+    role: "令和4年3月TMI専攻卒業, MDSデータサイエンスコンテスト2018優勝チーム受賞"
+    roleEn: "Graduated from Dept. of TMI, March 2022 (MDS Data Science Contest 2018 Winner)"
+    awards:
+      - "技術経営戦略学 専攻長賞（修士：2021年度）"
+      - "優秀卒業研究賞（2019年度）"
+    awardsEn:
+      - "Dean's Award, Department of Technology Management for Innovation (Master's, 2021)"
+      - "Excellent Undergraduate Research Award (2019)"
 
   - avatar: "OB"
     name: "佐藤 尚弥"
@@ -178,8 +272,12 @@ items:
   - avatar: "OB"
     name: "磯沼 大"
     nameEn: "Masaru Isonuma"
-    role: "令和3年9月博士号取得: 日本学術振興会特別研究員DC2, 令和3年度研究科長賞受賞"
-    roleEn: "Ph.D. obtained, September 2021 (JSPS Research Fellow DC2, Received Dean's Award 2021)"
+    role: "令和3年9月博士号取得: 日本学術振興会特別研究員DC2"
+    roleEn: "Ph.D. obtained, September 2021 (JSPS Research Fellow DC2)"
+    awards:
+      - "工学系研究科長賞（博士：2021年度）"
+    awardsEn:
+      - "Dean's Award, Graduate School of Engineering (Ph.D., 2021)"
 
   - avatar: "OG"
     name: "藤末 智夏"
@@ -262,8 +360,12 @@ items:
   - avatar: "OB"
     name: "古瀬 利博"
     nameEn: "Toshihiro Kose"
-    role: "令和2年3月博士号取得: 工学研究科長賞受賞"
-    roleEn: "Ph.D. obtained, March 2020 (Received Dean's Award of Engineering)"
+    role: "令和2年3月博士号取得"
+    roleEn: "Ph.D. obtained, March 2020"
+    awards:
+      - "工学系研究科長賞（博士：2019年度）"
+    awardsEn:
+      - "Dean's Award, Graduate School of Engineering (Ph.D., 2019)"
 
   - avatar: "OB"
     name: "松田 貴成"
@@ -304,8 +406,14 @@ items:
   - avatar: "OG"
     name: "中元 雪絵"
     nameEn: "Yukie Nakamoto"
-    role: "令和2年3月TMI専攻卒業: 令和2年度研究科長賞受賞 平成30年3月:日本機械学会畠山賞受賞"
-    roleEn: "Graduated from Dept. of TMI, March 2020 (Received Dean's Award 2020, JSME Hatakeyama Award 2018)"
+    role: "令和2年3月TMI専攻卒業"
+    roleEn: "Graduated from Dept. of TMI, March 2020"
+    awards:
+      - "工学系研究科長賞（修士：2019年度）"
+      - "日本機械学会畠山賞（2017年度）"
+    awardsEn:
+      - "Dean's Award, Graduate School of Engineering (Master's, 2019)"
+      - "JSME Hatakeyama Award (2017)"
 
   - avatar: "OB"
     name: "李 越"
@@ -646,6 +754,10 @@ items:
   - avatar: "OB"
     name: "杉本 浩司"
     nameEn: "Koji Sugimoto"
-    role: "平成23年3月卒業 平成22年度研究科長賞受賞"
-    roleEn: "Graduated March 2011 (Received Dean's Award 2010)"
+    role: "平成23年3月卒業"
+    roleEn: "Graduated March 2011"
+    awards:
+      - "工学系研究科長賞（修士：2010年度）"
+    awardsEn:
+      - "Dean's Award, Graduate School of Engineering (Master's, 2010)"
 order: 6
