@@ -62,15 +62,6 @@ cd team-sakata.github.io
 npm install
 ```
 
-## コマンド一覧
-
-| コマンド | 説明 |
-|:---------|:-----|
-| `npm run dev` | ローカル開発サーバー起動（`localhost:4321`） |
-| `npm run build` | ビルド（`dist/` に出力） |
-| `npm run preview` | ビルド結果をローカルでプレビュー |
-| `npm run deploy` | **ビルド＋本番デプロイ（gh-pages へ push）** |
-
 ## 本番デプロイ手順（コピペ用）
 
 ```bash
