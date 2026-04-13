@@ -75,7 +75,7 @@ items:
 
   - avatar: "OB"
     name: "松澤 駿也"
-    nameEn: "Shunya Matsuzawa"
+    nameEn: "Takaya Matsuzawa"
     role: "令和5年3月 TMI専攻卒業"
     roleEn: "Graduated from Dept. of TMI, March 2023"
 
@@ -111,7 +111,7 @@ items:
 
   - avatar: "OB"
     name: "三戸 大輝"
-    nameEn: "Daiki Mito"
+    nameEn: "Taiki Mito"
     role: "令和5年3月TMI専攻卒業"
     roleEn: "Graduated from Dept. of TMI, March 2023"
 
@@ -147,7 +147,7 @@ items:
 
   - avatar: "OB"
     name: "佐藤 尚弥"
-    nameEn: "Naoya Sato"
+    nameEn: "Naomi Sato"
     role: "令和4年3月TMI専攻卒業"
     roleEn: "Graduated from Dept. of TMI, March 2022"
 
@@ -243,7 +243,7 @@ items:
 
   - avatar: "OG"
     name: "瀬川 友香"
-    nameEn: "Yuka Segawa"
+    nameEn: "Tomoka Segawa"
     role: "令和3年3月システム創成学科卒業"
     roleEn: "Graduated from Dept. of Systems Innovation, March 2021"
 
@@ -261,7 +261,7 @@ items:
 
   - avatar: "OB"
     name: "古瀬 利博"
-    nameEn: "Toshihiro Furuse"
+    nameEn: "Toshihiro Kose"
     role: "令和2年3月博士号取得: 工学研究科長賞受賞"
     roleEn: "Ph.D. obtained, March 2020 (Received Dean's Award of Engineering)"
 
@@ -327,7 +327,7 @@ items:
 
   - avatar: "OB"
     name: "今給黎 成彬"
-    nameEn: "Nariaki Imakiire"
+    nameEn: "Shigeaki Imakiire"
     role: "平成31年3月TMI専攻卒業"
     roleEn: "Graduated from Dept. of TMI, March 2019"
 
@@ -345,7 +345,7 @@ items:
 
   - avatar: "OB"
     name: "吉岡 龍弥"
-    nameEn: "Tatsuya Yoshioka"
+    nameEn: "Ryuya Yoshioka"
     role: "平成31年3月TMI専攻卒業"
     roleEn: "Graduated from Dept. of TMI, March 2019"
 
@@ -381,7 +381,7 @@ items:
 
   - avatar: "OB"
     name: "山本 瑛伝"
-    nameEn: "Eiden Yamamoto"
+    nameEn: "Eden Yamamoto"
     role: "平成30年3月卒業"
     roleEn: "Graduated March 2018"
 
@@ -483,7 +483,7 @@ items:
 
   - avatar: "OB"
     name: "丸井 淳己"
-    nameEn: "Atsuki Marui"
+    nameEn: "Junki Marui"
     role: "平成28年3月卒業 博士号取得"
     roleEn: "Ph.D. obtained, March 2016"
 
