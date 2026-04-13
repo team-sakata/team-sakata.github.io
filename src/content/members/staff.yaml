@@ -23,6 +23,6 @@ items:
     role: "工学系研究科客員研究員、国立情報学研究所特任助教"
     roleEn: "Visiting Researcher, Graduate School of Engineering / Project Assistant Professor, National Institute of Informatics"
     # image: "/images/sample_avatar.svg"
-    description: "大規模言語モデルを中心に、機械学習・自然言語処理に関する研究開発を行っています。"
+      description: "大規模言語モデルを中心に、機械学習・自然言語処理に関する研究開発を行っています。"
     descriptionEn: "Working on research in machine learning and natural language processing, particularly in the field of Large Language Models."
 order: 1.5
