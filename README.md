@@ -74,20 +74,27 @@ npm install
 ## 本番デプロイ手順（コピペ用）
 
 ```bash
-# 1. main ブランチにいることを確認
-git checkout main
-
-# 2. 最新の変更を pull
-git pull origin main
-
-# 3. パッケージを最新化（必要に応じて）
-npm install
-
-# 4. ビルド＆デプロイ（これだけでOK）
 npm run deploy
 ```
 
-デプロイ後、1〜2分で https://team-sakata.github.io/ に反映されます。
+これだけで本番に反映されます（1〜2分後に https://team-sakata.github.io/ で確認）。
+
+### `npm run deploy` が裏でやっていること
+
+```
+npm run deploy
+  │
+  ├─ 1. npm run predeploy（自動実行）
+  │     └─ GITHUB_PAGES=true npm run build
+  │           └─ Astro が src/ 以下をコンパイルし、dist/ に HTML/CSS/JS を生成
+  │
+  └─ 2. gh-pages -d dist
+        └─ dist/ の中身を gh-pages ブランチに commit & push
+              └─ GitHub Pages が自動検知して本番サーバーに配信
+```
+
+> **注意**: `main` ブランチで作業していることを確認してから実行してください。
+> 初回や久しぶりの場合は `npm install` を先に実行してください。
 
 ## コンテンツの編集
 
