@@ -28,6 +28,10 @@ items:
     nameEn: "Naoya Tanetani"
     role: "令和8年3月 TMI専攻卒業"
     roleEn: "Graduated from Dept. of TMI, March 2026"
+    awards:
+      - "計算社会学会 石井晃受賞"
+    awardsEn:
+      - "Ishii Akira Award, Computational Sociology Society"
 
   - avatar: "OB"
     name: "原田 啓矢"
