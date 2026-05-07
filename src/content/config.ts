@@ -44,6 +44,7 @@ const publicationsCollection = defineCollection({
         title: z.string(),
         authors: z.string(),
         venue: z.string(),
+        link: z.string().optional(),
         hidden: z.boolean().default(false),
         year: z.string().optional(),
         category: z.enum(['preprint', 'journal', 'conference', 'review', 'invited_lecture']).optional(),

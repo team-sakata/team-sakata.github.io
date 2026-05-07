@@ -4,6 +4,7 @@ interface Props {
     title: string;
     authors: string;
     venue: string;
+    link?: string;
     hidden: boolean;
     year?: string;
   };
@@ -13,7 +14,15 @@ const { pub } = Astro.props;
 ---
 
 <div class:list={["pub-item", { hidden: pub.hidden }]}>
-  <div class="pub-title">{pub.title}</div>
+  <div class="pub-title">
+    {pub.link ? (
+      <a href={pub.link} target="_blank" rel="noopener noreferrer" class="pub-link">
+        {pub.title}
+      </a>
+    ) : (
+      pub.title
+    )}
+  </div>
   <div class="pub-meta">
     {pub.authors} · <span class="pub-venue"
       >{pub.venue} {pub.year && `(${pub.year})`}</span>
@@ -41,6 +50,17 @@ const { pub } = Astro.props;
     color: var(--text-primary);
     margin-bottom: 0.3rem;
     line-height: 1.5;
+  }
+
+  .pub-link {
+    color: inherit;
+    text-decoration: underline;
+    text-decoration-color: var(--accent);
+    text-underline-offset: 2px;
+  }
+
+  .pub-link:hover {
+    color: var(--accent);
   }
 
   .pub-meta {
