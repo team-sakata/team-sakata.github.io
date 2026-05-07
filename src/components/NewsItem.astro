@@ -10,6 +10,7 @@ interface Props {
 }
 
 const { news } = Astro.props;
+const isExternalLink = !!news.link && /^https?:\/\//.test(news.link);
 ---
 
 <div class="news-item">
@@ -19,8 +20,8 @@ const { news } = Astro.props;
       news.link ? (
         <a
           href={news.link}
-          target="_blank"
-          rel="noopener noreferrer"
+          target={isExternalLink ? "_blank" : undefined}
+          rel={isExternalLink ? "noopener noreferrer" : undefined}
           class="news-link"
         >
           {news.text}

@@ -81,6 +81,7 @@ const activityCollection = defineCollection({
         description_short: z.string().optional(),
         description_short_en: z.string().optional(),
         image: z.string().optional(),
+        images: z.array(z.string()).optional(),
         link: z.string().optional(),
     }),
 });

@@ -19,9 +19,13 @@ items:
   - avatar: "D2"
     name: "盧 慧敏"
     nameEn: "Huimin Lu"
+    role: "日本学術振興会特別研究員DC2"
+    roleEn: "JSPS Research Fellow (DC2)"
     awards:
+      - "言語処理学会年次大会 優秀賞・Elyza賞・SB Intuitions賞 三賞同時受賞（2025年度）"
       - "NEDO Entrepreneurs Program (NEP) VC賞（2025年度）"
     awardsEn:
+      - "NLP Annual Meeting: Outstanding Award, Elyza Award, and SB Intuitions Award (2025)"
       - "NEDO Entrepreneurs Program (NEP) VC Award (2025)"
   - avatar: "D2"
     name: "佐藤 圭吾"

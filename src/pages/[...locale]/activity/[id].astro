@@ -46,7 +46,19 @@ const listPath = buildLocalizedPath(locale, "activity");
         <section class="content-section">
             <div class="activity-detail">
                 {
-                    activity.data.image && (
+                    activity.data.images && activity.data.images.length > 0 ? (
+                        <div class="detail-gallery">
+                            {activity.data.images.map((imagePath: string, index: number) => (
+                                <img
+                                    src={resolvePath(imagePath)}
+                                    alt={`${activity.data.title} ${index + 1}`}
+                                    class="detail-image detail-gallery-image"
+                                    loading="lazy"
+                                    decoding="async"
+                                />
+                            ))}
+                        </div>
+                    ) : activity.data.image && (
                         <img
                             src={resolvePath(activity.data.image)}
                             alt={activity.data.title}
@@ -141,6 +153,19 @@ const listPath = buildLocalizedPath(locale, "activity");
         border: 1px solid var(--border);
     }
 
+    .detail-gallery {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 1rem;
+    }
+
+    .detail-gallery-image {
+        height: 260px;
+        max-height: none;
+        object-fit: contain;
+        width: 100%;
+    }
+
     .external-link-container {
         margin-top: 1rem;
     }
@@ -155,5 +180,17 @@ const listPath = buildLocalizedPath(locale, "activity");
 
     .external-link:hover {
         transform: translateX(4px);
+    }
+
+    @media (max-width: 768px) {
+        .detail-gallery {
+            grid-template-columns: 1fr;
+        }
+
+        .detail-gallery-image {
+            height: 220px;
+            object-fit: contain;
+            width: 100%;
+        }
     }
 </style>
