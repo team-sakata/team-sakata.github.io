@@ -13,6 +13,8 @@ items:
   - avatar: "D3"
     name: "三浦 千哲"
     nameEn: "Chiaki Miura"
+    awards:
+      - "2024 年度 戦略的創造研究推進事業（ACT-X）採択"
   - avatar: "D3"
     name: "Rikuei Kaku"
     nameEn: "Rikuei Kaku"
