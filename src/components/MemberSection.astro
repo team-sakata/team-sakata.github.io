@@ -17,6 +17,7 @@ const labels = {
   researchAreas: locale === "en" ? "Research areas:" : "研究分野:",
   courses: locale === "en" ? "Courses:" : "担当講義:",
   awards: locale === "en" ? "Selected student awards:" : "主な学生表彰:",
+  grants: locale === "en" ? "Grants Awarded:" : "助成金採択:",
 };
 
 // Helper function to get localized field
@@ -89,6 +90,16 @@ const getLocalized = (member: any, field: string) => {
                   <ul class="member-awards">
                     {getLocalized(member, 'awards').map((award: string) => (
                       <li>{award}</li>
+                    ))}
+                  </ul>
+                </div>
+              )}
+              {(member.grants || member.grantsEn) && (
+                <div class="member-meta">
+                  <span class="meta-label">{labels.grants}</span>
+                  <ul class="member-awards">
+                    {getLocalized(member, 'grants').map((grant: string) => (
+                      <li>{grant}</li>
                     ))}
                   </ul>
                 </div>

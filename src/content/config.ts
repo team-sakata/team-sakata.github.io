@@ -13,6 +13,8 @@ const membersCollection = defineCollection({
             roleEn: z.string().optional(),
             awards: z.array(z.string()).optional(),
             awardsEn: z.array(z.string()).optional(),
+            grants: z.array(z.string()).optional(),
+            grantsEn: z.array(z.string()).optional(),
             id: z.string().optional(), // For linking to member pages
             image: z.string().optional(),
             description: z.string().optional(),
