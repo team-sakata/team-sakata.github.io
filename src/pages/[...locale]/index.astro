@@ -24,6 +24,7 @@ const publications = await getPublications();
 import news from "../../data/news.yaml";
 import { resolvePath, buildLocalizedPath } from "../../utils/paths";
 import type { Locale } from "../../utils/paths";
+import { parseInlineLinks } from "../../utils/richText";
 
 const locale = (Astro.params.locale || "ja") as Locale;
 const isJa = locale === "ja";
@@ -133,18 +134,22 @@ researchFocus.sort((a, b) => a.data.order - b.data.order);
             .map((item: { date: string; text: string; link?: string }) => (
               <div class="news-preview-item">
                 <span class="date">{item.date}</span>
-                {item.link ? (
-                  <a
-                    href={item.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="text link"
-                  >
-                    {item.text}
-                  </a>
-                ) : (
-                  <span class="text">{item.text}</span>
-                )}
+                <span class="text">
+                  {parseInlineLinks(item.text).map((segment) =>
+                    segment.type === "link" ? (
+                      <a
+                        href={segment.href}
+                        target={segment.external ? "_blank" : undefined}
+                        rel={segment.external ? "noopener noreferrer" : undefined}
+                        class="link"
+                      >
+                        {segment.value}
+                      </a>
+                    ) : (
+                      segment.value
+                    ),
+                  )}
+                </span>
               </div>
             ))
         }
@@ -497,14 +502,14 @@ researchFocus.sort((a, b) => a.data.order - b.data.order);
     white-space: nowrap;
   }
 
-  .news-preview-item .text.link {
+  .news-preview-item .text .link {
     text-decoration: underline;
     text-decoration-color: var(--accent);
     text-underline-offset: 2px;
     color: inherit;
   }
 
-  .news-preview-item .text.link:hover {
+  .news-preview-item .text .link:hover {
     color: var(--accent);
   }
 

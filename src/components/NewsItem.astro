@@ -1,5 +1,5 @@
 ---
-import type { CollectionEntry } from "astro:content";
+import { parseInlineLinks } from "../utils/richText";
 
 interface Props {
   news: {
@@ -10,24 +10,26 @@ interface Props {
 }
 
 const { news } = Astro.props;
-const isExternalLink = !!news.link && /^https?:\/\//.test(news.link);
+const segments = parseInlineLinks(news.text);
 ---
 
 <div class="news-item">
   <div class="news-date">{news.date}</div>
   <div class="news-text">
     {
-      news.link ? (
-        <a
-          href={news.link}
-          target={isExternalLink ? "_blank" : undefined}
-          rel={isExternalLink ? "noopener noreferrer" : undefined}
-          class="news-link"
-        >
-          {news.text}
-        </a>
-      ) : (
-        news.text
+      segments.map((segment) =>
+        segment.type === "link" ? (
+          <a
+            href={segment.href}
+            target={segment.external ? "_blank" : undefined}
+            rel={segment.external ? "noopener noreferrer" : undefined}
+            class="news-link"
+          >
+            {segment.value}
+          </a>
+        ) : (
+          segment.value
+        ),
       )
     }
   </div>
