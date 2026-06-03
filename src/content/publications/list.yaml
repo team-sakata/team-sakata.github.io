@@ -7,13 +7,6 @@
   category: "preprint"
   hidden: false
 
-- title: "Influential scientists shape knowledge flows between science and IGO policy"
-  authors: "K. Asatani, Y. Iwata, Y. Tomokiyo, B. Mahfouz, M. Yarime, & I. Sakata"
-  venue: "arXiv preprint arXiv:2506.06753"
-  year: "2025"
-  category: "preprint"
-  hidden: false
-
 - title: "Do Researchers Benefit Career-wise from Involvement in International Policy Guideline Development?"
   authors: "Y. Tomokiyo, K. Nishimoto, K. Asatani, & I. Sakata"
   venue: "arXiv preprint arXiv:2503.22584"
@@ -22,12 +15,34 @@
   hidden: false
 
 # Journal Papers
+- title: "Structure of scientific knowledge flows to intergovernmental organizations"
+  authors: "K. Asatani, Y. Iwata, Y. Tomokiyo, B. Mahfouz, M. Yarime, & I. Sakata"
+  venue: "Proceedings of the National Academy of Sciences"
+  year: "2026"
+  volume: "123"
+  issue: "17"
+  pages: "e2514861123"
+  link: "https://doi.org/10.1073/pnas.2514861123"
+  category: "journal"
+  hidden: false
+
 - title: "Tracing the evolution of household carbon emission research by machine learning"
   authors: "Y. Long, L. Huang, S. Montagna, Z. Chen, X. Ding, Y. Shigetomi, T. Zhao, K. Asatani, I. Sakata, & Y. Yoshida"
   venue: "Environmental Impact Assessment Review"
   year: "2025"
   volume: "115"
   pages: "108039"
+  category: "journal"
+  hidden: false
+
+- title: "Urban Sustainability Studies as an Integrated Academic Field: A Systematic Review"
+  authors: "H. Nakajima, & K. Asatani"
+  venue: "Sustainability"
+  year: "2026"
+  volume: "18"
+  issue: "1"
+  pages: "201"
+  link: "https://doi.org/10.3390/su18010201"
   category: "journal"
   hidden: false
 
