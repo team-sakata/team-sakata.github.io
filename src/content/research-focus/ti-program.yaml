@@ -1,0 +1,11 @@
+title: "テクノロジー・インフォマティクス社会連携講座"
+title_ja: "テクノロジー・インフォマティクス社会連携講座"
+title_en: "Technology Informatics Social Collaboration Program"
+description: "東京大学大学院工学系研究科に設置された社会連携講座です。論文・特許などの科学技術ビッグデータに生成AIとネットワーク解析を組み合わせ、有望技術や連携先の探索を支援する技術（テクノロジー・インフォマティクス）の研究開発を企業と共同で進めています。設置期間は2020年4月から2024年3月、更新期間は2024年4月から2029年3月です。研究成果は学術分野可視化システムや論文・特許解析手法として社会に展開しています。"
+description_ja: "東京大学大学院工学系研究科に設置された社会連携講座です。論文・特許などの科学技術ビッグデータに生成AIとネットワーク解析を組み合わせ、有望技術や連携先の探索を支援する技術（テクノロジー・インフォマティクス）の研究開発を企業と共同で進めています。設置期間は2020年4月から2024年3月、更新期間は2024年4月から2029年3月です。研究成果は学術分野可視化システムや論文・特許解析手法として社会に展開しています。"
+description_en: "A social collaboration program established in the Graduate School of Engineering, The University of Tokyo. Together with industry partners, we develop Technology Informatics: methods that combine generative AI and network analysis on large-scale scientific and patent data to support the discovery of promising technologies and collaboration partners. The program ran from April 2020 to March 2024 and has been renewed for April 2024 to March 2029. Its outcomes are deployed as literature-mapping systems and paper-patent analysis methods."
+description_short: "生成AIとネットワーク解析による技術探索を企業と共同研究する社会連携講座（2020.04〜2029.03）"
+description_short_en: "Industry-collaboration program on AI-driven technology discovery (Apr 2020 – Mar 2029)"
+order: 2
+label: "Project"
+image: "/images/sample_avatar.avif"

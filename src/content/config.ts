@@ -25,6 +25,7 @@ const membersCollection = defineCollection({
             researchAreasEn: z.string().optional(),
             courses: z.string().optional(),
             coursesEn: z.string().optional(),
+            publicationAuthorKey: z.string().optional(), // e.g. "K. Asatani" — used to list this member's publications
         })),
         order: z.number().default(0),
     }),

@@ -1,9 +1,25 @@
 # Preprints
-- title: "Position: No Retroactive Cure for Infringement during Training"
-  authors: "S. Utsunomiya, M. Isonuma, J. Mori, & I. Sakata"
-  venue: "arXiv preprint arXiv:2604.18649"
-  link: "https://arxiv.org/abs/2604.18649"
+- title: "Large Language Models Exhibit Normative Conformity"
+  authors: "M. Bito, K. Nishimoto, K. Asatani, & I. Sakata"
+  venue: "arXiv preprint arXiv:2604.19301"
+  link: "https://arxiv.org/abs/2604.19301"
   year: "2026"
+  category: "preprint"
+  hidden: false
+
+- title: "Cooperation Breakdown in LLM Agents Under Communication Delays"
+  authors: "K. Nishimoto, K. Asatani, & I. Sakata"
+  venue: "arXiv preprint arXiv:2602.11754"
+  link: "https://arxiv.org/abs/2602.11754"
+  year: "2026"
+  category: "preprint"
+  hidden: false
+
+- title: "Asymmetric Impact of Basic Scientists during Applied Shift"
+  authors: "R. Kaku, M. Bito, K. Nishimoto, I. Sakata, & K. Asatani"
+  venue: "arXiv preprint arXiv:2509.01530"
+  link: "https://arxiv.org/abs/2509.01530"
+  year: "2025"
   category: "preprint"
   hidden: false
 
@@ -11,10 +27,22 @@
   authors: "Y. Tomokiyo, K. Nishimoto, K. Asatani, & I. Sakata"
   venue: "arXiv preprint arXiv:2503.22584"
   year: "2025"
+  link: "https://arxiv.org/abs/2503.22584"
   category: "preprint"
   hidden: false
 
 # Journal Papers
+- title: "Mental health as both outcome and determinant in climate adaptation"
+  authors: "Y. Long, Z. Zhou, Y. Kajikawa, K. Asatani, I. Sakata, & Y. Yoshida"
+  venue: "Nature Climate Change"
+  year: "2026"
+  volume: "16"
+  issue: "7"
+  pages: "746-748"
+  link: "https://doi.org/10.1038/s41558-026-02673-2"
+  category: "journal"
+  hidden: false
+
 - title: "Structure of scientific knowledge flows to intergovernmental organizations"
   authors: "K. Asatani, Y. Iwata, Y. Tomokiyo, B. Mahfouz, M. Yarime, & I. Sakata"
   venue: "Proceedings of the National Academy of Sciences"
@@ -32,6 +60,7 @@
   year: "2025"
   volume: "115"
   pages: "108039"
+  link: "https://doi.org/10.1016/j.eiar.2025.108039"
   category: "journal"
   hidden: false
 
@@ -52,6 +81,7 @@
   year: "2024"
   volume: "14"
   pages: "28172"
+  link: "https://doi.org/10.1038/s41598-024-77206-y"
   category: "journal"
   hidden: false
 
@@ -61,6 +91,7 @@
   year: "2024"
   volume: "135"
   pages: "103050"
+  link: "https://doi.org/10.1016/j.technovation.2024.103050"
   category: "journal"
   hidden: false
 
@@ -71,6 +102,7 @@
   volume: "19"
   issue: "1"
   pages: "e0297361"
+  link: "https://doi.org/10.1371/journal.pone.0297361"
   category: "journal"
   hidden: false
 
@@ -81,6 +113,7 @@
   volume: "13"
   issue: "1"
   pages: "4759"
+  link: "https://doi.org/10.1038/s41598-023-31452-8"
   category: "journal"
   hidden: false
 
@@ -91,6 +124,7 @@
   volume: "35"
   issue: "5"
   pages: "558-572"
+  link: "https://doi.org/10.1080/09537325.2021.1979210"
   category: "journal"
   hidden: false
 
@@ -101,6 +135,7 @@
   volume: "8"
   issue: "9"
   pages: "e10721"
+  link: "https://doi.org/10.1016/j.heliyon.2022.e10721"
   category: "journal"
   hidden: false
 
@@ -111,6 +146,7 @@
   volume: "17"
   issue: "1"
   pages: "101378"
+  link: "https://doi.org/10.1016/j.joi.2023.101378"
   category: "journal"
   hidden: false
 
@@ -121,6 +157,7 @@
   volume: "17"
   issue: "9"
   pages: "e0274253"
+  link: "https://doi.org/10.1371/journal.pone.0274253"
   category: "journal"
   hidden: false
 
@@ -130,6 +167,7 @@
   year: "2021"
   volume: "9"
   pages: "124142-124151"
+  link: "https://doi.org/10.1109/access.2021.3110111"
   category: "journal"
   hidden: false
 
@@ -139,6 +177,7 @@
   year: "2021"
   volume: "6"
   pages: "48"
+  link: "https://doi.org/10.1007/s41109-021-00389-0"
   category: "journal"
   hidden: false
 
@@ -149,6 +188,7 @@
   volume: "11"
   issue: "1"
   pages: "10055"
+  link: "https://doi.org/10.1038/s41598-021-89435-6"
   category: "journal"
   hidden: false
 
@@ -158,6 +198,7 @@
   year: "2021"
   volume: "57"
   pages: "101421"
+  link: "https://doi.org/10.1016/j.ribaf.2021.101421"
   category: "journal"
   hidden: false
 
@@ -165,6 +206,7 @@
   authors: "M. Isonuma, J. Mori, D. Bollegala, & I. Sakata"
   venue: "Transactions of the Association for Computational Linguistics (TACL)"
   year: "2021"
+  link: "https://doi.org/10.1162/tacl_a_00406"
   category: "journal"
   hidden: false
 
@@ -175,6 +217,7 @@
   volume: "11"
   issue: "1"
   pages: "7491"
+  link: "https://doi.org/10.1038/s41598-021-86750-w"
   category: "journal"
   hidden: false
 
@@ -184,6 +227,7 @@
   year: "2021"
   volume: "100"
   pages: "102192"
+  link: "https://doi.org/10.1016/j.technovation.2020.102192"
   category: "journal"
   hidden: false
 
@@ -194,6 +238,7 @@
   volume: "22"
   issue: "1"
   pages: "74-85"
+  link: "https://doi.org/10.1080/16258312.2020.1824531"
   category: "journal"
   hidden: false
 
@@ -204,6 +249,7 @@
   volume: "3"
   issue: "3"
   pages: "1-17, 40"
+  link: "https://doi.org/10.3390/asi3030040"
   category: "journal"
   hidden: false
 
@@ -213,6 +259,7 @@
   year: "2021"
   volume: "584"
   pages: "816-826"
+  link: "https://doi.org/10.1016/j.jcis.2020.10.012"
   category: "journal"
   hidden: false
 
@@ -222,6 +269,7 @@
   year: "2021"
   volume: "582"
   pages: "950-960"
+  link: "https://doi.org/10.1016/j.jcis.2020.08.100"
   category: "journal"
   hidden: false
 
@@ -231,6 +279,7 @@
   year: "2020"
   volume: "479"
   pages: "228795"
+  link: "https://doi.org/10.1016/j.jpowsour.2020.228795"
   category: "journal"
   hidden: false
 
@@ -240,6 +289,7 @@
   year: "2020"
   volume: "10"
   pages: "10126"
+  link: "https://doi.org/10.1038/s41598-020-67107-1"
   category: "journal"
   hidden: false
 
@@ -249,6 +299,7 @@
   year: "2020"
   volume: "167"
   pages: "11-18"
+  link: "https://doi.org/10.1016/j.carbon.2020.04.100"
   category: "journal"
   hidden: false
 
@@ -258,6 +309,7 @@
   year: "2020"
   volume: "6"
   pages: "e04160"
+  link: "https://doi.org/10.1016/j.heliyon.2020.e04160"
   category: "journal"
   hidden: false
 
@@ -267,6 +319,7 @@
   year: "2020"
   volume: "10"
   pages: "8456"
+  link: "https://doi.org/10.1038/s41598-020-64548-6"
   category: "journal"
   hidden: false
 
@@ -277,6 +330,7 @@
   volume: "13"
   issue: "4"
   pages: "975"
+  link: "https://doi.org/10.3390/en13040975"
   category: "journal"
   hidden: false
 
@@ -286,6 +340,7 @@
   year: "2020"
   volume: "386"
   pages: "121979"
+  link: "https://doi.org/10.1016/j.jhazmat.2019.121979"
   category: "journal"
   hidden: false
 
@@ -295,6 +350,7 @@
   year: "2019"
   volume: "154"
   pages: "169-177"
+  link: "https://doi.org/10.1016/j.carbon.2019.08.004"
   category: "journal"
   hidden: false
 
@@ -305,6 +361,7 @@
   volume: "7"
   issue: "1"
   pages: "53377-53391"
+  link: "https://doi.org/10.1109/access.2019.2911567"
   category: "journal"
   hidden: false
 
@@ -314,6 +371,7 @@
   year: "2019"
   volume: "146"
   pages: "751-766"
+  link: "https://doi.org/10.1016/j.techfore.2018.09.005"
   category: "journal"
   hidden: false
 
@@ -323,6 +381,7 @@
   year: "2018"
   volume: "7"
   pages: "416"
+  link: "https://doi.org/10.3390/ijgi7110416"
   category: "journal"
   hidden: false
 
@@ -332,6 +391,7 @@
   year: "2018"
   volume: "1"
   pages: "s42001-018-0021-1"
+  link: "https://doi.org/10.1007/s42001-018-0021-1"
   category: "journal"
   hidden: false
 
@@ -342,6 +402,7 @@
   volume: "13"
   issue: "5"
   pages: "e0197260"
+  link: "https://doi.org/10.1371/journal.pone.0197260"
   category: "journal"
   hidden: false
 
@@ -351,6 +412,7 @@
   year: "2018"
   volume: "1"
   pages: "s42004-018-0017-Z"
+  link: "https://doi.org/10.1038/s42004-018-0017-z"
   category: "journal"
   hidden: false
 
@@ -361,6 +423,7 @@
   volume: "14"
   issue: "1"
   pages: "30-49"
+  link: "https://doi.org/10.1504/ijpp.2018.090671"
   category: "journal"
   hidden: false
 
@@ -370,6 +433,7 @@
   year: "2017"
   volume: "119"
   pages: "522-526"
+  link: "https://doi.org/10.1016/j.carbon.2017.04.073"
   category: "journal"
   hidden: false
 
@@ -380,6 +444,7 @@
   volume: "12"
   issue: "2"
   pages: "e0171192"
+  link: "https://doi.org/10.1371/journal.pone.0171192"
   category: "journal"
   hidden: false
 
@@ -389,6 +454,7 @@
   year: "2017"
   volume: "7"
   pages: "40259"
+  link: "https://doi.org/10.1038/srep40259"
   category: "journal"
   hidden: false
 
@@ -398,6 +464,7 @@
   year: "2016"
   volume: "6"
   pages: "37009"
+  link: "https://doi.org/10.1038/srep37009"
   category: "journal"
   hidden: false
 
@@ -407,6 +474,7 @@
   year: "2016"
   volume: "9"
   pages: "519-534"
+  link: "https://doi.org/10.4236/ijcns.2016.911041"
   category: "journal"
   hidden: false
 
@@ -416,6 +484,7 @@
   year: "2016"
   volume: "98"
   pages: "334-342"
+  link: "https://doi.org/10.1016/j.carbon.2015.10.093"
   category: "journal"
   hidden: false
 
@@ -425,6 +494,7 @@
   year: "2016"
   volume: "101"
   pages: "377-381"
+  link: "https://doi.org/10.1016/j.carbon.2016.02.003"
   category: "journal"
   hidden: false
 
@@ -435,6 +505,7 @@
   volume: "4"
   issue: "4"
   pages: "418-429"
+  link: "https://doi.org/10.13044/j.sdewes.2016.04.0032"
   category: "journal"
   hidden: false
 
@@ -445,6 +516,7 @@
   volume: "12"
   issue: "1"
   pages: "2-19"
+  link: "https://doi.org/10.1504/ijetp.2016.074489"
   category: "journal"
   hidden: false
 
@@ -455,14 +527,40 @@
   volume: "12"
   issue: "1"
   pages: "84-102"
+  link: "https://doi.org/10.1504/ijetp.2016.074493"
   category: "journal"
   hidden: false
 
 # Conference Papers (Recent 5 Years)
+- title: "Position: No Retroactive Cure for Infringement during Training"
+  authors: "S. Utsunomiya, M. Isonuma, J. Mori, & I. Sakata"
+  venue: "The 43rd International Conference on Machine Learning (ICML 2026), Position Paper Track (Spotlight)"
+  link: "https://arxiv.org/abs/2604.18649"
+  year: "2026"
+  category: "conference"
+  hidden: false
+
+- title: "UniDetox: Universal Detoxification of Large Language Models via Dataset Distillation"
+  authors: "H. Lu, M. Isonuma, J. Mori, & I. Sakata"
+  venue: "The Thirteenth International Conference on Learning Representations (ICLR 2025)"
+  link: "https://arxiv.org/abs/2504.20500"
+  year: "2025"
+  category: "conference"
+  hidden: false
+
+- title: "Partner Firm Selection via Patent Embedding–Derived Technology Graphs and Synergy"
+  authors: "H. Kubo, Y. Ito, K. Nishimoto, K. Asatani, & I. Sakata"
+  venue: "The 14th International Conference on Complex Networks and their Applications (COMPLEX NETWORKS 2025)"
+  link: "https://zenodo.org/records/21673179"
+  year: "2025"
+  category: "conference"
+  hidden: false
+
 - title: "Lexical Entailment with Hierarchy Representations by Deep Metric Learning"
   authors: "N. Sato, et al."
   venue: "Findings of the Association for Computational Linguistics: EMNLP 2022"
   year: "2022"
+  link: "https://doi.org/10.18653/v1/2022.findings-emnlp.257"
   category: "conference"
   hidden: false
 
@@ -479,6 +577,7 @@
   venue: "Portland International Conference on Management Engineering and Technology (PICMET'20)"
   location: "Daejeon City, Korea"
   year: "2021"
+  link: "https://doi.org/10.23919/picmet53225.2022.9882631"
   category: "conference"
   hidden: false
 
@@ -487,6 +586,7 @@
   venue: "Portland International Conference on Management Engineering and Technology (PICMET'20)"
   location: "Daejeon City, Korea"
   year: "2021"
+  link: "https://doi.org/10.23919/picmet53225.2022.9882636"
   category: "conference"
   hidden: false
 
@@ -495,6 +595,7 @@
   venue: "The 9th International Conference on Complex Networks and Their Applications (COMPLEX NETWORKS 2020)"
   location: "Online"
   year: "2020"
+  link: "https://doi.org/10.1007/978-3-030-65347-7_26"
   category: "conference"
   hidden: false
 
@@ -503,6 +604,7 @@
   venue: "The 58th Annual Meeting of the Association for Computational Linguistics (ACL 2020)"
   location: "Online"
   year: "2020"
+  link: "https://doi.org/10.18653/v1/2020.acl-main.73"
   category: "conference"
   hidden: false
 
@@ -512,6 +614,7 @@
   location: "Online"
   year: "2020"
   award: "Best Student Paper Honorable Mention Award"
+  link: "https://doi.org/10.1145/3394231.3397899"
   category: "conference"
   hidden: false
 
@@ -536,6 +639,7 @@
   venue: "Annual Meeting of the Association for Computational Linguistics (ACL 2019)"
   location: "Florence, Italy"
   year: "2019"
+  link: "https://doi.org/10.18653/v1/p19-1206"
   category: "conference"
   hidden: false
 
@@ -545,6 +649,7 @@
   location: "Portland, USA"
   year: "2019"
   paper_id: "8893969"
+  link: "https://doi.org/10.23919/picmet.2019.8893969"
   category: "conference"
   hidden: false
 
@@ -554,6 +659,7 @@
   location: "Portland, USA"
   year: "2019"
   paper_id: "8893782"
+  link: "https://doi.org/10.23919/picmet.2019.8893782"
   category: "conference"
   hidden: false
 
@@ -563,6 +669,7 @@
   location: "Portland, USA"
   year: "2019"
   paper_id: "8893886"
+  link: "https://doi.org/10.23919/picmet.2019.8893886"
   category: "conference"
   hidden: false
 
@@ -572,6 +679,7 @@
   location: "Portland, USA"
   year: "2019"
   paper_id: "8893685"
+  link: "https://doi.org/10.23919/picmet.2019.8893685"
   category: "conference"
   hidden: false
 
@@ -581,6 +689,7 @@
   location: "Portland, USA"
   year: "2019"
   paper_id: "8893943"
+  link: "https://doi.org/10.23919/picmet.2019.8893943"
   category: "conference"
   hidden: false
 
@@ -590,6 +699,7 @@
   location: "Portland, USA"
   year: "2019"
   paper_id: "8893965"
+  link: "https://doi.org/10.23919/picmet.2019.8893965"
   category: "conference"
   hidden: false
 
@@ -607,6 +717,7 @@
   venue: "10th International Conference on Social Informatics (SocInfo'18)"
   location: "St. Petersburg, Russia"
   year: "2018"
+  link: "https://doi.org/10.1007/978-3-030-01129-1_4"
   category: "conference"
   hidden: false
 
@@ -615,6 +726,7 @@
   venue: "2018 IEEE International Conference on Industrial Engineering and Engineering Management (IEEM 2018)"
   location: "Bangkok, Thailand"
   year: "2018"
+  link: "https://doi.org/10.1109/ieem.2018.8607317"
   category: "conference"
   hidden: false
 
@@ -623,6 +735,7 @@
   venue: "2018 IEEE International Conference on Industrial Engineering and Engineering Management (IEEM 2018)"
   location: "Bangkok, Thailand"
   year: "2018"
+  link: "https://doi.org/10.1109/ieem.2018.8607408"
   category: "conference"
   hidden: false
 
@@ -631,6 +744,7 @@
   venue: "Portland International Conference on Management Engineering and Technology (PICMET'18)"
   location: "Honolulu, Hawaii, USA"
   year: "2018"
+  link: "https://doi.org/10.23919/picmet.2018.8481821"
   category: "conference"
   hidden: false
 
@@ -639,6 +753,7 @@
   venue: "Portland International Conference on Management Engineering and Technology (PICMET'18)"
   location: "Honolulu, Hawaii, USA"
   year: "2018"
+  link: "https://doi.org/10.23919/picmet.2018.8481955"
   category: "conference"
   hidden: false
 
@@ -647,6 +762,7 @@
   venue: "Portland International Conference on Management Engineering and Technology (PICMET'18)"
   location: "Honolulu, Hawaii, USA"
   year: "2018"
+  link: "https://doi.org/10.23919/picmet.2018.8481961"
   category: "conference"
   hidden: false
 
@@ -655,6 +771,7 @@
   venue: "Portland International Conference on Management Engineering and Technology (PICMET'18)"
   location: "Honolulu, Hawaii, USA"
   year: "2018"
+  link: "https://doi.org/10.23919/picmet.2018.8481973"
   category: "conference"
   hidden: false
 
@@ -663,6 +780,7 @@
   venue: "Portland International Conference on Management Engineering and Technology (PICMET'18)"
   location: "Honolulu, Hawaii, USA"
   year: "2018"
+  link: "https://doi.org/10.23919/picmet.2018.8481796"
   category: "conference"
   hidden: false
 
@@ -687,6 +805,7 @@
   venue: "Conference on Empirical Methods in NLP (EMNLP)"
   location: "Copenhagen, Denmark"
   year: "2017"
+  link: "https://doi.org/10.18653/v1/d17-1223"
   category: "conference"
   hidden: false
 
@@ -695,6 +814,7 @@
   venue: "Portland International Conference on Management Engineering and Technology (PICMET'17)"
   location: "Portland, USA"
   year: "2017"
+  link: "https://doi.org/10.23919/picmet.2017.8125280"
   category: "conference"
   hidden: false
 
@@ -703,6 +823,7 @@
   venue: "Portland International Conference on Management Engineering and Technology (PICMET'17)"
   location: "Portland, USA"
   year: "2017"
+  link: "https://doi.org/10.23919/picmet.2017.8125322"
   category: "conference"
   hidden: false
 
@@ -711,6 +832,7 @@
   venue: "Portland International Conference on Management Engineering and Technology (PICMET'17)"
   location: "Portland, USA"
   year: "2017"
+  link: "https://doi.org/10.23919/picmet.2017.8125283"
   category: "conference"
   hidden: false
 
@@ -719,6 +841,7 @@
   venue: "Portland International Conference on Management Engineering and Technology (PICMET'17)"
   location: "Portland, USA"
   year: "2017"
+  link: "https://doi.org/10.23919/picmet.2017.8125320"
   category: "conference"
   hidden: false
 
@@ -727,6 +850,7 @@
   venue: "Portland International Conference on Management Engineering and Technology (PICMET'17)"
   location: "Portland, USA"
   year: "2017"
+  link: "https://doi.org/10.23919/picmet.2017.8125250"
   category: "conference"
   hidden: false
 
@@ -735,6 +859,7 @@
   venue: "Portland International Conference on Management Engineering and Technology (PICMET'17)"
   location: "Portland, USA"
   year: "2017"
+  link: "https://doi.org/10.23919/picmet.2017.8125417"
   category: "conference"
   hidden: false
 
@@ -743,6 +868,7 @@
   venue: "Portland International Conference on Management Engineering and Technology (PICMET'17)"
   location: "Portland, USA"
   year: "2017"
+  link: "https://doi.org/10.23919/picmet.2017.8125410"
   category: "conference"
   hidden: false
 
@@ -751,6 +877,7 @@
   venue: "Portland International Conference on Management Engineering and Technology (PICMET'17)"
   location: "Portland, USA"
   year: "2017"
+  link: "https://doi.org/10.23919/picmet.2017.8125259"
   category: "conference"
   hidden: false
 
@@ -759,6 +886,7 @@
   venue: "Portland International Conference on Management Engineering and Technology (PICMET'17)"
   location: "Portland, USA"
   year: "2017"
+  link: "https://doi.org/10.23919/picmet.2017.8125409"
   category: "conference"
   hidden: false
 
@@ -775,6 +903,7 @@
   venue: "PURBA-2016 Workshop, in conjunction with UbiComp 2016"
   location: "Heidelberg, Germany"
   year: "2016"
+  link: "https://doi.org/10.1145/2968219.2968416"
   category: "conference"
   hidden: false
 
@@ -783,6 +912,7 @@
   venue: "Portland International Conference on Management Engineering and Technology (PICMET'16)"
   location: "Honolulu, Hawaii, USA"
   year: "2016"
+  link: "https://doi.org/10.1109/picmet.2016.7806730"
   category: "conference"
   hidden: false
 
@@ -791,6 +921,7 @@
   venue: "Portland International Conference on Management Engineering and Technology (PICMET'16)"
   location: "Honolulu, Hawaii, USA"
   year: "2016"
+  link: "https://doi.org/10.1109/picmet.2016.7806689"
   category: "conference"
   hidden: false
 
@@ -799,6 +930,7 @@
   venue: "Portland International Conference on Management Engineering and Technology (PICMET'16)"
   location: "Honolulu, Hawaii, USA"
   year: "2016"
+  link: "https://doi.org/10.1109/picmet.2016.7806697"
   category: "conference"
   hidden: false
 
@@ -807,6 +939,7 @@
   venue: "Portland International Conference on Management Engineering and Technology (PICMET'16)"
   location: "Honolulu, Hawaii, USA"
   year: "2016"
+  link: "https://doi.org/10.1109/picmet.2016.7806750"
   category: "conference"
   hidden: false
 
@@ -815,6 +948,7 @@
   venue: "Portland International Conference on Management Engineering and Technology (PICMET'16)"
   location: "Honolulu, Hawaii, USA"
   year: "2016"
+  link: "https://doi.org/10.1109/picmet.2016.7806701"
   category: "conference"
   hidden: false
 
@@ -825,6 +959,7 @@
   year: "2016"
   volume: "531"
   pages: "29-31"
+  link: "https://doi.org/10.1038/531029a"
   category: "review"
   hidden: false
 

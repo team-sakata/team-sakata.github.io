@@ -1,0 +1,12 @@
+title: "Science Planet+: LLMを活用した学術分野可視化システム"
+title_ja: "Science Planet+: LLMを活用した学術分野可視化システム"
+title_en: "Science Planet+: LLM-powered Map of Scientific Literature"
+description: "数億件の学術論文を引用ネットワークとLLMで整理し、研究分野の構造を地図として可視化するウェブシステムです。テキストで問いを入力すると関連論文群からAIが回答を生成し、分野ごとの地図を対話的に探索できます。研究室で開発した学術ビッグデータ解析の技法群を実装したもので、大学内外に提供しています。"
+description_ja: "数億件の学術論文を引用ネットワークとLLMで整理し、研究分野の構造を地図として可視化するウェブシステムです。テキストで問いを入力すると関連論文群からAIが回答を生成し、分野ごとの地図を対話的に探索できます。研究室で開発した学術ビッグデータ解析の技法群を実装したもので、大学内外に提供しています。"
+description_en: "Science Planet+ organizes hundreds of millions of scholarly papers with citation networks and LLMs, and visualizes the structure of research fields as interactive maps. Users can ask questions in natural language and receive AI-generated answers grounded in the relevant literature. The system implements the large-scale bibliometric techniques developed in our lab and is provided to institutions inside and outside the University of Tokyo."
+description_short: "数億件の論文をLLMと引用ネットワークで地図化し、対話的に探索できるシステム"
+description_short_en: "An LLM-powered system that maps hundreds of millions of papers for interactive exploration"
+order: 1
+label: "System"
+image: "/images/researches/science-planet.webp"
+link: "https://planet.sakatalab.t.u-tokyo.ac.jp/"

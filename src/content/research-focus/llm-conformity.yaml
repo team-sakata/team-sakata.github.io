@@ -1,0 +1,12 @@
+title: "Large Language Models Exhibit Normative Conformity"
+title_ja: "LLMは規範的同調を示す：LLMエージェントによる社会シミュレーション"
+title_en: "Large Language Models Exhibit Normative Conformity"
+description: "人間の集団で知られる同調行動が、LLMエージェントの集団でも生じるかを検証しました。複数のLLMエージェントに集団の中で判断させる実験を行い、他者の回答が明らかに誤っていても多数派に合わせる「規範的同調」が生じることを示しました。LLMを用いた社会シミュレーションの妥当性と、AIが集団的意思決定に与える影響を考える上での基礎的な知見です。"
+description_ja: "人間の集団で知られる同調行動が、LLMエージェントの集団でも生じるかを検証しました。複数のLLMエージェントに集団の中で判断させる実験を行い、他者の回答が明らかに誤っていても多数派に合わせる「規範的同調」が生じることを示しました。LLMを用いた社会シミュレーションの妥当性と、AIが集団的意思決定に与える影響を考える上での基礎的な知見です。"
+description_en: "We examined whether conformity, a well-known behavior in human groups, also emerges among LLM agents. In experiments where multiple LLM agents make judgments within a group, we found that agents align with the majority even when the majority is clearly wrong, exhibiting normative conformity. The findings inform the validity of LLM-based social simulation and how AI may shape collective decision-making."
+description_short: "LLMエージェントの集団でも人間と同様の規範的同調が生じることを実験的に示した研究"
+description_short_en: "Experimental evidence that groups of LLM agents exhibit human-like normative conformity"
+order: 3
+label: "Research"
+image: "/images/sample_avatar.avif"
+link: "https://arxiv.org/abs/2604.19301"

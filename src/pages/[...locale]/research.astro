@@ -3,8 +3,9 @@ import Layout from "../../layouts/Layout.astro";
 import PageHeader from "../../components/PageHeader.astro";
 import Section from "../../components/Section.astro";
 import { getResearchFocus } from "../../utils/collections";
-import { resolvePath } from "../../utils/paths";
+import { resolvePath, buildLocalizedPath } from "../../utils/paths";
 import type { Locale } from "../../utils/paths";
+import { parseInlineLinks } from "../../utils/richText";
 
 export function getStaticPaths() {
   return [
@@ -33,16 +34,60 @@ const researchAreas = [
     renderHighlights: () =>
       isJa
         ? [
-            "国際的な研究トピックの進展と遅れの分析",
-            "基礎研究者を軸としたサイエンスエコシステムの理解",
-            "政策文書における論文引用メカニズムの解明",
-            "サーキュラーエコノミー分野のトップ研究者の分析",
+            "[国際的な研究トピックの進展と遅れの分析](https://doi.org/10.1038/s41598-023-31452-8)",
+            "[基礎研究者を軸としたサイエンスエコシステムの理解](https://arxiv.org/abs/2509.01530)",
+            "[政策文書における論文引用メカニズムの解明](https://doi.org/10.1073/pnas.2514861123)",
+            "[サーキュラーエコノミー分野のトップ研究者の分析](https://arxiv.org/abs/2507.04923)",
           ]
         : [
-            "Measuring global advancement and delay of research topics",
-            "Modeling science ecosystems centered on fundamental researchers",
-            "Understanding mechanisms of policy citations to scientific papers",
-            "Analyzing leading researchers in the circular economy domain",
+            "[Measuring global advancement and delay of research topics](https://doi.org/10.1038/s41598-023-31452-8)",
+            "[Modeling science ecosystems centered on fundamental researchers](https://arxiv.org/abs/2509.01530)",
+            "[Understanding mechanisms of policy citations to scientific papers](https://doi.org/10.1073/pnas.2514861123)",
+            "[Analyzing leading researchers in the circular economy domain](https://arxiv.org/abs/2507.04923)",
+          ],
+  },
+  {
+    renderTitle: () =>
+      isJa ? "生成AIと社会 / Generative AI and Society" : "Generative AI and Society",
+    renderDescription: () =>
+      isJa
+        ? "生成AIの普及が学術研究や技術開発のあり方をどのように変えつつあるかを、大規模な論文・特許データから定量的に分析します。また、LLMをエージェントとした社会シミュレーションにより、AIの集団が示す同調や協調といった振る舞いを実験的に検証し、AIが集団的な意思決定や規範形成に与える影響を明らかにしています。"
+        : "We quantitatively analyze how the spread of generative AI is reshaping scientific research and technology development, using large-scale paper and patent data. We also run social simulations with LLM agents to experimentally examine collective behaviors such as conformity and cooperation, revealing how AI may influence collective decision-making and norm formation.",
+    renderHighlights: () =>
+      isJa
+        ? [
+            "LLMエージェント集団における規範的同調（[arXiv 2026](https://arxiv.org/abs/2604.19301)）と通信遅延下での協調の崩壊（[arXiv 2026](https://arxiv.org/abs/2602.11754)）の検証",
+            "生成AIの利用拡大が研究テーマや技術開発に与える影響の分析",
+            "LLMエージェントを用いた社会シミュレーション手法の開発",
+          ]
+        : [
+            "Normative conformity ([arXiv 2026](https://arxiv.org/abs/2604.19301)) and cooperation breakdown under communication delays ([arXiv 2026](https://arxiv.org/abs/2602.11754)) in groups of LLM agents",
+            "Analyzing how expanding use of generative AI reshapes research topics and technology development",
+            "Developing social-simulation methods with LLM agents",
+          ],
+  },
+  {
+    renderTitle: () =>
+      isJa
+        ? "生成AIの活用による技術探索 / AI-driven Technology Discovery"
+        : "AI-driven Technology Discovery",
+    renderDescription: () =>
+      isJa
+        ? "生成AIを論文・特許の大規模解析に組み込み、有望技術や連携先の探索を支援する手法とシステムを開発しています。LLMによる論文の地図化・要約、LLMアノテーションを用いた論文と特許の紐づけ、基礎研究から応用研究への進展度の定量化などに取り組み、テクノロジー・インフォマティクス社会連携講座を通じて企業との共同研究として推進しています。"
+        : "We develop methods and systems that embed generative AI into large-scale analysis of papers and patents to support the discovery of promising technologies and collaboration partners. Our work includes LLM-based mapping and summarization of the literature, linking papers to patents with LLM annotation, and quantifying the advancement from basic to applied research, pursued jointly with industry through the Technology Informatics Social Collaboration Program.",
+    renderHighlights: () =>
+      isJa
+        ? [
+            "LLMを活用した学術分野可視化システム [Science Planet+](https://planet.sakatalab.t.u-tokyo.ac.jp/) の開発・提供",
+            "特許埋め込みから構築した技術グラフとシナジーによる提携先企業の選定（[Complex Networks 2025](https://zenodo.org/records/21673179)）",
+            "LLMアノテーションを用いた論文と特許の紐づけ（METSTI 2026 発表予定）",
+            "基礎研究から応用研究への進展度の定量化と、応用シフト期における基礎研究者の役割（[Technovation 2024](https://doi.org/10.1016/j.technovation.2024.103050), [arXiv 2025](https://arxiv.org/abs/2509.01530)）",
+          ]
+        : [
+            "Developing and providing [Science Planet+](https://planet.sakatalab.t.u-tokyo.ac.jp/), an LLM-powered map of scientific literature",
+            "Partner firm selection via patent-embedding-derived technology graphs and synergy ([Complex Networks 2025](https://zenodo.org/records/21673179))",
+            "Linking papers to patents using LLM annotation (to appear at METSTI 2026)",
+            "Quantifying basic-to-applied research advancement and the role of basic scientists during applied shifts ([Technovation 2024](https://doi.org/10.1016/j.technovation.2024.103050), [arXiv 2025](https://arxiv.org/abs/2509.01530))",
           ],
   },
   {
@@ -57,18 +102,20 @@ const researchAreas = [
     renderHighlights: () =>
       isJa
         ? [
-            "Twitter上の政治コミュニティ構造の変化の解析",
+            "[Twitter上の政治コミュニティ構造の変化の解析](https://doi.org/10.1038/s41598-021-86750-w)",
             "Google Mapデータによる都市インタラクション構造の理解",
             "研究者のSNS利用と研究インパクトの関係分析",
             "地銀を中心とした企業間取引ネットワークの距離特性",
             "パテントスペースを用いた企業ポートフォリオ戦略の評価",
+            "気候変動適応におけるメンタルヘルスの位置づけに関する論考（[Nature Climate Change 2026](https://doi.org/10.1038/s41558-026-02673-2)）",
           ]
         : [
-            "Tracking structural changes in political communities on Twitter",
+            "[Tracking structural changes in political communities on Twitter](https://doi.org/10.1038/s41598-021-86750-w)",
             "Understanding urban interaction patterns using Google Maps data",
             "Analyzing scientists’ social media use and research impact",
             "Distance characteristics in regional-bank-centered transaction networks",
             "Evaluating corporate portfolio strategies using patent-space models",
+            "Commentary on mental health as both outcome and determinant in climate adaptation ([Nature Climate Change 2026](https://doi.org/10.1038/s41558-026-02673-2))",
           ],
   },
   {
@@ -81,15 +128,15 @@ const researchAreas = [
     renderHighlights: () =>
       isJa
         ? [
-            "大規模言語モデルの逆学習による訓練データ解析",
-            "コーパスの逆蒸留による言語モデルの安全性向上",
-            "ガードレールなどの法的有効性に関する議論",
+            "大規模言語モデルの逆学習による訓練データ解析（[ACL 2024](https://arxiv.org/abs/2401.15241)）",
+            "コーパスの逆蒸留による言語モデルの安全性向上（[ICLR 2025](https://arxiv.org/abs/2504.20500)）",
+            "[ガードレールなどの法的有効性に関する議論](https://arxiv.org/abs/2604.18649)",
             "エージェント間の効率的なコミュニケーション方法に関する研究",
           ]
         : [
-            "Analyzing training data of large language models via inverse learning",
-            "Improving language model safety through inverse distillation of corpora",
-            "Discussions on the legal validity of guardrails and related mechanisms",
+            "Analyzing training data of large language models via inverse learning ([ACL 2024](https://arxiv.org/abs/2401.15241))",
+            "Improving language model safety through inverse distillation of corpora ([ICLR 2025](https://arxiv.org/abs/2504.20500))",
+            "[Discussions on the legal validity of guardrails and related mechanisms](https://arxiv.org/abs/2604.18649)",
             "Research on efficient communication methods among agents",
           ],
   },
@@ -120,7 +167,7 @@ const researchAreas = [
           学生の研究テーマ選択については自主性を尊重し、多様なテーマの研究が進められています。研究者同士が活発に交流し、分野横断的な取り組みが進んでいます。
         </p>
         <p>
-          さらに、テクノロジー・インフォマティックス社会連携講座や NEDO/産業技術総合研究所のプロジェクトなど、外部機関との共同研究も積極的に推進しています。研究成果の社会実装と広範なコミュニティへの貢献を重視しています。
+          さらに、<a href={buildLocalizedPath(locale, "research/ti-program")}>テクノロジー・インフォマティクス社会連携講座</a>や NEDO/産業技術総合研究所のプロジェクトなど、外部機関との共同研究も積極的に推進しています。研究成果の社会実装と広範なコミュニティへの貢献を重視しています。
         </p>
       </>
     ) : (
@@ -135,7 +182,7 @@ const researchAreas = [
           Students are encouraged to choose their research topics autonomously, leading to a rich variety of themes. Active collaboration across domains is a defining characteristic of our research environment.
         </p>
         <p>
-          We also collaborate with external organizations such as the Technology Informatics Social Collaboration Program and the NEDO/AIST Science-Technology Trend Forecasting Project, emphasizing societal impact and engagement with broader research communities.
+          We also collaborate with external organizations such as the <a href={buildLocalizedPath(locale, "research/ti-program")}>Technology Informatics Social Collaboration Program</a> and the NEDO/AIST Science-Technology Trend Forecasting Project, emphasizing societal impact and engagement with broader research communities.
         </p>
       </>
     )}
@@ -159,7 +206,21 @@ const researchAreas = [
             {highlights.length > 0 ? (
               <ul>
                 {highlights.map((item) => (
-                  <li>{item}</li>
+                  <li>
+                    {parseInlineLinks(item).map((seg) =>
+                      seg.type === "link" ? (
+                        <a
+                          href={seg.href}
+                          target={seg.external ? "_blank" : undefined}
+                          rel={seg.external ? "noopener noreferrer" : undefined}
+                        >
+                          {seg.value}
+                        </a>
+                      ) : (
+                        seg.value
+                      ),
+                    )}
+                  </li>
                 ))}
               </ul>
             ) : (

@@ -2,6 +2,8 @@
 import Layout from "../../../layouts/Layout.astro";
 import { getCollection } from "astro:content";
 import { resolvePath, detectLocale, buildLocalizedPath } from "../../../utils/paths";
+import { getPublications } from "../../../utils/collections";
+import PublicationItem from "../../../components/PublicationItem.astro";
 
 export async function getStaticPaths() {
   const members = await getCollection("members");
@@ -31,6 +33,20 @@ const displayLocation = locale === "en" ? (member.locationEn ?? member.location)
 const displayResearchAreas = locale === "en" ? (member.researchAreasEn ?? member.researchAreas) : member.researchAreas;
 const displayCourses = locale === "en" ? (member.coursesEn ?? member.courses) : member.courses;
 
+// Publications authored by this member (matched by publicationAuthorKey, e.g. "K. Asatani")
+const authorKey = member.publicationAuthorKey;
+const allPublications = authorKey ? await getPublications() : [];
+const memberPublications = allPublications.filter(
+  (p) => !p.hidden && p.authors.includes(authorKey!)
+);
+const categoryOrder = ["preprint", "journal", "conference", "review", "invited_lecture"] as const;
+const publicationGroups = categoryOrder
+  .map((category) => ({
+    category,
+    items: memberPublications.filter((p) => p.category === category),
+  }))
+  .filter((g) => g.items.length > 0);
+
 const copy = {
   ja: {
     metaTitle: `${member.name} | 坂田・森・浅谷研究室`,
@@ -40,6 +56,14 @@ const copy = {
       researchAreas: "研究分野",
       courses: "担当講義",
     },
+    publications: "主な業績",
+    categories: {
+      preprint: "プレプリント",
+      journal: "ジャーナル論文 / 解説",
+      conference: "国際会議論文",
+      review: "総説",
+      invited_lecture: "招待講演",
+    },
   },
   en: {
     metaTitle: `${displayName} | Sakata / Mori / Asatani Lab`,
@@ -48,6 +72,14 @@ const copy = {
       location: "Office",
       researchAreas: "Research Areas",
       courses: "Courses",
+    },
+    publications: "Selected Publications",
+    categories: {
+      preprint: "Preprints",
+      journal: "Journal Papers / Commentaries",
+      conference: "Conference Papers",
+      review: "Reviews",
+      invited_lecture: "Invited Lectures",
     },
   },
 } as const;
@@ -112,6 +144,24 @@ const listPath = buildLocalizedPath(locale, "members");
             )
           }
         </div>
+
+        {
+          publicationGroups.length > 0 && (
+            <section class="member-publications">
+              <h2>{t.publications}</h2>
+              {publicationGroups.map((group) => (
+                <div class="pub-group">
+                  <h3>{t.categories[group.category]}</h3>
+                  <div class="pub-list">
+                    {group.items.map((item) => (
+                      <PublicationItem pub={item} />
+                    ))}
+                  </div>
+                </div>
+              ))}
+            </section>
+          )
+        }
 
         <button type="button" class="back-link" onclick="history.back()">{t.back}</button>
       </div>
@@ -201,6 +251,29 @@ const listPath = buildLocalizedPath(locale, "members");
 
   .info-item p {
     color: var(--text-primary);
+  }
+
+  .member-publications {
+    margin-top: 1rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--border);
+  }
+
+  .member-publications h2 {
+    font-size: 1.2rem;
+    color: var(--text-primary);
+    margin-bottom: 1.5rem;
+  }
+
+  .pub-group + .pub-group {
+    margin-top: 2rem;
+  }
+
+  .pub-group h3 {
+    font-size: 0.9rem;
+    color: var(--accent);
+    margin-bottom: 0.75rem;
+    font-weight: 500;
   }
 
   .back-link {

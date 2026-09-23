@@ -49,11 +49,11 @@ const guidelinesText = {
     ? "そうした手法を用いた考察の対象としては、大規模な学術ビックデータ、ソーシャルメディア、取引関係やM&A等を含む大規模な企業情報、列車を利用したトリップデータ、レビュー文など、様々なものを扱っています。生成AIに関しては、逆学習を用いたLLMの解析に先駆的に取り組んでいます。"
     : "We analyze diverse datasets including large-scale scholarly corpora, social media, corporate information covering transactions and M&A, passenger trip data, and review texts. We are also pioneers in analyzing large language models through inverse reinforcement learning.",
   collaboration: isJa
-    ? "さらに、このような研究を進めるための外部連携として、「テクノロジー・インフォマティックス社会連携講座」や「事前学習言語モデルとネットワークの融合に基づく科学技術トレンド予測（NEDO/産業技術総合研究所）」の代表を務めるほか、多様な企業等と共同研究を行っています。"
-    : "To advance our research, we lead initiatives such as the Technology Informatics Social Collaboration Program and the NEDO/AIST project on science and technology trend forecasting through the fusion of pretrained language models and network science, while collaborating with various industry partners.",
+    ? "さらに、このような研究を進めるための外部連携として、「[テクノロジー・インフォマティクス社会連携講座](/ja/research/ti-program/)」や「事前学習言語モデルとネットワークの融合に基づく科学技術トレンド予測（NEDO/産業技術総合研究所）」の代表を務めるほか、多様な企業等と共同研究を行っています。"
+    : "To advance our research, we lead initiatives such as the [Technology Informatics Social Collaboration Program](/en/research/ti-program/) and the NEDO/AIST project on science and technology trend forecasting through the fusion of pretrained language models and network science, while collaborating with various industry partners.",
   outreach: isJa
-    ? "研究に加えて、成果の発信や社会への貢献も重視しています。リサーチインテリジェンス等の国際会議で招待講演を行うほか、UTOKYO COMPASS推進に関する様々な活動（グローバル・コモンズ、ビジョン形成、SDGs国際シンポジウム）、地方創成策や国土計画の政策立案への参加をしています。また、学術ビックデータに関する開拓した技法群を実装したウエブシステム「学術俯瞰・未来予測システム」の東京大学内外への提供を行っています。さらに、「アントレプレナーシップ教育デザイン寄付講座」の運営を担っています。"
-    : "Beyond research, we emphasize disseminating our findings and contributing to society. We deliver invited talks at international conferences on research intelligence, participate in UTOKYO COMPASS initiatives (Global Commons, vision formation, SDGs International Symposium), and contribute to regional revitalization and national planning policies. We also provide our Academic Landscape and Future Prediction System to institutions within and outside the University of Tokyo, and manage the Entrepreneurship Education Design Endowed Course.",
+    ? "研究に加えて、成果の発信や社会への貢献も重視しています。リサーチインテリジェンス等の国際会議で招待講演を行うほか、UTOKYO COMPASS推進に関する様々な活動（グローバル・コモンズ、ビジョン形成、SDGs国際シンポジウム）、地方創成策や国土計画の政策立案への参加をしています。また、学術ビックデータに関する開拓した技法群を実装したウエブシステム「[学術俯瞰・未来予測システム（Science Planet+）](https://planet.sakatalab.t.u-tokyo.ac.jp/)」の東京大学内外への提供を行っています。さらに、「アントレプレナーシップ教育デザイン寄付講座」の運営を担っています。"
+    : "Beyond research, we emphasize disseminating our findings and contributing to society. We deliver invited talks at international conferences on research intelligence, participate in UTOKYO COMPASS initiatives (Global Commons, vision formation, SDGs International Symposium), and contribute to regional revitalization and national planning policies. We also provide our [Academic Landscape and Future Prediction System (Science Planet+)](https://planet.sakatalab.t.u-tokyo.ac.jp/) to institutions within and outside the University of Tokyo, and manage the Entrepreneurship Education Design Endowed Course.",
   students: isJa
     ? "学生のみなさんには、研究テーマの選定から、研究デザイン、分析、論文化まで、一連のプロセスを主体的にまわす経験をしてもらうことを重視しています。教員の側から研究テーマや研究計画の示唆をすることは控え、みなさんが自ら選んだテーマや設計した研究計画の支援に徹することとしています。こうしたことから、研究室内の研究テーマは実に多様なものとなっています。"
     : "We emphasize giving students hands-on experience driving the entire research process—from selecting a topic, designing the study, conducting analysis, to writing papers. Rather than suggesting research themes or plans, faculty focus on supporting the topics and plans students choose themselves. This approach results in remarkably diverse research themes within the lab.",
@@ -111,8 +111,23 @@ researchFocus.sort((a, b) => a.data.order - b.data.order);
         <div class="guidelines-text">
           <p>{guidelinesText.intro}</p>
           <p>{guidelinesText.research}</p>
-          <p>{guidelinesText.collaboration}</p>
-          <p>{guidelinesText.outreach}</p>
+          {[guidelinesText.collaboration, guidelinesText.outreach].map((para) => (
+            <p>
+              {parseInlineLinks(para).map((seg) =>
+                seg.type === "link" ? (
+                  <a
+                    href={seg.href}
+                    target={seg.external ? "_blank" : undefined}
+                    rel={seg.external ? "noopener noreferrer" : undefined}
+                  >
+                    {seg.value}
+                  </a>
+                ) : (
+                  seg.value
+                ),
+              )}
+            </p>
+          ))}
           <p>{guidelinesText.students}</p>
           <p>{guidelinesText.conferences}</p>
           <p>{guidelinesText.closing}</p>
@@ -330,10 +345,12 @@ researchFocus.sort((a, b) => a.data.order - b.data.order);
             description: rDesc,
             image: rData.image,
             link: buildLocalizedPath(locale, `research/${r.id}`),
-            tags: [
-              isJa ? "研究" : "Research",
-              isJa ? "論文" : "Publications",
-            ],
+            tags:
+              rData.label === "Project"
+                ? [isJa ? "プロジェクト" : "Project"]
+                : rData.label === "System"
+                  ? [isJa ? "システム" : "System"]
+                  : [isJa ? "研究" : "Research", isJa ? "論文" : "Publications"],
           });
         });
 
