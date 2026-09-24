@@ -39,7 +39,7 @@ const allPublications = authorKey ? await getPublications() : [];
 const memberPublications = allPublications.filter(
   (p) => !p.hidden && p.authors.includes(authorKey!)
 );
-const categoryOrder = ["preprint", "journal", "conference", "review", "invited_lecture"] as const;
+const categoryOrder = ["preprint", "journal", "comment", "conference", "review", "invited_lecture"] as const;
 const publicationGroups = categoryOrder
   .map((category) => ({
     category,
@@ -59,7 +59,8 @@ const copy = {
     publications: "主な業績",
     categories: {
       preprint: "プレプリント",
-      journal: "ジャーナル論文 / 解説",
+      journal: "ジャーナル論文",
+      comment: "コメント",
       conference: "国際会議論文",
       review: "総説",
       invited_lecture: "招待講演",
@@ -76,7 +77,8 @@ const copy = {
     publications: "Selected Publications",
     categories: {
       preprint: "Preprints",
-      journal: "Journal Papers / Commentaries",
+      journal: "Journal Papers",
+      comment: "Comments",
       conference: "Conference Papers",
       review: "Reviews",
       invited_lecture: "Invited Lectures",

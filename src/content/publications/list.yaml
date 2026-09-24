@@ -40,7 +40,7 @@
   issue: "7"
   pages: "746-748"
   link: "https://doi.org/10.1038/s41558-026-02673-2"
-  category: "journal"
+  category: "comment"
   hidden: false
 
 - title: "Structure of scientific knowledge flows to intergovernmental organizations"
@@ -960,7 +960,7 @@
   volume: "531"
   pages: "29-31"
   link: "https://doi.org/10.1038/531029a"
-  category: "review"
+  category: "comment"
   hidden: false
 
 - title: "科学技術ビックデータで未来を予測する"

@@ -50,7 +50,7 @@ const publicationsCollection = defineCollection({
         link: z.string().optional(),
         hidden: z.boolean().default(false),
         year: z.string().optional(),
-        category: z.enum(['preprint', 'journal', 'conference', 'review', 'invited_lecture']).optional(),
+        category: z.enum(['preprint', 'journal', 'comment', 'conference', 'review', 'invited_lecture']).optional(),
     })),
 });
 

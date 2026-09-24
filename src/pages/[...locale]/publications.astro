@@ -17,6 +17,7 @@ const publications = await getPublications();
 
 const preprints = publications.filter((p) => p.category === "preprint");
 const journals = publications.filter((p) => p.category === "journal");
+const comments = publications.filter((p) => p.category === "comment");
 const conferences = publications.filter((p) => p.category === "conference");
 
 const locale = detectLocale(Astro.url.pathname);
@@ -26,7 +27,8 @@ const copy = {
     pageTitle: "論文",
     sections: {
       preprints: "プレプリント",
-      journals: "ジャーナル論文 / 解説",
+      journals: "ジャーナル論文",
+      comments: "コメント",
       conferences: "国際会議論文",
     },
   },
@@ -35,7 +37,8 @@ const copy = {
     pageTitle: "Publications",
     sections: {
       preprints: "Preprints",
-      journals: "Journal Papers / Commentaries",
+      journals: "Journal Papers",
+      comments: "Comments",
       conferences: "Conference Papers",
     },
   },
@@ -56,6 +59,12 @@ const t = copy[locale];
   <Section title={t.sections.journals}>
     <div class="pub-list">
       {journals.map((item) => <PublicationItem pub={item} />)}
+    </div>
+  </Section>
+
+  <Section title={t.sections.comments}>
+    <div class="pub-list">
+      {comments.map((item) => <PublicationItem pub={item} />)}
     </div>
   </Section>
 
