@@ -15,8 +15,6 @@ items:
     role: "大分大学准教授、共同研究者"
     roleEn: "Associate Professor, Oita University / Collaborator"
     # image: "/images/sample_avatar.svg"
-    description: "専門は..."
-    descriptionEn: "Specializes in..."
   - avatar: "磯"
     name: "磯沼 大"
     nameEn: "Masaru Isonuma"

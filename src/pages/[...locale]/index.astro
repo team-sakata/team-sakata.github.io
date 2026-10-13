@@ -21,7 +21,7 @@ const members = await getSortedMembers();
 const researchFocus = await getResearchFocus();
 const publications = await getPublications();
 
-import news from "../../data/news.yaml";
+import { newsItems, getNewsPath, getNewsText, getNewsTitle, hasNewsDetail } from "../../utils/news";
 import { resolvePath, buildLocalizedPath } from "../../utils/paths";
 import type { Locale } from "../../utils/paths";
 import { parseInlineLinks } from "../../utils/richText";
@@ -144,25 +144,29 @@ researchFocus.sort((a, b) => a.data.order - b.data.order);
     >
       <div class="news-preview">
         {
-          news
+          newsItems
             .slice(0, 5)
-            .map((item: { date: string; text: string; link?: string }) => (
+            .map((item) => (
               <div class="news-preview-item">
                 <span class="date">{item.date}</span>
                 <span class="text">
-                  {parseInlineLinks(item.text).map((segment) =>
-                    segment.type === "link" ? (
-                      <a
-                        href={segment.href}
-                        target={segment.external ? "_blank" : undefined}
-                        rel={segment.external ? "noopener noreferrer" : undefined}
-                        class="link"
-                      >
-                        {segment.value}
-                      </a>
-                    ) : (
-                      segment.value
-                    ),
+                  {hasNewsDetail(item) ? (
+                    <a href={getNewsPath(item, locale)} class="link">{getNewsTitle(item, locale)}</a>
+                  ) : (
+                    parseInlineLinks(getNewsText(item, locale)).map((segment) =>
+                      segment.type === "link" ? (
+                        <a
+                          href={segment.href}
+                          target={segment.external ? "_blank" : undefined}
+                          rel={segment.external ? "noopener noreferrer" : undefined}
+                          class="link"
+                        >
+                          {segment.value}
+                        </a>
+                      ) : (
+                        segment.value
+                      ),
+                    )
                   )}
                 </span>
               </div>
@@ -304,8 +308,8 @@ researchFocus.sort((a, b) => a.data.order - b.data.order);
     <!-- Research Focus & Activity Boxes (Show 3 items: 1 Activity, 2 Research) -->
     {
       (() => {
-        // Select 1 activity (e.g., the one with ID 20231114_01)
-        const selectedActivity = activity.find((a) => a.id === "20250610_01");
+        // Show the latest activity report on the home page.
+        const selectedActivity = activity[0];
 
         // Select 2 research focus items (e.g., order 1 and 2)
         const selectedResearch = researchFocus.filter(
@@ -390,8 +394,8 @@ researchFocus.sort((a, b) => a.data.order - b.data.order);
     >
       <p>
         {isJa
-          ? "研究室見学を随時受け付けています。研究会（月2回・月曜3限）や輪読会の見学を推奨しています。"
-          : "We welcome lab visits anytime. Joining our twice-monthly seminar (Mon 3rd period) or reading groups is recommended before applying."}
+          ? "研究室見学を随時受け付けています。研究会（月2回・月曜5限、16:50-18:35）や輪読会の見学を推奨しています。"
+          : "We welcome lab visits anytime. Joining our twice-monthly seminar (Mon period 5, 16:50-18:35) or reading groups is recommended before applying."}
       </p>
       <p
         style="margin-top: 0.5rem;"

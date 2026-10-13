@@ -139,15 +139,39 @@ public/
 
 `src/data/news.yaml` の**先頭**に追記します。
 
+通常のニュースは、一覧に本文と文中リンクをそのまま表示します。
+
 ```yaml
-- date: "2026.04"
-  text: "ここにニュースの内容を書く"
-  link: "https://example.com"   # リンクがある場合のみ（省略可）
+- date: "2026.10"
+  text: "ここにニュースの内容を書く。[関連資料](https://example.com)"
+  textEn: "English news text with an optional [link](https://example.com)."
+```
+
+詳細ページが必要なニュースだけ、`id`・見出し・本文・画像を追加します。
+
+```yaml
+- id: "event-2026"                 # URL用の一意な名前
+  date: "2026.10"
+  title: "一覧に表示する短い見出し"
+  titleEn: "Short headline for the English page"
+  text: "一覧に表示する短い見出し"
+  textEn: "Short headline for the English page"
+  body: "詳細ページの本文（目安300字）"
+  bodyEn: "English text for the detail page"
+  images:
+    - "/images/news/event-2026-01.jpg"
+    - "/images/news/event-2026-02.jpg"
+  link: "https://example.com"       # 詳細ページの関連リンク（省略可）
 ```
 
 - `date` — `"YYYY.MM"` 形式（ダブルクォートで囲む）
-- `text` — ニュース本文（ダブルクォートで囲む）
-- `link` — 外部リンク URL（任意）
+- `text` / `textEn` — 日英の一覧文。`[題目](https://example.com)` 形式のリンクを入れられます。
+- `id` — 詳細ページが必要な記事にだけ指定します。一意の値がページのURLになります。
+- `title` / `titleEn` — 詳細ページを使う記事の日英見出し。クリックすると詳細ページに移動します。
+- `body` / `bodyEn` — 詳細ページの本文。省略時は `text` / `textEn` を使います。
+- `images` — `public/images/news/` に配置した写真のパス。未配置の写真は表示されません。
+- `link` — 詳細ページの関連リンク URL（任意）
+- `id` のない既存記事は一覧のままで、文中リンクも直接開けます。
 - **YAML はインデント（半角スペース2つ）が重要です。タブは使わないでください。**
 
 ### 画像を追加する

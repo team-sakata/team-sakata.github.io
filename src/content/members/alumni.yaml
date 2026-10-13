@@ -88,16 +88,6 @@ items:
     roleEn: "Graduated from Dept. of TMI, March 2025"
 
   - avatar: "OB"
-    name: "友清 雄太"
-    nameEn: "Yuta Tomokiyo"
-    role: "令和7年3月 TMI専攻卒業"
-    roleEn: "Graduated from Dept. of TMI, March 2025"
-    awards:
-      - "技術経営戦略学 専攻長賞（修士：2024年度）"
-    awardsEn:
-      - "Dean's Award, Department of Technology Management for Innovation (Master's, 2024)"
-
-  - avatar: "OB"
     name: "中村 亮太"
     nameEn: "Ryota Nakamura"
     role: "令和7年3月 TMI専攻卒業"

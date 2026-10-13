@@ -42,7 +42,7 @@ const t = copy[locale];
                             {item.data.image && (
                                 <img
                                     src={resolvePath(item.data.image)}
-                                    alt={item.data.title}
+                                    alt={locale === "en" ? (item.data.title_en || item.data.title) : (item.data.title_ja || item.data.title)}
                                     class="activity-image"
                                     loading="lazy"
                                     decoding="async"
@@ -51,8 +51,8 @@ const t = copy[locale];
                             <div class="card-date">
                                 {item.data.date.replace(/-/g, ".")}
                             </div>
-                            <h3>{item.data.title}</h3>
-                            <p>{item.data.description}</p>
+                            <h3>{locale === "en" ? (item.data.title_en || item.data.title) : (item.data.title_ja || item.data.title)}</h3>
+                            <p>{locale === "en" ? (item.data.description_en || item.data.description) : (item.data.description_ja || item.data.description)}</p>
                         </div>
                     </a>
                 ))

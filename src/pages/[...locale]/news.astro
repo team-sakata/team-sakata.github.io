@@ -3,7 +3,7 @@ import Layout from "../../layouts/Layout.astro";
 import NewsItem from "../../components/NewsItem.astro";
 import PageHeader from "../../components/PageHeader.astro";
 import Section from "../../components/Section.astro";
-import news from "../../data/news.yaml";
+import { newsItems, type NewsEntry } from "../../utils/news";
 import { detectLocale } from "../../utils/paths";
 
 export function getStaticPaths() {
@@ -14,11 +14,8 @@ export function getStaticPaths() {
 }
 
 // Group news by year
-const newsByYear = news.reduce(
-  (
-    acc: Record<string, typeof news>,
-    item: { date: string; text: string; link?: string },
-  ) => {
+const newsByYear = newsItems.reduce(
+  (acc: Record<string, NewsEntry[]>, item) => {
     const year = item.date.split(".")[0];
     if (!acc[year]) {
       acc[year] = [];
@@ -53,11 +50,7 @@ const t = copy[locale];
     years.map((year) => (
       <Section title={year}>
         <div class="news-list">
-          {newsByYear[year].map(
-            (item: { date: string; text: string; link?: string }) => (
-              <NewsItem news={item} />
-            ),
-          )}
+          {newsByYear[year].map((item) => <NewsItem news={item} />)}
         </div>
       </Section>
     ))

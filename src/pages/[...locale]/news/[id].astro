@@ -1,0 +1,132 @@
+---
+import { existsSync } from "node:fs";
+import { join } from "node:path";
+import Layout from "../../../layouts/Layout.astro";
+import { buildLocalizedPath, detectLocale, resolvePath } from "../../../utils/paths";
+import { newsItems, getNewsBody, getNewsTitle, hasNewsDetail } from "../../../utils/news";
+import { parseInlineLinks } from "../../../utils/richText";
+
+export function getStaticPaths() {
+  const detailedNews = newsItems.filter(hasNewsDetail);
+  const ids = detailedNews.map((entry) => entry.id);
+  if (new Set(ids).size !== ids.length) {
+    throw new Error("News IDs must be unique");
+  }
+  return (["ja", "en"] as const).flatMap((locale) =>
+    detailedNews.map((entry) => ({
+      params: { locale, id: entry.id },
+      props: { entry },
+    })),
+  );
+}
+
+const { entry } = Astro.props;
+const locale = detectLocale(Astro.url.pathname);
+const title = getNewsTitle(entry, locale);
+const body = getNewsBody(entry, locale);
+const segments = parseInlineLinks(body);
+const images = (entry.images ?? []).filter((path: string) =>
+  path.startsWith("/images/news/") &&
+  !path.includes("..") &&
+  existsSync(join(process.cwd(), "public", path.slice(1))),
+);
+const backLabel = locale === "ja" ? "← ニュース一覧へ" : "← Back to news";
+const relatedLabel = locale === "ja" ? "関連リンクを開く →" : "Open related link →";
+---
+
+<Layout title={`${title} | ${locale === "ja" ? "坂田・森・浅谷研究室" : "Sakata / Mori / Asatani Lab"}`} isSubpage>
+  <article class="news-detail">
+    <a class="back-link" href={buildLocalizedPath(locale, "news")}>{backLabel}</a>
+    <h1>{title}</h1>
+    <p class="news-date">{entry.date}</p>
+
+    {images.length > 0 && (
+      <div class="detail-gallery">
+        {images.map((path: string, index: number) => (
+          <img src={resolvePath(path)} alt={`${title} ${index + 1}`} loading="lazy" decoding="async" />
+        ))}
+      </div>
+    )}
+
+    <div class="description">
+      {segments.map((segment) =>
+        segment.type === "link" ? (
+          <a
+            href={segment.href}
+            target={segment.external ? "_blank" : undefined}
+            rel={segment.external ? "noopener noreferrer" : undefined}
+          >{segment.value}</a>
+        ) : segment.value,
+      )}
+    </div>
+
+    {entry.link && (
+      <a class="related-link" href={entry.link} target="_blank" rel="noopener noreferrer">
+        {relatedLabel}
+      </a>
+    )}
+  </article>
+</Layout>
+
+<style>
+  .news-detail {
+    max-width: 960px;
+    margin: 0 auto 4rem;
+  }
+
+  .back-link, .related-link {
+    color: var(--accent);
+    text-decoration: none;
+    font-size: 0.9rem;
+  }
+
+  .back-link:hover, .related-link:hover {
+    text-decoration: underline;
+  }
+
+  h1 {
+    margin: 1.5rem 0 0.5rem;
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    line-height: 1.4;
+  }
+
+  .news-date {
+    color: var(--text-muted);
+    margin-bottom: 2rem;
+  }
+
+  .detail-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1rem;
+    margin-bottom: 2rem;
+  }
+
+  .detail-gallery img {
+    width: 100%;
+    height: 300px;
+    object-fit: contain;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    background: var(--bg-card);
+  }
+
+  .description {
+    padding: 1.5rem;
+    background: var(--bg-card);
+    border-left: 3px solid var(--accent);
+    border-radius: 4px;
+    color: var(--text-secondary);
+    line-height: 1.8;
+    overflow-wrap: anywhere;
+  }
+
+  .description a {
+    color: var(--accent);
+  }
+
+  .related-link {
+    display: inline-block;
+    margin-top: 1.5rem;
+  }
+</style>

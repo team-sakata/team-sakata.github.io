@@ -16,15 +16,17 @@ export async function getStaticPaths() {
 
 const { activity } = Astro.props;
 const locale = detectLocale(Astro.url.pathname);
+const title = locale === "en" ? (activity.data.title_en || activity.data.title) : (activity.data.title_ja || activity.data.title);
+const description = locale === "en" ? (activity.data.description_en || activity.data.description) : (activity.data.description_ja || activity.data.description);
 const copy = {
     ja: {
         back: "← 戻る",
-        metaTitle: `${activity.data.title} | 坂田・森・浅谷研究室`,
+        metaTitle: `${title} | 坂田・森・浅谷研究室`,
         external: "関連リンクを開く →",
     },
     en: {
         back: "← Back",
-        metaTitle: `${activity.data.title} | Sakata / Mori / Asatani Lab`,
+        metaTitle: `${title} | Sakata / Mori / Asatani Lab`,
         external: "Open related link →",
     },
 } as const;
@@ -37,7 +39,7 @@ const listPath = buildLocalizedPath(locale, "activity");
     <main class="main-content">
         <section class="page-header">
             <button type="button" class="back-link" onclick="history.back()">{t.back}</button>
-            <h1>{activity.data.title}</h1>
+            <h1>{title}</h1>
             <div class="activity-date">
                 {activity.data.date.replace(/-/g, ".")}
             </div>
@@ -51,7 +53,7 @@ const listPath = buildLocalizedPath(locale, "activity");
                             {activity.data.images.map((imagePath: string, index: number) => (
                                 <img
                                     src={resolvePath(imagePath)}
-                                    alt={`${activity.data.title} ${index + 1}`}
+                                    alt={`${title} ${index + 1}`}
                                     class="detail-image detail-gallery-image"
                                     loading="lazy"
                                     decoding="async"
@@ -61,14 +63,14 @@ const listPath = buildLocalizedPath(locale, "activity");
                     ) : activity.data.image && (
                         <img
                             src={resolvePath(activity.data.image)}
-                            alt={activity.data.title}
+                            alt={title}
                             class="detail-image"
                             loading="lazy"
                             decoding="async"
                         />
                     )
                 }
-                <p class="description">{activity.data.description}</p>
+                <p class="description">{description}</p>
                 {
                     activity.data.link && (
                         <div class="external-link-container">

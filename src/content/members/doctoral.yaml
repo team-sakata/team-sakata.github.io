@@ -18,7 +18,7 @@ items:
     grantsEn:
       - "Japan Science and Technology Agency (JST) Strategic Basic Research Programs Act-X"
   - avatar: "D3"
-    name: "Rikuei Kaku"
+    name: "カク リクエイ"
     nameEn: "Rikuei Kaku"
   - avatar: "D2"
     name: "盧 慧敏"
@@ -37,4 +37,14 @@ items:
   - avatar: "D1"
     name: "柴谷 佳弥"
     nameEn: " Yoshimi Shibatani"
+  - avatar: "D1"
+    name: "多田 哲朗"
+    nameEn: "Tada Tetsuro"
+  - avatar: "D1"
+    name: "友清 雄太"
+    nameEn: "Yuta Tomokiyo"
+    awards:
+      - "技術経営戦略学 専攻長賞（修士：2024年度）"
+    awardsEn:
+      - "Dean's Award, Department of Technology Management for Innovation (Master's, 2024)"
 order: 2
